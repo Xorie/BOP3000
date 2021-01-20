@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BOP3000">
+        <activity android:name="Subscription.newSubscription"></activity>
+        <activity android:name="Payment_method.newPayment_method" />
+        <activity android:name="Subscription.Subscription" />
+        <activity android:name="Payment_method.Payment_method" />
+        <activity android:name="Inspiration.Inspiration_newpost" />
+        <activity
+            android:name="Inspiration.Inspiration"
+            android:label="@string/title_activity_inspiration"
+            android:theme="@style/Theme.BOP3000.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

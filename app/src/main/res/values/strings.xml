@@ -7,4 +7,15 @@
     <string name="inspiration_newpic">Last opp bilde</string>
     <string name="inspiration_save">Lagre</string>
     <string name="inspiration_back">Tilbake</string>
+    <string name="inspiration_checkbox">Ønsker du å være annonym?</string>
+    <string name="inspiration_hint">Skriv tekst til bilde</string>
+    <string name="payment_method_tittle">Betalingsmetode</string>
+    <string name="payment_method_change">Endre</string>
+    <string name="payment_method_tittle2">Endre betalingsmetode</string>
+    <string name="payment_method_save">Lagre</string>
+    <string name="subscription_change">Endre</string>
+    <string name="subscription_tittle">Abonnement</string>
+    <string name="subscription_tittle2">Endre abonnement</string>
+    <string name="subscription_save">Lagre</string>
+
 </resources>
