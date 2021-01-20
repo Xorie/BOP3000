@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="startcolor">#FBFBFB</color>
     <color name="endcolor">#BBA49E</color>
+
+    <!-- Brukerprofil -->
+    <color name="brukerprofil_background">#BBA49E</color>
 </resources>

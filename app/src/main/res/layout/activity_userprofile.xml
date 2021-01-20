@@ -6,4 +6,82 @@
     android:layout_height="match_parent"
     tools:context="Userprofile.Userprofile">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="183dp"
+        android:background="@color/brukerprofil_background">
+
+        <TextView
+            android:id="@+id/brukerprofil_firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/brukerprofil_firstname"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/brukerprofil_surname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/brukerprofil_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/brukerprofil_surname"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/brukerprofil_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/brukerprofil_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/brukerprofil_username"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/brukerprofil_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/brukerprofil_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/brukerprofil_email"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/brukerprofil_settingsbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/brukerprofil_settingsbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/brukerprofil_settingsbtn"
+            android:background="@color/cardview_shadow_start_color"
+            app:layout_constraintBottom_toTopOf="@+id/brukerprofil_logoutbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/brukerprofil_logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:text="@string/brukerprofil_logoutbtn"
+            android:background="@color/cardview_shadow_start_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
