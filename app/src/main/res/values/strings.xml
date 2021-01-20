@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BOP3000</string>
+
+    <!-- Brukerprofil -->
+    <string name="brukerprofil_firstname">Fornavn</string>
+    <string name="brukerprofil_surname">Etternavn</string>
+    <string name="brukerprofil_username">Brukernavn</string>
+    <string name="brukerprofil_email">E-post</string>
+    <string name="brukerprofil_settingsbtn">Instillinger</string>
+    <string name="brukerprofil_logoutbtn">Logg Ut</string>
+
 </resources>
