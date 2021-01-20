@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BOP3000</string>
+    <string name="registrer_firstname">Fornavn</string>
+    <string name="registrer_lastname">Etternavn</string>
+    <string name="registrer_email">Epost</string>
+    <string name="registrer_displayname">Visningsnavn</string>
+    <string name="registrer_password">Passord</string>
+    <string name="registrer_repassword">Bekreft passord</string>
 </resources>

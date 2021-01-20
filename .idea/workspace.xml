@@ -11,11 +11,39 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Bjorge" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="med knapp" />
+    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="med knapp">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +55,18 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="testing" />
+        <entry key="$PROJECT_DIR$" value="Bjorge" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,10 +80,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Android Projects/MOB3000v1-PREFINAL/MOB3000v1" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -141,7 +178,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Bjorge" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -157,10 +206,27 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="477" y="266" key="#PSD/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610979888618" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1610980031243">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611137160885">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137160885" />
+    <state x="531" y="291" key="AndroidCreateResourceFileDialog" timestamp="1611137444738">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="531" y="291" key="AndroidCreateResourceFileDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137444738" />
+    <state x="805" y="332" key="AndroidCreateXmlResourceDialog" timestamp="1611138569661">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="805" y="332" key="AndroidCreateXmlResourceDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611138569661" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1611137690941">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610980031243" />
+    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137690941" />
+    <state x="84" y="233" key="SettingsEditor" timestamp="1610982635632">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="84" y="233" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1610982635632" />
     <state x="412" y="297" width="700" height="530" key="recent.locations.popup" timestamp="1610979630422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
