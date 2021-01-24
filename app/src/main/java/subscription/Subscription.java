@@ -1,4 +1,4 @@
-package Subscription;
+package subscription;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import Payment_method.Payment_method;
 import application.bop3000.R;
 
 public class Subscription extends AppCompatActivity {

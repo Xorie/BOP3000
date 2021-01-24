@@ -1,4 +1,4 @@
-package Payment_method;
+package payment_method;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import Inspiration.Inspiration;
 import application.bop3000.R;
 
 public class newPayment_method extends AppCompatActivity implements View.OnClickListener {

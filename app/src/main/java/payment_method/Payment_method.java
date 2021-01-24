@@ -1,4 +1,4 @@
-package Payment_method;
+package payment_method;
 
 import androidx.appcompat.app.AppCompatActivity;
 

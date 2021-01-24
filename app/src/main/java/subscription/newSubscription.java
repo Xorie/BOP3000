@@ -1,4 +1,4 @@
-package Subscription;
+package subscription;
 
 import androidx.appcompat.app.AppCompatActivity;
 

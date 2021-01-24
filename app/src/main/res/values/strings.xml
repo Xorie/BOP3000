@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">BOP3000</string>
+    <string name="title_activity_inspiration">Inspiration</string>
     <string name="inspiration_logo">Knittersbox.no</string>
     <string name="inspiration_test">GOD TIRSDAG :)
     Hva strikker du i dag? Jeg strikker genser!</string>

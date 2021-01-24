@@ -1,4 +1,4 @@
-package FAQ;
+package faq;
 
 public class FAQ {
 }

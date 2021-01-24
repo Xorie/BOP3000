@@ -1,4 +1,4 @@
-package Inspiration;
+package inspiration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;

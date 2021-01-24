@@ -5,46 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context="Inspiration.Inspiration">
+    tools:context="inspiration.Inspiration">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:gravity="center_horizontal"
         android:text="@string/inspiration_logo"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="268dp"
         android:layout_height="157dp"
-        android:layout_marginBottom="164dp"
         android:gravity="center_horizontal"
         android:hint="@string/inspiration_test"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="268dp"
         android:layout_height="264dp"
         android:layout_marginTop="34dp"
+        android:contentDescription="@string/inspiration_newpost"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/strikk"
-        android:contentDescription="@string/inspiration_newpost"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/strikk" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
