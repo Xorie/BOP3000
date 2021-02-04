@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Profil</string>
+
+    <string name="app_name">BOP3000</string>
 
     <!-- Userprofile/Usersettings -->
     <!-- Userprofile: -->
@@ -11,8 +12,8 @@
     <string name="userprofile_settingsbtn">Innstillinger</string>
     <string name="userprofile_logoutbtn">Logg Ut</string>
     <string name="userprofile_address">Leveringsadresse</string>
-<!--    <string name="userprofile_postsbtn">Dine innlegg: 4</string>-->
-<!--    <string name="userprofile_header">Profil</string>-->
+    <!--    <string name="userprofile_postsbtn">Dine innlegg: 4</string>-->
+    <!--    <string name="userprofile_header">Profil</string>-->
     <string name="userprofile_street">Gateadresse</string>
     <string name="userprofile_postnr">Postnummer</string>
     <string name="userprofile_city">Sted</string>
@@ -22,7 +23,14 @@
     <string name="usersettings_newaddrtxt">Endre leveringsaddresse</string>
     <string name="usersettings_newsubtxt">Endre abonnement</string>
     <!-- Change subscription type: -->
-        <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>
-        <string name="usersettings_changesubbtn">Endre abonnement</string>
+    <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>
+    <string name="usersettings_changesubbtn">Endre abonnement</string>
 
+    <!-- Register -->
+    <string name="registrer_firstname">Fornavn</string>
+    <string name="registrer_lastname">Etternavn</string>
+    <string name="registrer_email">Epost</string>
+    <string name="registrer_displayname">Visningsnavn</string>
+    <string name="registrer_password">Passord</string>
+    <string name="registrer_repassword">Bekreft passord</string>
 </resources>
