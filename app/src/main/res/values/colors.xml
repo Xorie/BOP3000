@@ -7,9 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="startcolor">#FBFBFB</color>
     <color name="endcolor">#BBA49E</color>
 
-    <!-- Brukerprofil -->
-    <color name="brukerprofil_background">#BBA49E</color>
+    <!-- Userprofile -->
+<!--    <color name="userprofile_background">#BBA49E</color>-->
+    <color name="userprofile_headertest">#a8908a</color>
+    <color name="userprofile_knapp">#a8908a</color>
+
 </resources>
