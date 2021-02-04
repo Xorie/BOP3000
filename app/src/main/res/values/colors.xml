@@ -10,4 +10,5 @@
 
     <color name="startcolor">#FBFBFB</color>
     <color name="endcolor">#BBA49E</color>
+    <color name="gray">#bbbbbb</color>
 </resources>
