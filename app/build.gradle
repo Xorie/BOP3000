@@ -39,4 +39,8 @@ dependencies {
 
     //OAESIJNAOEUINGo
     implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    // Room Database
+    implementation "androidx.room:room-runtime:2.2.6"
+    annotationProcessor "androidx.room:room-compiler:2.2.6"
 }
