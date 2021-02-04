@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">BOP3000</string>
-    <string name="registrer_firstname">Fornavn</string>
-    <string name="registrer_lastname">Etternavn</string>
-    <string name="registrer_email">Epost</string>
-    <string name="registrer_displayname">Visningsnavn</string>
-    <string name="registrer_password">Passord</string>
-    <string name="registrer_repassword">Bekreft passord</string>
+    <string name="registration">Registrer ny bruker</string>
+    <string name="registration_firstname">Fornavn</string>
+    <string name="registration_lastname">Etternavn</string>
+    <string name="registration_email">Epost</string>
+    <string name="registration_displayname">Visningsnavn</string>
+    <string name="registration_password">Passord</string>
+    <string name="registration_repassword">Bekreft passord</string>
+    <string name="registration_buttonreg">Registrer</string>
+    <string name="registration_buttonback">Tilbake</string>
+
+    <string name="login_email">Epost</string>
+    <string name="login_password">Passord</string>
+    <string name="login_login">Logg inn</string>
+    <string name="login_registrer">Registrer</string>
+    <string name="knittersbox">knittersbox</string>
 </resources>
