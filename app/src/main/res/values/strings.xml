@@ -1,22 +1,9 @@
 <resources>
     <string name="app_name">BOP3000</string>
-    <string name="title_activity_inspiration">Inspiration</string>
-    <string name="inspiration_logo">Knittersbox.no</string>
-    <string name="inspiration_test">GOD TIRSDAG :)
-    Hva strikker du i dag? Jeg strikker genser!</string>
-    <string name="inspiration_newpost">Nytt innlegg</string>
-    <string name="inspiration_newpic">Last opp bilde</string>
-    <string name="inspiration_save">Lagre</string>
-    <string name="inspiration_back">Tilbake</string>
-    <string name="inspiration_checkbox">Ønsker du å være annonym?</string>
-    <string name="inspiration_hint">Skriv tekst til bilde</string>
-    <string name="payment_method_tittle">Betalingsmetode</string>
-    <string name="payment_method_change">Endre</string>
-    <string name="payment_method_tittle2">Endre betalingsmetode</string>
-    <string name="payment_method_save">Lagre</string>
-    <string name="subscription_change">Endre</string>
-    <string name="subscription_tittle">Abonnement</string>
-    <string name="subscription_tittle2">Endre abonnement</string>
-    <string name="subscription_save">Lagre</string>
-
+    <string name="registrer_firstname">Fornavn</string>
+    <string name="registrer_lastname">Etternavn</string>
+    <string name="registrer_email">Epost</string>
+    <string name="registrer_displayname">Visningsnavn</string>
+    <string name="registrer_password">Passord</string>
+    <string name="registrer_repassword">Bekreft passord</string>
 </resources>
