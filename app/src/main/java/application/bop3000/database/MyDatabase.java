@@ -17,10 +17,10 @@ public abstract class MyDatabase extends RoomDatabase {
 
     // **********//
     // Declare your data access objects *DAO* as abstract
-    //public abstract Dao getStudentDao();
+    public abstract KnittersboxDao getKnittersboxDao();
     // **********//
 
-    static MyDatabase getDatabase(final Context context) {
+    public static MyDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (MyDatabase.class) {
                 if (INSTANCE == null) {

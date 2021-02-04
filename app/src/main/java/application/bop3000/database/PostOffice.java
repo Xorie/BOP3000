@@ -17,4 +17,20 @@ public class PostOffice implements Serializable {
 
     @ColumnInfo (name = "post_office")
     private String post_office;
+
+    public int getPostnr() {
+        return postnr;
+    }
+
+    public void setPostnr(int postnr) {
+        this.postnr = postnr;
+    }
+
+    public String getPost_office() {
+        return post_office;
+    }
+
+    public void setPost_office(String post_office) {
+        this.post_office = post_office;
+    }
 }

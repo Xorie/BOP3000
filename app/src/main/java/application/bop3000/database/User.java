@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -22,7 +23,7 @@ public class User implements Serializable {
     @ColumnInfo(name = "userID")
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    private String userID;
+    private int userID;
 
     @ColumnInfo (name = "email")
     private String email;
@@ -47,4 +48,88 @@ public class User implements Serializable {
 
     @ColumnInfo (name = "postoffice_postnr")
     private String postnr;
+
+    @ColumnInfo (name = "subscription_subscriptionID")
+    private String subscription_subscriptionID;
+
+    @NonNull
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(@NonNull int userID) {
+        this.userID = userID;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getStreetname() {
+        return streetname;
+    }
+
+    public void setStreetname(String streetname) {
+        this.streetname = streetname;
+    }
+
+    public String getDisplayname() {
+        return displayname;
+    }
+
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
+    }
+
+    public String getPostnr() {
+        return postnr;
+    }
+
+    public void setPostnr(String postnr) {
+        this.postnr = postnr;
+    }
+
+    public String getSubscription_subscriptionID() {
+        return subscription_subscriptionID;
+    }
+
+    public void setSubscription_subscriptionID(String subscription_subscriptionID) {
+        this.subscription_subscriptionID = subscription_subscriptionID;
+    }
 }
