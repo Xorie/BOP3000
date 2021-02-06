@@ -1,4 +1,4 @@
-package inspiration;
+package application.bop3000.inspiration;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +20,9 @@ public class Inspiration extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
+
+
+            //fra insperasjonssiden til nytt innlegg siden
             public void onClick(View view) {
                 Intent intent = new Intent(Inspiration.this, Inspiration_newpost.class);
                 startActivity(intent);

@@ -2,6 +2,7 @@ package application.bop3000;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
+import application.bop3000.inspiration.Inspiration;
 
 public class MainActivity extends AppCompatActivity {
     EditText firstname, lastname, email, displayname, password;
@@ -19,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
+        setContentView(R.layout.activity_main);
 
+        /*
         //firstname = findViewById(R.id.registration_firstname);
         //lastname = findViewById(R.id.registration_lastname);
         email = findViewById(R.id.registration_email);
@@ -69,5 +72,11 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+*/
+    }
+    public void goInspiration (View view){
+        Intent intent = new Intent(MainActivity.this, Inspiration.class);
+        startActivity(intent);
     }
 }

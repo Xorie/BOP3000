@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="application.bop3000">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -13,9 +16,9 @@
         <activity android:name="payment_method.newPayment_method" />
         <activity android:name="subscription.Subscription" />
         <activity android:name="payment_method.Payment_method" />
-        <activity android:name="inspiration.Inspiration_newpost" />
+        <activity android:name=".inspiration.Inspiration_newpost" />
         <activity
-            android:name="inspiration.Inspiration"
+            android:name=".inspiration.Inspiration"
             android:label="@string/title_activity_inspiration"
             android:theme="@style/Theme.BOP3000.NoActionBar" />
         <activity android:name=".MainActivity">
