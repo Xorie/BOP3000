@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/registration_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/registration_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="4dp"
+        app:drawableLeftCompat="@drawable/ic_email"
+        android:hint="@string/registration_email"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:id="@+id/registration_displayname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="4dp"
+        app:drawableLeftCompat="@drawable/ic_person_search"
+        android:hint="@string/registration_displayname"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:id="@+id/registration_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="4dp"
+        app:drawableLeftCompat="@drawable/ic_password"
+        android:hint="@string/registration_password"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:id="@+id/registration_repassword"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="4dp"
+        app:drawableLeftCompat="@drawable/ic_password"
+        android:hint="@string/registration_repassword"
+        android:drawablePadding="10dp" />
+
+    <Button
+        android:id="@+id/registration_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_buttonreg"
+        android:textColor="@color/white"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/registration_lagre">
+    </Button>
+
+    <Button
+        android:id="@+id/registration_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_buttonback"
+        android:textColor="@color/white"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/registration_lagre">
+    </Button>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
