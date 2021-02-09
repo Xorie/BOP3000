@@ -15,4 +15,9 @@
     <string name="login_login">Logg inn</string>
     <string name="login_registrer">Registrer</string>
     <string name="knittersbox">knittersbox</string>
+
+    <!-- Menu -->
+    <string name="menu_knittersbox">Knittersbox.no</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>

@@ -7,12 +7,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import application.bop3000.MainActivity;
 import application.bop3000.R;
 
 public class Menu extends AppCompatActivity {
@@ -46,6 +48,21 @@ public class Menu extends AppCompatActivity {
 
 
     private void selectDrawerItem(MenuItem menuItem) {
+        Intent intent_home = new Intent(this, MainActivity.class);
+
+        switch(menuItem.getItemId()) {
+            case R.id.home:
+                startActivity(intent_home);
+                break;
+            case R.id.userprofile:
+                break;
+            case R.id.faq:
+                break;
+            case R.id.subscription:
+                break;
+            case R.id.logout:
+                break;
+        }
     }
 
     ActionBarDrawerToggle setupDrawerToggle() {
