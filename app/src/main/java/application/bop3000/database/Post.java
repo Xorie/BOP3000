@@ -49,4 +49,13 @@ public class Post implements Serializable {
     public void setUserID(String userID) {
         this.userID = userID;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postID=" + postID +
+                ", post_text='" + post_text + '\'' +
+                ", userID='" + userID + '\'' +
+                '}';
+    }
 }
