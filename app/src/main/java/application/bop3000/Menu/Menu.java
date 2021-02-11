@@ -16,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import application.bop3000.MainActivity;
 import application.bop3000.R;
+import application.bop3000.Subscription.Subscription;
 
 public class Menu extends AppCompatActivity {
     private Toolbar toolbar;
@@ -49,19 +50,17 @@ public class Menu extends AppCompatActivity {
 
     private void selectDrawerItem(MenuItem menuItem) {
         Intent intent_home = new Intent(this, MainActivity.class);
+        Intent intent_subscription = new Intent(this, Subscription.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
                 break;
-            case R.id.userprofile:
-                break;
-            case R.id.faq:
-                break;
+
             case R.id.subscription:
+                startActivity(intent_subscription);
                 break;
-            case R.id.logout:
-                break;
+
         }
     }
 

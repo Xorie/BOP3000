@@ -20,4 +20,9 @@
     <string name="menu_knittersbox">Knittersbox.no</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="subscription_tittle">Abonnement</string>
+    <string name="subscription_change">Endre</string>
+    <string name="subscription_tittle2">Endre abonnement</string>
+    <string name="subscription_spinnertext">Velg abonnement</string>
+    <string name="subscription_save">Lagre</string>
 </resources>
