@@ -1,6 +1,7 @@
-package FAQ;
+package application.bop3000.FAQ;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import application.bop3000.R;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
