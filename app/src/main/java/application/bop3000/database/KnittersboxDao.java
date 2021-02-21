@@ -4,7 +4,6 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -13,7 +12,16 @@ public interface KnittersboxDao {
     @Insert
     void registerUser(User user);
 
+    @Insert
+    void registerSub(Subscription sub);
+
     @Query("Select * from FAQ where question = (:qst)")
     List<FAQ> faqliste(String qst);
+
+    @Query("Select * from Subscription")
+    List<Subscription> subListe();
+
+    @Query("Select * from Subscription where description = (:subscript)")
+    Subscription hentSubID(String subscript);
 
 }
