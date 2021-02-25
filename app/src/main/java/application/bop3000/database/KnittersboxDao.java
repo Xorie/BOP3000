@@ -16,4 +16,11 @@ public interface KnittersboxDao {
     @Query("Select * from FAQ where question = (:qst)")
     List<FAQ> faqliste(String qst);
 
+    //Find registered users
+    @Query("SELECT * FROM User WHERE email = (:email) AND password = (:password)")
+    User login(String email, String password);
+
+    //Find display name of users
+    @Query("SELECT * FROM User WHERE displayname = (:displayname)")
+    User displayname(String displayname);
 }

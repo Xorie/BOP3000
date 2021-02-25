@@ -30,7 +30,6 @@ public abstract class MyDatabase extends RoomDatabase {
                             // Migration is not part of this practical.
                             .fallbackToDestructiveMigration()
                             .build();
-
                 }
             }
         }

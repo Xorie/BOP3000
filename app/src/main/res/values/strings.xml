@@ -15,4 +15,5 @@
     <string name="login_login">Logg inn</string>
     <string name="login_registrer">Registrer</string>
     <string name="knittersbox">knittersbox</string>
+    <string name="personvern"><a href="https://knittersbox.no/personvern-2/">Godkjenner personvern og vilkår</a></string>
 </resources>
