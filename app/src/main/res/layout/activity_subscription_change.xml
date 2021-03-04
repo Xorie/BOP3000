@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Subscription.Subscription_change">
 
@@ -17,24 +16,39 @@
         android:layout_gravity="center"
         android:text="@string/subscription_tittle2"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/endcolor"
         android:textSize="40sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
         android:text="@string/subscription_spinnertext"
-        android:textColor="@color/white"
+        android:textColor="@color/endcolor"
         android:textSize="20sp" />
 
-    <Spinner
-        android:id="@+id/subscription_spinner"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/edit_square"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/subscription_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/subscription_postnr"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="@color/white"
+        android:hint="Postnr"
+        android:textColor="@color/endcolor"
         android:layout_gravity="center"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
@@ -45,21 +59,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="By"
-        android:textColor="@color/white"
+        android:textColor="@color/endcolor"
         android:layout_gravity="center"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="25dp"/>
-
-    <EditText
-        android:id="@+id/subscription_postnr"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Postnr"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginBottom="25dp"/>
 
     <EditText
@@ -67,10 +70,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Adresse"
-        android:textColor="@color/white"
+        android:textColor="@color/endcolor"
         android:layout_gravity="center"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginBottom="25dp"/>
 
     <Button
@@ -82,7 +85,7 @@
         android:textColor="@color/white"
         android:textSize="17sp"
         android:layout_gravity="center"
-        android:background="@drawable/registration_lagre"/>
+        android:backgroundTint="@color/endcolor"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

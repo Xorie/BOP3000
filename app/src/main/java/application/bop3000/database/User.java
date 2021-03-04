@@ -46,10 +46,10 @@ public class User implements Serializable {
     private String displayname;
 
     @ColumnInfo (name = "postoffice_postnr")
-    private int postnr;
+    private String postnr;
 
     @ColumnInfo (name = "subscription_subscriptionID")
-    private int subscription_subscriptionID;
+    private String subscription_subscriptionID;
 
     @NonNull
     public int getUserID() {
@@ -116,19 +116,19 @@ public class User implements Serializable {
         this.displayname = displayname;
     }
 
-    public int getPostnr() {
+    public String getPostnr() {
         return postnr;
     }
 
-    public void setPostnr(int postoffice_postnr) {
+    public void setPostnr(String postoffice_postnr) {
         this.postnr = postoffice_postnr;
     }
 
-    public int getSubscription_subscriptionID() {
+    public String getSubscription_subscriptionID() {
         return subscription_subscriptionID;
     }
 
-    public void setSubscription_subscriptionID(int subscription_subscriptionID) {
+    public void setSubscription_subscriptionID(String subscription_subscriptionID) {
         this.subscription_subscriptionID = subscription_subscriptionID;
     }
 }

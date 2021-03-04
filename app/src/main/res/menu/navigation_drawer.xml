@@ -26,6 +26,7 @@
         <item
             android:id="@+id/logout"
             android:title="Logg ut"
+            android:actionMenuTextColor="@color/red"
             android:icon="@drawable/ic_power"/>
     </group>
 </menu>

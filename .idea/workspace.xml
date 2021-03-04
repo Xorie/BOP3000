@@ -19,11 +19,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="med knapp">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/AppExecutors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edit_square.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/Subscription/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/Subscription/Subscription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/Subscription/Subscription_change.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/Subscription/Subscription_change.java" afterDir="false" />
@@ -31,6 +32,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_change.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_change.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,14 +214,14 @@
     </state>
     <state x="477" y="266" key="#PSD/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1611259284862" />
     <state x="477" y="266" key="#PSD/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610982124764" />
-    <state x="798" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1613592414461">
+    <state x="798" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1614617565843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="798" y="219" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613592414461" />
-    <state x="540" y="275" key="AndroidCreateResourceFileDialog" timestamp="1613575344276">
+    <state x="798" y="219" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614617565843" />
+    <state x="1038" y="444" key="AndroidCreateResourceFileDialog" timestamp="1614111113039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="275" key="AndroidCreateResourceFileDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613575344276" />
+    <state x="1038" y="444" key="AndroidCreateResourceFileDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614111113039" />
     <state x="540" y="275" key="AndroidCreateResourceFileDialog/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1611138763766" />
     <state x="768" y="313" key="AndroidCreateXmlResourceDialog" timestamp="1611257860361">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -231,27 +235,27 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="604" y="278" key="Downloadable.Font.Dialog.Size/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1611244105779" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613590355394">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614275548554">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613590355394" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614275548554" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610980031243" />
-    <state width="1692" height="271" key="GridCell.Tab.0.bottom" timestamp="1613769210946">
+    <state width="1692" height="274" key="GridCell.Tab.0.bottom" timestamp="1614813800924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1692" height="271" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613769210946" />
-    <state width="1692" height="271" key="GridCell.Tab.0.center" timestamp="1613769210946">
+    <state width="1692" height="274" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614813800924" />
+    <state width="1692" height="274" key="GridCell.Tab.0.center" timestamp="1614813800924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1692" height="271" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613769210946" />
-    <state width="1692" height="271" key="GridCell.Tab.0.left" timestamp="1613769210946">
+    <state width="1692" height="274" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614813800924" />
+    <state width="1692" height="274" key="GridCell.Tab.0.left" timestamp="1614813800924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1692" height="271" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613769210946" />
-    <state width="1692" height="271" key="GridCell.Tab.0.right" timestamp="1613769210946">
+    <state width="1692" height="274" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614813800924" />
+    <state width="1692" height="274" key="GridCell.Tab.0.right" timestamp="1614813800924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1692" height="271" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1613769210946" />
+    <state width="1692" height="274" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614813800924" />
     <state x="148" y="89" key="MergeDialog" timestamp="1611243922404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

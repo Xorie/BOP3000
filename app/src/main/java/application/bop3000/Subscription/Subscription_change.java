@@ -4,25 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
-
 import application.bop3000.AppExecutors;
 import application.bop3000.R;
-import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Subscription;
 import application.bop3000.database.User;
@@ -35,10 +26,7 @@ public class Subscription_change extends AppCompatActivity {
     private EditText et_address;
     private Button button;
     private Spinner spinner;
-    private Object Message;
-    private Object Subscription;
     private int subID;
-    private application.bop3000.database.Subscription subDesc;
 
 
     @Override
@@ -53,13 +41,13 @@ public class Subscription_change extends AppCompatActivity {
         et_postnr = findViewById(R.id.subscription_postnr);
         et_address = findViewById(R.id.subscription_address);
 
-
-
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+                //Endelig liste
                 List<String> subscriptionList = new ArrayList<>();
 
+                //Liste som henter abonnement
                 List<Subscription> hentListe;
                 hentListe = mDb.getKnittersboxDao().subListe();
 
@@ -72,6 +60,7 @@ public class Subscription_change extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        //Setter spinner adapter
                         ArrayAdapter adapter = new ArrayAdapter<>(Subscription_change.this,
                                 android.R.layout.simple_spinner_item, subscriptionList);
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -81,78 +70,62 @@ public class Subscription_change extends AppCompatActivity {
             }
         });
 
-        //spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            //public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-
-                //KnittersboxDao hent = (KnittersboxDao) mDb.getKnittersboxDao();
-                //Subscription sub = hent.hentSub();
-                //int subid = sub.getSubscriptionID();
-                //System.out.println(subid);
-                //System.out.println(subid);
-                //System.out.println(subid);
-                //System.out.println(subid);
-                //System.out.println("æsj");
-                //int listcounter = 0;
-                //List<Subscription> hente;
-                //hente = mDb.getKnittersboxDao().subListe();
-                //Subscription sub = hente.get(listcounter);
-                //int subid = sub.getSubscriptionID();
-
-                //Message mSelected = (Message) parent.getItemAtPosition(pos);
-                //Log.i("Id:"+ mSelected.getSubscriptionID());
-            //}
-
-            //@Override
-            //public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-               // Log.i("Message", "Nothing is selected");
-           // }
-       // });
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        //Oppretter brukerobjekt og henter inputdata
-                        User user = new User();
-                        final String city = et_city.getText().toString();
+
+                        int userID = 1;
+                        //Finner brukeren som er pålogget
+                        User user = mDb.getKnittersboxDao().hentBrukerID(userID);
+
+                        //inputdata
+                        String city = et_city.getText().toString();
                         String postnr = et_postnr.getText().toString();
-                        final int i_postnr = Integer.parseInt(postnr);
-                        final String address = et_address.getText().toString();
+                        String address = et_address.getText().toString();
                         String subscript = spinner.getSelectedItem().toString();
 
-                        //Henter abonnementet som er valgt og finner ID
-                        subDesc = mDb.getKnittersboxDao().hentSubID(subscript);
+
+                        //Henter abonnementet som er vald og finner ID
+                        Subscription subDesc = mDb.getKnittersboxDao().hentSubID(subscript);
                         subID = subDesc.getSubscriptionID();
+                        String Str_subID = String.valueOf(subID);
 
-                        //test
-                        System.out.println(subID);
-                        System.out.println(city);
-                        System.out.println(i_postnr);
-                        System.out.println(address);
-                        System.out.println(subscript);
 
-                        //Setter
-                        user.setCity(city);
-                        user.setPostnr(i_postnr);
-                        user.setStreetname(address);
-                        user.setSubscription_subscriptionID(subID);
-
-                        // Register user
-                        KnittersboxDao userDao = mDb.getKnittersboxDao();
-                        userDao.registerUser(user);
-                        runOnUiThread(new Runnable() {
+                        runOnUiThread( new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(getApplicationContext(), "Lagt til Bruker", Toast.LENGTH_SHORT).show();
+                                if(city.isEmpty() || postnr.isEmpty() || address.isEmpty()) {
+                                    Toast.makeText( getApplicationContext(), "Fyll felt", Toast.LENGTH_SHORT ).show();
+                                }
                             }
                         });
+                        if(city.isEmpty() || postnr.isEmpty() || address.isEmpty()) {
+
+
+
+                        } else {
+                            //Setter
+                            user.setCity(city);
+                            user.setPostnr(postnr);
+                            user.setStreetname(address);
+                            user.setSubscription_subscriptionID(Str_subID);
+                            //Oppdaterer bruker
+                            mDb.getKnittersboxDao().updateUser(user);
+
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "Bruker er oppdatert", Toast.LENGTH_SHORT ).show();
+
+                                    startActivity(new Intent(Subscription_change.this, application.bop3000.Subscription.Subscription.class ));
+                                }
+                            });
+                        }
                     }
                 }).start();
             }
