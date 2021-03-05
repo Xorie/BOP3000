@@ -52,12 +52,12 @@ public class User implements Serializable {
     @ColumnInfo (name = "subscription_subscriptionID")
     private String subscription_subscriptionID;
 
-    @NonNull
+
     public int getUserID() {
         return userID;
     }
 
-    public void setUserID(@NonNull int userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
