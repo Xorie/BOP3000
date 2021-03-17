@@ -54,6 +54,30 @@
     <string name="login_registrer">Registrer</string>
     <string name="knittersbox">knittersbox</string>
 
+    <string name="title_activity_inspiration">Inspiration</string>
+    <string name="inspiration_logo">Knittersbox.no</string>
+    <string name="inspiration_takePic">Ta bilde</string>
+    <string name="inspiration_gallary">Bilde fra galleri</string>
+    <string name="inspiration_saysomething">Si noe om bildet</string>
+    <string name="inspiration_title">Titel på innlegget</string>
+    <string name="inspiration_newpost">Nytt innlegg</string>
+    <string name="inspiration_newpic">Last opp bilde</string>
+    <string name="inspiration_save">Lagre</string>
+    <string name="inspiration_back">Tilbake</string>
+    <string name="inspiration_checkbox">Ønsker du å være annonym?</string>
+    <string name="inspiration_hint">Skriv tekst til bilde</string>
+
+    <string name="payment_method_tittle">Betalingsmetode</string>
+    <string name="payment_method_change">Legg til ny betalingsmetode</string>
+    <string name="payment_method_tittle2">Ny betalingsmetode</string>
+    <string name="payment_method_save">Lagre</string>
+    <string name="payment_method_cardnr">Kortnummer:</string>
+    <string name="payment_method_expirationDate">Utløpsdato:</string>
+    <string name="payment_method_CVC">Kortkode (CVC)</string>
+    <string name="payment_method_delete">Slett betalingsmetode</string>
+
+
+
     <!-- Menu -->
     <string name="menu_knittersbox">Knittersbox.no</string>
     <string name="drawer_open">Open navigation drawer</string>
