@@ -3,6 +3,7 @@ package application.bop3000.database;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,4 +24,15 @@ public interface KnittersboxDao {
     //Find display name of users
     @Query("SELECT * FROM User WHERE displayname = (:displayname)")
     User displayname(String displayname);
+
+    //Find email of users
+    @Query("SELECT * FROM User WHERE email = (:email)")
+    User userEmail(String email);
+
+    //Update userID
+    @Update
+    void updateUserId(User user);
+
+    @Query("UPDATE User SET userID = (:userId) WHERE email = (:email)")
+    int updateUserIdQuery(int userId, String email);
 }
