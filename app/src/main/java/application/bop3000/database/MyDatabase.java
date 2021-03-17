@@ -6,8 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, FAQ.class, Image.class, Post.class, PostOffice.class, Subscription.class}, version=1)
-
+@Database(entities = {User.class, FAQ.class, Post.class, PostOffice.class, Subscription.class, Payment.class}, version=13)
 public abstract class MyDatabase extends RoomDatabase {
 
     // Database name to be used

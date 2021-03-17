@@ -1,20 +1,20 @@
 package application.bop3000.inspiration;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,21 +22,24 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 
-public class Inspiration_newpost extends AppCompatActivity{
-    private static final int MY_CAMERA_REQUEST_CODE = 100;
-    private static final int PICK_IMAGE = 1;
-    EditText newpost_txt;
+public class Inspiration_newpost extends AppCompatActivity implements View.OnClickListener {
+    private static final int GALLERY_REQUEST = 100;
+    private static final int CAMERA_REQUEST = 200;
+    private ImageView selectedImageview;
+    private EditText titleEdithText, textEdithText;
     Button btn_save;
+    Bitmap bitmap;
+    private MyDatabase DB;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -44,118 +47,120 @@ public class Inspiration_newpost extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inspiration_newpost);
+        this.selectedImageview = (ImageView) findViewById(R.id.new_memory_selected_image);
+        this.titleEdithText = (EditText) findViewById(R.id.new_memory_title);
+        this.textEdithText = (EditText) findViewById(R.id.new_memory_txt);
 
         //sjekker om kamera har tillatelse eller ikke
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
         }
-        newpost_txt = findViewById(R.id.newpost_text);
+        //lagre knapp
         btn_save = findViewById(R.id.inspiration_save);
-    }
-    //tror den fungerer
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == MY_CAMERA_REQUEST_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
-                UploadPic();
-            } else {
-                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-    //https://stackoverflow.com/questions/38552144/how-get-permission-for-camera-in-android-specifically-marshmallow
-
-    private String UploadPic() {
-        UploadPic();
-        return null;
+        btn_save.setOnClickListener((View.OnClickListener) this);
     }
 
-    //https://stackoverflow.com/questions/13977245/android-open-camera-from-button
-    //https://stackoverflow.com/questions/5309190/android-pick-images-from-gallery
-    //kan åpne både kamera og fil systemet
-    public void UploadPic(View view) {
-        CharSequence menu[] = new CharSequence[]{"Galleri", "Åpne kamera"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Last opp bilde");
-        builder.setItems(menu, new DialogInterface.OnClickListener() {
-            @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    if (i == 0) {
-                        Toast.makeText(getApplicationContext(), "Klikket på galleri", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent();
-                        intent.setType("image/*");
-                        intent.setAction(Intent.ACTION_GET_CONTENT);
-                        startActivityForResult(Intent.createChooser(intent, "Velg et bilde"), PICK_IMAGE);
+    //https://www.tutorialspoint.com/how-to-write-an-image-file-in-internal-storage-in-android
+    //meste av koden kommer her, alt annet er fra stackoverflow
+    //lagre bildet på en intern mappe, så lagre innlegget i databasen
+    public void saveToInternalStorage (Bitmap bitmap) {
+        DB = MyDatabase.getDatabase(getApplicationContext());
+        final KnittersboxDao postDao = DB.getKnittersboxDao();
+        final Post post = new Post();
 
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Klikket på kamera", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                        startActivity(intent);
-
-                    }
-                }
-            });builder.show();
-    }
-    public void onSaveImage( View v) {
-        String saveToInternalStorage;
-        Bitmap bitmapImage = null;
+        //lagre bilde internt i mobilen
+        bitmap = ((BitmapDrawable) selectedImageview.getDrawable()).getBitmap();
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        // path to /data/data/yourapp/app_data/imageDir
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        // Create imageDir
-        File mypath = new File(directory, "profile.jpg");
-
+        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE); //lager en mappe
+        File file = new File(directory, titleEdithText.getText().toString() + ".jpg");
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) { e.printStackTrace();}
-        finally { try {fos.close();}
-        catch (IOException e) {e.printStackTrace();}}
-    }//return mypath.getAbsolutePath();
+            fos = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, fos);
+            fos.flush();
+            //lagrer innlegget i room databasen
+            Intent i = getIntent();
+            final String user = i.getStringExtra("SID"); //sjekk med Bjørge med navnet
+            String imagepath = file.toString();
+            final String title = titleEdithText.getText().toString();
+            final String post_text = textEdithText.getText().toString();
 
-
-
-    //fungerer å lagre teksten
-    public void onSave(View v) {
-        Post post = new Post();
-        post.setPost_text(newpost_txt.getText().toString());
-
-        //lagrer teksten
-        MyDatabase userDatabase = MyDatabase.getDatabase(getApplicationContext());
-        KnittersboxDao postDao = userDatabase.getKnittersboxDao();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                postDao.registerNewPost(post);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(), "tekst er lagret", Toast.LENGTH_LONG).show();
-                    }
-                });
+            if (title.isEmpty()) {
+                Toast.makeText(this, "Du må fylle inn titelfeltet!", Toast.LENGTH_LONG).show();
+            } else {
+                post.setUserID(user);
+                post.setPost_tittle(title); //title på bildet
+                post.setPost_text(post_text); //teksten til bildet
+                post.setPost_imagepath(imagepath); //selve bildetveien
+                new Thread(() -> postDao.insertNewPost(post)).start();
+                Toast.makeText(getApplicationContext(), "Innlegget er lagret!", Toast.LENGTH_LONG).show();
             }
-        }).start();
+        }catch(Exception e){
+                e.printStackTrace();
+            }
+            finally{
+                try {
+                    fos.close();
+                    Intent i = new Intent(this, Inspiration.class);
+                    startActivity(i);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
     }
 
-    private void loadImage(String path){
-        try {
-            File file = new File(path, "profile.jpg");
-            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(file));
-            ImageView img=(ImageView)findViewById(R.id.srPostImage);
-            img.setImageBitmap(b); // it will display the image in imageview
-            String file_path = UploadPic(); // store this file_path in db
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+    //åpner galleri
+    public void openGallery(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Velge bilde"), GALLERY_REQUEST);
+    }
+
+    //åpner kamera
+    public void openCamera(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA_REQUEST);
+    }
+
+
+    //https://www.youtube.com/watch?v=ykbU41xhDrY
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
+            Uri selectedImage = data.getData();
+            InputStream imageStream = null;
+            try {
+                imageStream = getContentResolver().openInputStream(selectedImage);
+                selectedImageview.setImageBitmap(BitmapFactory.decodeStream(imageStream));
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Kunne ikke laste inne bildet", Toast.LENGTH_LONG).show();
+            }
+
+        }
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
+            try {
+                Bundle ex = data.getExtras();
+                Bitmap image = (Bitmap)ex.get("data");
+                selectedImageview.setImageBitmap(image);
+            } catch (Exception e) {
+                Toast.makeText(this, "Kunne ikke laste inne bildet", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
-    //tilbake knapp til insp side
-    public void onclickback(View view){
-        Intent intent = new Intent(Inspiration_newpost.this, Inspiration.class);
-        startActivity(intent);
+
+    //kaller på funksjon for å lagre bilde internt på mobilen og til room databasen
+    @Override
+    public void onClick(View v) {
+        saveToInternalStorage(bitmap);
+    }
+
+    //tilbake til inpirasjonssiden
+    public void back(View view){
+        Intent i = new Intent(this, Inspiration.class);
+        startActivity(i);
     }
 }

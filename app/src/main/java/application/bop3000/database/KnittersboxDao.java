@@ -6,7 +6,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -18,20 +17,23 @@ public interface KnittersboxDao {
     @Query("Select * from FAQ where question = (:qst)")
     List<FAQ> faqliste(String qst);
 
+    //intert for Post
     @Insert
-    void registerNewPost(Post post);
+    void insertNewPost(Post post);
 
-    @Query("SELECT * FROM Post ORDER BY postID")
+    //for å hente alle postene
+    @Query("SELECT * FROM Post ORDER BY postID DESC")
     List<Post> loadAllPost();
 
-    @Update
-    void updatePost(Post post);
+    //for å hente payment_method for en bruker
+    @Query("SELECT * FROM Payment WHERE user_userID = (:user)")
+    List<Payment> loadAllPay(String user);
 
-    @Delete
-    void delete(Post post);
+    @Insert
+    void insertNewPayment(Payment pay);
 
-    @Query("SELECT * FROM Post WHERE postID = :id")
-    Post loadPostById(int id);
-
-
+    /*
+    @Query("DELETE FROM User WHERE uid = :id")
+    void deleteById(String id);
+*/
 }

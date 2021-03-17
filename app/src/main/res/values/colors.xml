@@ -11,5 +11,6 @@
     <color name="startcolor">#FBFBFB</color>
     <color name="endcolor">#BBA49E</color>
     <color name="gray">#bbbbbb</color>
-    <color name="save">#54C24B</color>
+    <color name="save">#99897f</color>
+    <color name="delete">#FF0000</color>
 </resources>

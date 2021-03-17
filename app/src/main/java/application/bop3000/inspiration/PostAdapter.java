@@ -2,23 +2,25 @@ package application.bop3000.inspiration;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.BreakIterator;
-import java.text.StringCharacterIterator;
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 import application.bop3000.R;
+import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
-    Context context;
-    private List<Post> mPostList;
+    static Context context;
+    private List<Post> PostList;
 
     public PostAdapter(Context context) {this.context = context;}
 
@@ -31,36 +33,37 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder PostViewholder, int i) {
-        PostViewHolder.post_text.setText(mPostList.get(i).getPost_text());
-    }
-
-    public List<Post> getData() {
-        return mPostList;
+        String hentimage = PostList.get(i).getPost_imagepath();
+        Uri mUri = Uri.parse(hentimage);
+        PostViewholder.post_image.setImageURI(mUri);
+        PostViewholder.post_user.setText(PostList.get(i).getUserID());
+        PostViewHolder.post_text.setText(PostList.get(i).getPost_text());
+        PostViewHolder.post_title.setText(PostList.get(i).getPost_tittle());
     }
 
     static class PostViewHolder extends RecyclerView.ViewHolder {
-        Context context;
-        static TextView post_text, post_id, post_user;
-        //ImageView editImage;
-        MyDatabase mDb;
+        static ImageView post_image;
+        static TextView post_text, post_title, post_user;
 
-        PostViewHolder(@NonNull final View itemView) {
+        PostViewHolder( @NonNull final View itemView){
             super(itemView);
-            mDb = MyDatabase.getDatabase(context);
+            post_user = itemView.findViewById(R.id.srPostUser);
             post_text = itemView.findViewById(R.id.srPostTxt);
-        }
+            post_title = itemView.findViewById(R.id.srPostTitle);
+            post_image = itemView.findViewById(R.id.srPostImage);
+                }
     }
+
     @Override
     public int getItemCount() {
-        if (mPostList == null) {
+        if (PostList == null) {
             return 0;
         }
-        return mPostList.size();
-
+        return PostList.size();
     }
 
     public void setTasks(List<Post> postList) {
-        mPostList = postList;
+        PostList = postList;
         notifyDataSetChanged();
     }
 }

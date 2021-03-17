@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="payment_method.Payment_method"
-    android:background="@drawable/background">
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".payment_method.Payment_method">
 
     <TextView
         android:id="@+id/textView4"
@@ -13,40 +14,40 @@
         android:layout_height="53dp"
         android:text="@string/payment_method_tittle"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        android:textColor="@color/endcolor"
+        android:textSize="40sp" />
+
+    <View
+        android:id="@+id/divider12"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/pay_recview"
         android:layout_width="373dp"
-        android:layout_height="171dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        android:layout_height="171dp" />
 
     <Button
-        android:id="@+id/btn_change"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:id="@+id/btn_new_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/endcolor"
+        android:onClick="goNewpayment"
         android:text="@string/payment_method_change"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="17sp"
-        android:onClick="goNewpayment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.222" />
+        android:textSize="17sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_delete_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/delete"
+        android:text="@string/payment_method_delete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:onClick="onClickDelete"/>
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.payment_method.Payment_method;
 
 public class MainActivity extends AppCompatActivity {
     EditText firstname, lastname, email, displayname, password;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 */
     }
     public void goInspiration (View view){
-        Intent intent = new Intent(MainActivity.this, Inspiration.class);
+        Intent intent = new Intent(MainActivity.this, Payment_method.class);
         startActivity(intent);
     }
 }
