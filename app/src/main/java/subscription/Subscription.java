@@ -16,7 +16,7 @@ public class Subscription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
-        btn_new = findViewById(R.id.btn_new);
+        btn_new = findViewById(R.id.subscription_btn_change);
     }
 
     public void goNewsubscription(View view){

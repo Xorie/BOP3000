@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
+        setContentView(R.layout.activity_register);
 
         //firstname = findViewById(R.id.registration_firstname);
         //lastname = findViewById(R.id.registration_lastname);
