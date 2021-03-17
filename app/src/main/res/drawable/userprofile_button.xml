@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
 
-    <solid android:color="@color/endcolor" />
+    <solid android:color="@color/userprofile_main" />
 
     <corners android:radius="0dp" />
 
