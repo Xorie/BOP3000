@@ -12,6 +12,7 @@
         <activity android:name=".Menu.Menu" />
         <activity android:name=".Subscription.Subscription" />
         <activity android:name=".Subscription.Subscription_change" />
+        <activity android:name=".FAQ.faq" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,4 +1,4 @@
-package FAQ;
+package application.bop3000.FAQ;
 
 import android.content.Context;
 import android.view.LayoutInflater;

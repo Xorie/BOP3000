@@ -22,6 +22,10 @@ public class Subscription extends AppCompatActivity {
     private TextView userCity;
     private TextView userAddress;
     private Button button;
+    private String subDesc;
+    private String post;
+    private String city;
+    private String address;
 
 
     @Override
@@ -31,7 +35,6 @@ public class Subscription extends AppCompatActivity {
 
         mDb = MyDatabase.getDatabase(getApplicationContext());
         button = findViewById(R.id.subscription_btn_change);
-        Button buttoninsert = findViewById(R.id.subscription_btn_insert);
         userSub = findViewById(R.id.userSub);
         userPost = findViewById(R.id.userPost);
         userCity = findViewById(R.id.userCity);
@@ -42,17 +45,35 @@ public class Subscription extends AppCompatActivity {
             public void run() {
                 int userID = 1;
 
-                //Henter informasjon på brukerID
+                // Henter informasjon på brukerID
                 User user = mDb.getKnittersboxDao().hentBrukerID(userID);
-                String sub = user.getSubscription_subscriptionID();
-                String post = user.getPostnr();
-                String city = user.getCity();
-                String address = user.getStreetname();
 
-                //Henter subscription desc fra ID
-                int subscriptID = Integer.parseInt(sub);
-                application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
-                String subDesc = subscription.getDescription();
+                // Sjekker om man får nullverdi
+                if (user.getSubscription_subscriptionID() == null) {
+                    subDesc = "Ingen";
+                } else {
+                    String sub = user.getSubscription_subscriptionID();
+                    //Henter subscription desc fra ID
+                    int subscriptID = Integer.parseInt(sub);
+                    application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
+                    subDesc = subscription.getDescription();
+                }
+
+                if (user.getPostnr() == null) {
+                    post = "Ingen";
+                } else { post = user.getPostnr(); }
+
+                if (user.getCity() == null) {
+                    city = "Ingen";
+                } else { city = user.getCity(); }
+
+                if (user.getStreetname() == null) {
+                    address = "Ingen";
+                } else { address = user.getStreetname(); }
+
+
+
+
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -78,49 +99,6 @@ public class Subscription extends AppCompatActivity {
 
 
 
-        buttoninsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AppExecutors.getInstance().diskIO().execute( new Runnable() {
-                    @Override
-                    public void run() {
-                        application.bop3000.database.Subscription sub1 = new application.bop3000.database.Subscription();
-                        application.bop3000.database.Subscription sub2 = new application.bop3000.database.Subscription();
-                        application.bop3000.database.Subscription sub3 = new application.bop3000.database.Subscription();
-                        User user = new User();
-                        sub1.setType(1);
-                        sub2.setType(2);
-                        sub3.setType(3);
-                        user.setEmail("test@test.no");
-                        user.setDisplayname("test");
-                        user.setPassword("test");
-                        sub1.setDescription("Abonnement 1");
-                        sub2.setDescription("Abonnement 2");
-                        sub3.setDescription("Abonnement 3");
 
-                        KnittersboxDao subDao = mDb.getKnittersboxDao();
-                        KnittersboxDao userDao = mDb.getKnittersboxDao();
-
-
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // Register user
-                                subDao.registerSub(sub1);
-                                subDao.registerSub(sub2);
-                                subDao.registerSub(sub3);
-                                userDao.registerUser(user);
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(getApplicationContext(), "Lagt til Subscription", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-                        }).start();
-                    }
-                });
-            }
-        });
     }
 }

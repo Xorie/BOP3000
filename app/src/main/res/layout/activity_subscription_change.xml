@@ -48,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Postnr"
+        android:maxLength="4"
         android:textColor="@color/endcolor"
         android:layout_gravity="center"
         android:layout_marginLeft="100dp"

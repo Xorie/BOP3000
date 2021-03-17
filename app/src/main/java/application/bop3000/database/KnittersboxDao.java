@@ -16,17 +16,25 @@ public interface KnittersboxDao {
     @Insert
     void registerSub(Subscription sub);
 
+    @Insert
+    void registerPostnr(PostOffice postnr);
+
+    @Insert
+    void registerFaq(FAQ faq);
+
     @Update
     void updateUser(User user);
-
-    @Query("Select * from FAQ where question = (:qst)")
-    List<FAQ> faqliste(String qst);
 
     @Query("Select * from User where userID = (:userID)")
     User hentBrukerID(int userID);
 
+    //FAQ
+    @Query("Select * from `APPLICATION/BOP3000/FAQ`")
+    List<FAQ> faqList();
+
+    //Subscription
     @Query("Select * from Subscription")
-    List<Subscription> subListe();
+    List<Subscription> subList();
 
     @Query("Select * from Subscription where description = (:subscript)")
     Subscription hentSubID(String subscript);
@@ -34,6 +42,8 @@ public interface KnittersboxDao {
     @Query("Select * from Subscription where subscriptionID = (:subscriptID)")
     Subscription hentSubDesc(int subscriptID);
 
-
+    //PostOffice
+    @Query("Select * from PostOffice")
+    List<PostOffice> hentPostOffice();
 
 }
