@@ -13,17 +13,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-
-
-
         android:usesCleartextTraffic="true"
-
-
-
-
-        android:theme="@style/Theme.BOP3000">
-        <activity android:name="FAQ.faq"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".Menu.Menu" />
+        <activity android:name=".Subscription.Subscription" />
+        <activity android:name=".Subscription.Subscription_change" />
+        <activity android:name=".FAQ.faq" />
         <activity android:name="login.Login" />
         <activity android:name="register.Register">
             <intent-filter>

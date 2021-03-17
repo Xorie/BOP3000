@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="startcolor">#FBFBFB</color>
     <color name="endcolor">#BBA49E</color>
+
+    <!-- Menu -->
+    <color name="red">#8B0000</color>
 </resources>

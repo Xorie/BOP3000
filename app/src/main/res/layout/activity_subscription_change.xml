@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Subscription.Subscription_change">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:text="@string/subscription_tittle2"
+        android:textAlignment="center"
+        android:textColor="@color/endcolor"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:text="@string/subscription_spinnertext"
+        android:textColor="@color/endcolor"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/edit_square"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/subscription_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/subscription_postnr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Postnr"
+        android:maxLength="4"
+        android:textColor="@color/endcolor"
+        android:layout_gravity="center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/subscription_city"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="By"
+        android:textColor="@color/endcolor"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/subscription_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Adresse"
+        android:textColor="@color/endcolor"
+        android:layout_gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:text="@string/subscription_save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/endcolor"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
