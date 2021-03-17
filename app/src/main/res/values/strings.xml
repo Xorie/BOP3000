@@ -1,5 +1,43 @@
 <resources>
+
     <string name="app_name">BOP3000</string>
+
+    <!-- .......   FRA MIKKEL START    ............................................................. -->
+    <!-- Userprofile: -->
+    <string name="userprofile_username">Brukernavn</string>
+    <string name="userprofile_sub">Abonnement</string>
+    <string name="userprofile_fname">Navn</string>
+<!--    <string name="userprofile_sname">Etternavn</string>-->
+    <string name="userprofile_email">E-post</string>
+    <string name="userprofile_settingsbtn">Rediger profil</string>
+    <string name="userprofile_pwdbtn">Endre passord</string>
+    <string name="userprofile_address">Leveringsadresse</string>
+    <!--    <string name="userprofile_postsbtn">Dine innlegg: 4</string>-->
+    <!--    <string name="userprofile_header">Profil</string>-->
+    <string name="userprofile_street">Gateadresse</string>
+    <string name="userprofile_postnr">Postnummer</string>
+    <string name="userprofile_city">Sted</string>
+    <!-- Usersettings: -->
+    <string name="usersettings_change_header_txt">Rediger profil</string>
+    <string name="usrsettings_hint_usrname">Visningsnavn</string>
+    <string name="usrsettings_hint_fname">Fornavn</string>
+    <string name="usrsettings_hint_sname">Etternavn</string>
+    <string name="usrsettings_hint_email">E-post</string>
+    <string name="usrsettings_btn_savename">Oppdater profil</string>
+    <string name="usersettings_change_psw_txt">Endre passord</string>
+    <string name="usrsettings_hint_pwdold">Gammelt passord</string>
+    <string name="usrsettings_hint_pwdnew">Nytt passord</string>
+    <string name="usersettings_newpwdbtn">Endre passord</string>
+
+    <!-- FRA GAMMEL: -->
+    <string name="usersettings_newemailtxt">Endre e-post</string>
+    <string name="usersettings_newaddrtxt">Endre leveringsaddresse</string>
+    <string name="usersettings_newsubtxt">Endre abonnement</string>
+    <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>
+    <string name="usersettings_changesubbtn">Endre abonnement</string>
+    <!-- ......    FRA MIKKEL SLUTT    ............................................................................................. -->
+
+    <!-- Registration -->
     <string name="registration">Registrer ny bruker</string>
     <string name="registration_firstname">Fornavn</string>
     <string name="registration_lastname">Etternavn</string>
@@ -9,7 +47,7 @@
     <string name="registration_repassword">Bekreft passord</string>
     <string name="registration_buttonreg">Registrer</string>
     <string name="registration_buttonback">Tilbake</string>
-
+    <!-- Login -->
     <string name="login_email">Epost</string>
     <string name="login_password">Passord</string>
     <string name="login_login">Logg inn</string>
@@ -29,4 +67,5 @@
     <string name="subscription_save">Lagre</string>
 
     <string name="personvern"><a href="https://knittersbox.no/personvern-2/">Godkjenner personvern og vilkår</a></string>
+
 </resources>
