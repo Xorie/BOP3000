@@ -47,7 +47,6 @@
         android:backgroundTint="@color/delete"
         android:text="@string/payment_method_delete"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:onClick="onClickDelete"/>
+        android:textColor="@color/white" />
 
 </LinearLayout>
