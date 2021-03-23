@@ -11,7 +11,10 @@ import application.bop3000.MainActivity;
 import application.bop3000.R;
 import application.bop3000.database.FAQ;
 import application.bop3000.database.MyDatabase;
-import application.bop3000.database.Subscription;
+import application.bop3000.inspiration.Inspiration;
+import application.bop3000.payment_method.Payment_method;
+import application.bop3000.subscription.Subscription;
+import application.bop3000.userprofile.UserProfile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -120,13 +123,19 @@ public class faq extends AppCompatActivity {
 
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {
-        Intent intent_home = new Intent(this, MainActivity.class);
+        Intent intent_home = new Intent(this, Inspiration.class);
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
+        Intent intent_profile = new Intent(this, UserProfile.class);
+        Intent intent_payment = new Intent(this, Payment_method.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                break;
+
+            case R.id.userprofile:
+                startActivity(intent_profile);
                 break;
 
             case R.id.subscription:
@@ -135,6 +144,9 @@ public class faq extends AppCompatActivity {
 
             case R.id.faq:
                 startActivity(intent_faq);
+                break;
+            case R.id.payment:
+                startActivity(intent_payment);
         }
     }
 

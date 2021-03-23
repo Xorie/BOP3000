@@ -46,8 +46,7 @@
         <activity android:name=".userprofile.UserSettings" />
         <activity android:name=".userprofile.ChangeSubscriptionOLD" />
         <activity android:name=".userprofile.UserSettingsOLD" />
-        <activity android:name=".userprofile.UserProfile"
-            android:theme="@style/Theme.Profile"/>
+        <activity android:name=".userprofile.UserProfile" />
         <activity android:name=".register.Register"/>
         android:theme="@style/Theme.BOP3000">
         <activity android:name=".payment_method.newPayment_method" />
@@ -55,8 +54,7 @@
         <activity android:name=".inspiration.Inspiration_newpost" />
         <activity
             android:name=".inspiration.Inspiration"
-            android:label="@string/title_activity_inspiration"
-            android:theme="@style/Theme.BOP3000.NoActionBar" />
+            android:label="@string/title_activity_inspiration" />
         <activity android:name=".MainActivity"/>
 
 

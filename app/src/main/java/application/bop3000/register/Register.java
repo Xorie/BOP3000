@@ -46,27 +46,6 @@ public class Register extends AppCompatActivity {
         back = findViewById(R.id.registration_back);
 
 
-        // Button TEST ex DB /////////////////////////////////////
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Button button = findViewById(R.id.test);
-                        button.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                DatabasePost.syncUserData("tisstiss", "t", getApplicationContext());
-                            }
-                        });
-                    }
-                }).start();
-            }
-        });
-        ////////////////////////////////////////////
-
-
 
         //Room DB connection
         userDatabase = MyDatabase.getDatabase(getApplicationContext());
