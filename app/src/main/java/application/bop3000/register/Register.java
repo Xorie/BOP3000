@@ -1,13 +1,10 @@
-package register;
+package application.bop3000.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
-import android.text.Editable;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,16 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOError;
-
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 
 import appexecutors.AppExecutors;
-import network.DatabaseGet;
-import network.DatabasePost;
+import application.bop3000.login.Login;
+import application.bop3000.network.DatabasePost;
 
 public class Register extends AppCompatActivity {
     EditText firstname, lastname, email, displayname, password, rePassword;
@@ -87,7 +82,7 @@ public class Register extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(register.Register.this, login.Login.class));
+                startActivity(new Intent( Register.this, Login.class));
             }
         });
 

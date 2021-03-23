@@ -1,10 +1,7 @@
-package network;
+package application.bop3000.network;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -14,11 +11,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import appexecutors.AppExecutors;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
-import register.Register;
 
 public class DatabasePost {
     //private static Context context;

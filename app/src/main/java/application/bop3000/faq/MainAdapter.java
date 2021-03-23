@@ -1,4 +1,4 @@
-package application.bop3000.FAQ;
+package application.bop3000.faq;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import application.bop3000.R;
 

@@ -1,4 +1,4 @@
-package network;
+package application.bop3000.network;
 
 import android.content.Context;
 import android.content.Intent;

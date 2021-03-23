@@ -23,17 +23,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <!-- Button skal vekk -->
-        <Button
-            android:id="@+id/subscription_btn_insert"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/endcolor"
-            android:layout_gravity="center"
-            android:text="Insert"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="17sp" />
+
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

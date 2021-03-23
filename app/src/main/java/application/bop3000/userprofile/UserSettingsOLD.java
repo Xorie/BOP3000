@@ -1,4 +1,4 @@
-package userprofile;
+package application.bop3000.userprofile;
 
 import androidx.appcompat.app.AppCompatActivity;
 import application.bop3000.R;

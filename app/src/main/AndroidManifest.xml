@@ -29,37 +29,37 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Menu.Menu" />
-        <activity android:name=".Subscription.Subscription" />
-        <activity android:name=".Subscription.Subscription_change" />
-        <activity android:name=".FAQ.faq" />
-        <activity android:name="login.Login" />
-        <activity android:name="userprofile.ChangePassword" />
-        <activity android:name="userprofile.UserSettings" />
-        <activity android:name="userprofile.ChangeSubscriptionOLD" />
-        <activity android:name="userprofile.UserSettingsOLD" />
-        <activity android:name="userprofile.UserProfile"
+        <activity android:name=".subscription.Subscription" />
+        <activity android:name=".subscription.Subscription_change" />
+        <activity android:name=".faq.faq" />
+
+        <activity android:name=".login.Login" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".userprofile.ChangePassword" />
+        <activity android:name=".userprofile.UserSettings" />
+        <activity android:name=".userprofile.ChangeSubscriptionOLD" />
+        <activity android:name=".userprofile.UserSettingsOLD" />
+        <activity android:name=".userprofile.UserProfile"
             android:theme="@style/Theme.Profile"/>
-        <activity android:name="register.Register"/>
+        <activity android:name=".register.Register"/>
         android:theme="@style/Theme.BOP3000">
-        <activity android:name="subscription.newSubscription"></activity>
         <activity android:name=".payment_method.newPayment_method" />
-        <activity android:name="subscription.Subscription" />
         <activity android:name=".payment_method.Payment_method" />
         <activity android:name=".inspiration.Inspiration_newpost" />
         <activity
             android:name=".inspiration.Inspiration"
             android:label="@string/title_activity_inspiration"
             android:theme="@style/Theme.BOP3000.NoActionBar" />
-        <activity android:name=".MainActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <activity android:name=".MainActivity"/>
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"

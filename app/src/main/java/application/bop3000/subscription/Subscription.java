@@ -1,4 +1,4 @@
-package application.bop3000.Subscription;
+package application.bop3000.subscription;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import application.bop3000.AppExecutors;
 import application.bop3000.R;
-import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 

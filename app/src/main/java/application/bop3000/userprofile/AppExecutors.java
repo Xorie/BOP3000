@@ -1,4 +1,4 @@
-package userprofile;
+package application.bop3000.userprofile;
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -33,7 +33,7 @@ public class AppExecutors {
 
     // For Singleton instantiation
     private static final Object LOCK = new Object();
-    private static userprofile.AppExecutors sInstance;
+    private static AppExecutors sInstance;
     private final Executor diskIO;
     private final Executor mainThread;
     private final Executor networkIO;
@@ -44,10 +44,10 @@ public class AppExecutors {
         this.mainThread = mainThread;
     }
 
-    public static userprofile.AppExecutors getInstance() {
+    public static AppExecutors getInstance() {
         if (sInstance == null) {
             synchronized (LOCK) {
-                sInstance = new userprofile.AppExecutors(Executors.newSingleThreadExecutor(),
+                sInstance = new AppExecutors(Executors.newSingleThreadExecutor(),
                         Executors.newFixedThreadPool(3),
                         new MainThreadExecutor());
             }

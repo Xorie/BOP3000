@@ -1,10 +1,9 @@
-package application.bop3000.Subscription;
+package application.bop3000.subscription;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import application.bop3000.AppExecutors;
 import application.bop3000.R;
@@ -161,7 +159,7 @@ public class Subscription_change extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         Toast.makeText(getApplicationContext(), "Bruker er oppdatert", Toast.LENGTH_SHORT ).show();
-                                        startActivity(new Intent(Subscription_change.this, application.bop3000.Subscription.Subscription.class ));
+                                        startActivity(new Intent(Subscription_change.this, application.bop3000.subscription.Subscription.class ));
                                     }
                                 });
                             }
