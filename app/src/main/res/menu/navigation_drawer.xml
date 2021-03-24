@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Hjem"
+            android:icon="@drawable/ic_home" />
+        <item
+            android:id="@+id/userprofile"
+            android:title="Brukerprofil"
+            android:icon="@drawable/ic_person"/>
+        <item
+            android:id="@+id/faq"
+            android:title="FAQ"
+            android:icon="@drawable/ic_info"/>
+        <item
+            android:id="@+id/subscription"
+            android:title="Abonnement"
+            android:icon="@drawable/ic_description"/>
+        <item
+            android:id="@+id/payment"
+            android:title="Betalingsmetode"
+            android:icon="@drawable/ic_payment"/>
+    </group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/logout"
+            android:title="Logg ut"
+            android:actionMenuTextColor="@color/red"
+            android:icon="@drawable/ic_power"/>
+    </group>
+</menu>

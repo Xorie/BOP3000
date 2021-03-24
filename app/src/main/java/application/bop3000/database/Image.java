@@ -6,14 +6,16 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.Serializable;
-import java.sql.Blob;
 
-@Entity(tableName = "Image",
-        foreignKeys = @ForeignKey(entity = Post.class,
-                parentColumns = "postID",
-                childColumns = "post_postID",
-                onDelete = ForeignKey.CASCADE))
+@Entity(tableName = "Image"
+        //,foreignKeys = @ForeignKey(entity = Post.class,
+          //      parentColumns = "postID",
+            //    childColumns = "post_postID",
+              //  onDelete = ForeignKey.CASCADE)
+        )
 public class Image implements Serializable {
     @ColumnInfo(name = "imageID")
     @PrimaryKey(autoGenerate = true)
@@ -21,10 +23,10 @@ public class Image implements Serializable {
     private int imageID;
 
     @ColumnInfo (name = "location")
-    private String location;
+    private String  location;
 
-    @ColumnInfo (typeAffinity = ColumnInfo.BLOB, name = "image")
-    private byte[] image;
+    @ColumnInfo (name = "image", typeAffinity = ColumnInfo.BLOB)
+    private byte[]image;
 
     @ColumnInfo (name = "post_postID")
     private String post_postID;
@@ -38,9 +40,7 @@ public class Image implements Serializable {
         this.imageID = imageID;
     }
 
-    public String getLocation() {
-        return location;
-    }
+    public  String getLocation() {return location; }
 
     public void setLocation(String location) {
         this.location = location;
