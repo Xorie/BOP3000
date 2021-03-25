@@ -32,6 +32,7 @@ import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.inspiration.PostAdapter;
+import application.bop3000.login.Login;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
@@ -92,7 +93,7 @@ public class Payment_method extends AppCompatActivity {
         AtomicReference<String> myData = new AtomicReference<>("");
         AppExecutors.getInstance().diskIO().execute(() -> {
             Intent i = getIntent();
-            final String user = i.getStringExtra("SID"); //sjekk med Bjørge med navnet
+            final String user = Login.getUser().getEmail();
             final List<Payment> pay = DB.getKnittersboxDao().loadAllPay(user);
             runOnUiThread(() -> pAdapter.setTasks(pay));
         });

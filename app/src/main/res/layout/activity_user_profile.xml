@@ -10,9 +10,6 @@
 
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".userprofile.UserProfile"
@@ -34,37 +31,37 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/userprofile_main"
-                android:layout_marginBottom="20dp">
-    <!--            android:background="@drawable/userprofile_header_color"-->
+                android:layout_marginBottom="20dp"
+                android:background="@color/userprofile_button"
+                android:orientation="vertical">
+                <!--            android:background="@drawable/userprofile_header_color"-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profil"
-                    android:textSize="22sp"
-                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    android:text="@string/userprofile_profile"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
 
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:orientation="vertical"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:layout_margin="46dp"-->
-    <!--            android:padding="26dp"-->
-    <!--            android:background="@drawable/userprofile_round_layout">-->
+                <!--        <LinearLayout-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="match_parent"-->
+                <!--            android:orientation="vertical"-->
+                <!--            android:layout_gravity="center"-->
+                <!--            android:layout_margin="46dp"-->
+                <!--            android:padding="26dp"-->
+                <!--            android:background="@drawable/userprofile_round_layout">-->
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="42dp"
                     android:layout_marginStart="42dp"
+                    android:layout_marginLeft="42dp"
                     android:layout_marginTop="64dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/userprofile_descusername"
@@ -74,11 +71,11 @@
                         android:textColor="@color/white"
                         android:textSize="12sp"
 
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toTopOf="@+id/userprofile_username"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/userprofile_username"
@@ -87,13 +84,13 @@
                         android:layout_marginBottom="8dp"
                         android:textColor="@color/white"
                         android:textSize="24sp"
-                        app:layout_constraintTop_toBottomOf="@+id/userprofile_descusername"
                         app:layout_constraintBottom_toTopOf="@+id/userprofile_descsub"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userprofile_descusername" />
 
-    <!--        </LinearLayout>-->
+                    <!--        </LinearLayout>-->
                 </LinearLayout>
             </LinearLayout>
 
@@ -433,6 +430,7 @@
                     android:layout_height="54dp"
                     android:background="@drawable/userprofile_button"
                     android:text="@string/userprofile_settingsbtn"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:layout_marginBottom="16dp"/>
 
@@ -443,6 +441,7 @@
                     android:layout_height="54dp"
                     android:background="@drawable/userprofile_button"
                     android:text="@string/userprofile_pwdbtn"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"/>
                 <!--            android:background="@drawable/background"-->
 

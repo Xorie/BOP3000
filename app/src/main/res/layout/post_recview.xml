@@ -21,6 +21,7 @@
                 android:id="@+id/srPostUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/noe"
                 android:textColor="@color/black" />
 
 
@@ -29,28 +30,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="319dp"
                 tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/app_name"
                 />
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white"/>
+                android:background="@drawable/white"
+                />
 
             <TextView
                 android:id="@+id/srPostTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/black"/>
+                android:text="@string/noe"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/srPostTxt"
                 android:layout_width="209dp"
                 android:layout_height="139dp"
-                android:text="TextView"
-                android:textColor="@color/black"/>
+                android:text="@string/noe"
+                android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>
 

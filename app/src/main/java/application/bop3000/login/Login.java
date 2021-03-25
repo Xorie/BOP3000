@@ -27,9 +27,9 @@ import application.bop3000.inspiration.Inspiration;
 import application.bop3000.register.Register;
 
 public class Login extends AppCompatActivity {
-
     EditText email, password;
     Button login, registration;
+    private static User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            User user = knittersboxDao.login(emailText, passwordText);
+                            user = knittersboxDao.login(emailText, passwordText);
                             if(user == null) {
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -89,6 +89,10 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(Login.this, Register.class));
             }
         });
+    }
+
+    public static User getUser(){
+        return user;
     }
 
 }

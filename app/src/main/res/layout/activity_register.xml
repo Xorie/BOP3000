@@ -4,19 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:background="@drawable/white">
 
     <TextView
         android:id="@+id/registration_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/registration"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="50dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="@string/registration"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="45sp"
-        android:textColor="@color/white"
-        android:layout_gravity="center"/>
+        android:textColor="@color/black"
+        android:textSize="45sp" />
 
 
     <EditText
@@ -28,11 +29,13 @@
         android:layout_marginBottom="4dp"
         app:drawableLeftCompat="@drawable/ic_email"
         android:hint="@string/registration_email"
+        android:autofillHints="@string/registration_email"
         android:inputType="textEmailAddress"
         android:drawablePadding="10dp"/>
 
     <EditText
         android:id="@+id/registration_displayname"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="25dp"
@@ -40,6 +43,7 @@
         android:layout_marginBottom="4dp"
         app:drawableLeftCompat="@drawable/ic_person_search"
         android:hint="@string/registration_displayname"
+        android:autofillHints="registration_displayname"
         android:drawablePadding="10dp"/>
 
     <EditText
@@ -51,6 +55,7 @@
         android:layout_marginBottom="4dp"
         app:drawableLeftCompat="@drawable/ic_password"
         android:hint="@string/registration_password"
+        android:autofillHints="registration_password"
         android:inputType="textPassword"
         android:drawablePadding="10dp"/>
 
@@ -63,6 +68,7 @@
         android:layout_marginBottom="4dp"
         app:drawableLeftCompat="@drawable/ic_password"
         android:hint="@string/registration_repassword"
+        android:autofillHints="registration_repassword"
         android:inputType="textPassword"
         android:drawablePadding="10dp" />
 
@@ -75,7 +81,8 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/registration_lagre">
+        android:background="@drawable/registration_lagre"
+        android:textAllCaps="false">
     </Button>
 
     <Button
@@ -87,7 +94,8 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/registration_lagre">
+        android:background="@drawable/registration_lagre"
+        android:textAllCaps="false">
     </Button>
 
     <LinearLayout

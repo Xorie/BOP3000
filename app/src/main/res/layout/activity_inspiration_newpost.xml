@@ -12,15 +12,17 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
         android:gravity="center_horizontal"
         android:text="@string/inspiration_newpost"
         android:textAlignment="center"
-        android:textColor="@color/endcolor"
+        android:textColor="@color/black"
         android:textSize="40sp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background = "@drawable/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,8 +33,7 @@
                 android:id="@+id/divider5"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white" />
+                android:background="@drawable/white" />
 
             <ImageView
                 android:id="@+id/new_memory_selected_image"
@@ -50,7 +51,6 @@
                 android:hint="@string/inspiration_title"
                 android:textColor="@color/black"
                 android:inputType="textPersonName"
-                android:backgroundTint="@color/gray"
                 android:textColorHint="@color/gray"
                 android:autofillHints="@string/inspiration_title" />
 
@@ -62,7 +62,7 @@
                 android:textColor="@color/black"
                 android:hint="@string/inspiration_saysomething"
                 android:textColorHint="@color/gray"
-                android:backgroundTint="@color/gray"
+
                 android:autofillHints="@string/inspiration_saysomething"
                 android:inputType="text" />
 
@@ -70,7 +70,7 @@
                 android:id="@+id/gallery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/endcolor"
+                android:background="@drawable/userprofile_button"
                 android:onClick="openGallery"
                 android:text="@string/inspiration_gallary"
                 android:textAllCaps="false"
@@ -80,14 +80,13 @@
                 android:id="@+id/divider4"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white"/>
+                android:background="@drawable/white" />
 
             <Button
                 android:id="@+id/camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/endcolor"
+                android:background="@drawable/userprofile_button"
                 android:onClick="openCamera"
                 android:text="@string/inspiration_takePic"
                 android:textAllCaps="false"
@@ -97,15 +96,14 @@
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white"/>
+                android:background="@drawable/white"
+                />
 
             <Button
                 android:id="@+id/inspiration_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/save"
-                android:background="@color/endcolor"
+                android:background="@drawable/userprofile_button"
                 android:onClick="onClick"
                 android:text="@string/inspiration_save"
                 android:textAllCaps="false"
@@ -116,14 +114,13 @@
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="12dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white"/>
+                android:background="@drawable/white" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gray"
+                android:background="@drawable/gray"
                 android:onClick="back"
                 android:text="@string/inspiration_back"
                 android:textAllCaps="false"

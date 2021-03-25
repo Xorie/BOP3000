@@ -21,6 +21,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.userprofile.UserProfile;
 
@@ -79,7 +80,7 @@ public class Subscription extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute( new Runnable() {
             @Override
             public void run() {
-                int userID = 1;
+                int userID = Login.getUser().getUserID();
 
                 // Henter informasjon på brukerID
                 User user = mDb.getKnittersboxDao().hentBrukerID(userID);

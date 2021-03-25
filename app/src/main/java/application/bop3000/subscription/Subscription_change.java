@@ -18,6 +18,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.PostOffice;
 import application.bop3000.database.Subscription;
 import application.bop3000.database.User;
+import application.bop3000.login.Login;
 
 public class Subscription_change extends AppCompatActivity {
 
@@ -124,7 +125,7 @@ public class Subscription_change extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        int userID = 1;
+                        int userID = Login.getUser().getUserID();
                         //Finner brukeren som er pålogget
                         user = mDb.getKnittersboxDao().hentBrukerID(userID);
 

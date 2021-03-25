@@ -4,6 +4,7 @@
 
     <!-- .......   FRA MIKKEL START    ............................................................. -->
     <!-- Userprofile: -->
+    <string name="userprofile_profile">Brukerprofil</string>
     <string name="userprofile_username">Brukernavn</string>
     <string name="userprofile_sub">Abonnement</string>
     <string name="userprofile_fname">Navn</string>
@@ -28,13 +29,6 @@
     <string name="usrsettings_hint_pwdold">Gammelt passord</string>
     <string name="usrsettings_hint_pwdnew">Nytt passord</string>
     <string name="usersettings_newpwdbtn">Endre passord</string>
-
-    <!-- FRA GAMMEL: -->
-    <string name="usersettings_newemailtxt">Endre e-post</string>
-    <string name="usersettings_newaddrtxt">Endre leveringsaddresse</string>
-    <string name="usersettings_newsubtxt">Endre abonnement</string>
-    <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>
-    <string name="usersettings_changesubbtn">Endre abonnement</string>
     <!-- ......    FRA MIKKEL SLUTT    ............................................................................................. -->
 
     <!-- Registration -->
@@ -54,6 +48,7 @@
     <string name="login_registrer">Registrer</string>
     <string name="knittersbox">knittersbox</string>
 
+    <!-- inpirasjon -->
     <string name="title_activity_inspiration">Inspiration</string>
     <string name="inspiration_logo">Knittersbox.no</string>
     <string name="inspiration_takePic">Ta bilde</string>
@@ -66,7 +61,9 @@
     <string name="inspiration_back">Tilbake</string>
     <string name="inspiration_checkbox">Ønsker du å være annonym?</string>
     <string name="inspiration_hint">Skriv tekst til bilde</string>
+    <string name="noe">Noe</string>
 
+    <!-- betalingsmetode -->
     <string name="payment_method_tittle">Betalingsmetode</string>
     <string name="payment_method_change">Legg til ny betalingsmetode</string>
     <string name="payment_method_tittle2">Ny betalingsmetode</string>
@@ -75,6 +72,9 @@
     <string name="payment_method_expirationDate">Utløpsdato:</string>
     <string name="payment_method_CVC">Kortkode (CVC)</string>
     <string name="payment_method_delete">Slett betalingsmetode</string>
+    <string name="payment_method_writecardnr">Skriver kortnummer</string>
+    <string name="payment_method_writeexp">Skriv utløpsdato</string>
+    <string name="payment_method_writecvc">Skriv CVC</string>
 
 
 
@@ -82,6 +82,12 @@
     <string name="menu_knittersbox">Knittersbox.no</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="logout">Logg ut</string>
+    <string name="payment_method">Betalingsmetode</string>
+    <string name="subcripstion">Abonnoment</string>
+    <string name="faq">FAQ</string>
+    <string name="userprofile">Brukerprofil</string>
+    <string name="home">Hjem</string>
 
     <!-- Subscription -->
     <string name="subscription_tittle">Abonnement</string>
@@ -89,6 +95,9 @@
     <string name="subscription_tittle2">Endre abonnement</string>
     <string name="subscription_spinnertext">Velg abonnement</string>
     <string name="subscription_save">Lagre</string>
+    <string name="subscription_zipcode">Endre postnr</string>
+    <string name="subscription_city">Endre by</string>
+    <string name="subscription_adresse">Endre adresse</string>
 
     <string name="personvern"><a href="https://knittersbox.no/personvern-2/">Godkjenner personvern og vilkår</a></string>
 

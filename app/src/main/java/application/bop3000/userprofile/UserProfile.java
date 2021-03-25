@@ -19,6 +19,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.subscription.Subscription;
 
@@ -46,7 +47,7 @@ public class UserProfile extends AppCompatActivity {
 
 
     // Email for logget inn bruker (HARDKODET NÅ, MÅ KOMME FRA LOGG INN eller noe)
-    String email_usr = "hei@gmail.com";
+    String email_usr = Login.getUser().getEmail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +146,7 @@ public class UserProfile extends AppCompatActivity {
         Intent user_settings = new Intent(this, UserSettings.class);
 
         // Sender med email for bruker
-        user_settings.putExtra("useremail", email_usr);
+        //user_settings.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(user_settings);
@@ -158,7 +159,7 @@ public class UserProfile extends AppCompatActivity {
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
         // Sender med email for bruker
-        change_pwd.putExtra("useremail", email_usr);
+        //change_pwd.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(change_pwd);
