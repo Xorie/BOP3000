@@ -17,6 +17,7 @@ import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
+import application.bop3000.login.Login;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     static Context context;
@@ -36,7 +37,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         String hentimage = PostList.get(i).getPost_imagepath();
         Uri mUri = Uri.parse(hentimage);
         PostViewholder.post_image.setImageURI(mUri);
-        PostViewholder.post_user.setText(PostList.get(i).getUserID());
+        PostViewholder.post_user.setText(Login.getUser().getDisplayname());
         PostViewHolder.post_text.setText(PostList.get(i).getPost_text());
         PostViewHolder.post_title.setText(PostList.get(i).getPost_tittle());
     }

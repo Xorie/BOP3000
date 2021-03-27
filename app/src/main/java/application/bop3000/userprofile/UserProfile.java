@@ -113,7 +113,15 @@ public class UserProfile extends AppCompatActivity {
 
                         // Setter data på riktig plass
                         username.setText(user.getDisplayname());
-                        firstname.setText(full_name);
+                        //Sjekker om bruker har lagt til navn (fullt navn, fornavn, etternavn)
+                        if(full_name.equals(" ") || full_name.equals("null null")) {
+                            firstname.setText(R.string.userprofile_noname);
+                        } else if (user.getFirstname() == null || user.getFirstname().isEmpty()) {
+                            full_name = user.getLastname();
+                            firstname.setText(full_name);
+                        } else {
+                            firstname.setText(full_name);
+                        }
                         //lastname.setText(user.getLastname());
                         email.setText(user.getEmail());
                         street.setText(user.getStreetname());
@@ -172,25 +180,38 @@ public class UserProfile extends AppCompatActivity {
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
         Intent intent_payment = new Intent(this, Payment_method.class);
+        Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
+                break;
+            case R.id.logout:
+
+                startActivity(intent_loggout);
+                finish();
+
+
         }
     }
 

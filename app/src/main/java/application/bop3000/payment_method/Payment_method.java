@@ -132,25 +132,36 @@ public class Payment_method extends AppCompatActivity {
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
         Intent intent_payment = new Intent(this, Payment_method.class);
+        Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
+                break;
+            case R.id.logout:
+                startActivity(intent_loggout);
+                finish();
+
         }
     }
 

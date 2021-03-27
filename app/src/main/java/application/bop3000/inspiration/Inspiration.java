@@ -1,7 +1,13 @@
 package application.bop3000.inspiration;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +32,7 @@ import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
+import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
@@ -41,7 +49,8 @@ public class Inspiration extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private NavigationView navigationView;
-    private View itemLogout;
+    //private MenuItem itemLogout;
+    private Menu mOptionsMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +78,9 @@ public class Inspiration extends AppCompatActivity {
         navigationView = findViewById(R.id.naviView);
 
         //SKAL BLI RØD
-        itemLogout = findViewById(R.id.logout);
+        //itemLogout = findViewById(R.id.logout);
+
+
 
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
@@ -108,25 +119,38 @@ public class Inspiration extends AppCompatActivity {
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
         Intent intent_payment = new Intent(this, Payment_method.class);
+        Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
+                break;
+            case R.id.logout:
+
+                startActivity(intent_loggout);
+                finish();
+
+
         }
     }
 
@@ -155,5 +179,6 @@ public class Inspiration extends AppCompatActivity {
                     }
                 });
     }
+
 
 }
