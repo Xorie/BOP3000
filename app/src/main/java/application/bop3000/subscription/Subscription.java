@@ -77,6 +77,7 @@ public class Subscription extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
+
         AppExecutors.getInstance().diskIO().execute( new Runnable() {
             @Override
             public void run() {
@@ -138,6 +139,13 @@ public class Subscription extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
+    }
+
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {
         Intent intent_home = new Intent(this, Inspiration.class);
@@ -150,30 +158,24 @@ public class Subscription extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
                 startActivity(intent_loggout);
-                finish();
 
         }
     }
@@ -203,4 +205,5 @@ public class Subscription extends AppCompatActivity {
                     }
                 });
     }
+
 }

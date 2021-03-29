@@ -1,13 +1,8 @@
 package application.bop3000.inspiration;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +13,6 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,9 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import application.bop3000.AppExecutors;
-import application.bop3000.MainActivity;
 import application.bop3000.R;
-import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
@@ -104,6 +96,12 @@ public class Inspiration extends AppCompatActivity {
         retrieveTasks();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
+    }
+
     private void retrieveTasks() {
         AtomicReference<String> myData = new AtomicReference<>("");
         AppExecutors.getInstance().diskIO().execute(() -> {
@@ -124,31 +122,24 @@ public class Inspiration extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
-
                 startActivity(intent_loggout);
-                finish();
 
 
         }

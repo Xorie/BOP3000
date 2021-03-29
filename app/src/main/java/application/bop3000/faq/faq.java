@@ -7,7 +7,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import application.bop3000.AppExecutors;
-import application.bop3000.MainActivity;
 import application.bop3000.R;
 import application.bop3000.database.FAQ;
 import application.bop3000.database.MyDatabase;
@@ -89,6 +88,12 @@ public class faq extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
+    }
+
 
     private void getFaq() {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -134,30 +139,24 @@ public class faq extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
                 startActivity(intent_loggout);
-                finish();
 
         }
     }

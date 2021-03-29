@@ -53,8 +53,6 @@
         <activity
             android:name=".inspiration.Inspiration"
             android:label="@string/title_activity_inspiration" />
-        <activity android:name=".MainActivity"/>
-
 
 
         <service

@@ -10,12 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,15 +21,11 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 import application.bop3000.AppExecutors;
-import application.bop3000.MainActivity;
 import application.bop3000.R;
-import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Payment;
-import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
-import application.bop3000.inspiration.PostAdapter;
 import application.bop3000.login.Login;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
@@ -83,6 +77,12 @@ public class Payment_method extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
+    }
+    
     @Override
     protected void onResume() {
         super.onResume();
@@ -137,30 +137,24 @@ public class Payment_method extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
                 startActivity(intent_loggout);
-                finish();
 
         }
     }

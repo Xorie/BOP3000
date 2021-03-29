@@ -96,6 +96,13 @@ public class UserProfile extends AppCompatActivity {
         showListData();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
+    }
+
+
     // Metode for å vise data om bruker
     private void showListData(){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -185,31 +192,24 @@ public class UserProfile extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
-
                 startActivity(intent_loggout);
-                finish();
 
 
         }

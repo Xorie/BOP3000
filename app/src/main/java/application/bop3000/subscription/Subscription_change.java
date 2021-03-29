@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -46,6 +47,7 @@ public class Subscription_change extends AppCompatActivity {
     //Liste som henter abonnement
     private List<Subscription> getSubList;
     private List<PostOffice> getPostList;
+    private ImageButton backbutton;
 
 
     @Override
@@ -59,6 +61,8 @@ public class Subscription_change extends AppCompatActivity {
         et_city = findViewById(R.id.subscription_city);
         et_postnr = findViewById(R.id.subscription_postnr);
         et_address = findViewById(R.id.subscription_address);
+        backbutton = findViewById(R.id.toolbarBack);
+
 
         subscriptionList = new ArrayList<>();
         postOfficeList = new ArrayList<>();
@@ -71,6 +75,7 @@ public class Subscription_change extends AppCompatActivity {
         super.onStart();
         getSub();
         buttonClick();
+        toolBackButton();
     }
 
     @Override
@@ -176,6 +181,14 @@ public class Subscription_change extends AppCompatActivity {
                 }).start();
             }
         });
+    }
+    private void toolBackButton() {
+        backbutton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Subscription_change.this, application.bop3000.subscription.Subscription.class));
+            }
+        } );
     }
 
     private void getSubID() {

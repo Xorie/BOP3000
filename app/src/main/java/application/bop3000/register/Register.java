@@ -111,6 +111,7 @@ public class Register extends AppCompatActivity {
                                                         Toast.makeText(getApplicationContext(), "Bruker registrert!", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
+                                                startActivity(new Intent(Register.this, Login.class));
                                             }
                                         }).start();
                                     } else {
