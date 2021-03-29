@@ -5,23 +5,23 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:title="Hjem"
+            android:title="@string/home"
             android:icon="@drawable/ic_home" />
         <item
             android:id="@+id/userprofile"
-            android:title="Brukerprofil"
+            android:title="@string/userprofile"
             android:icon="@drawable/ic_person"/>
         <item
             android:id="@+id/faq"
-            android:title="FAQ"
+            android:title="@string/faq"
             android:icon="@drawable/ic_info"/>
         <item
             android:id="@+id/subscription"
-            android:title="Abonnement"
+            android:title="@string/subcripstion"
             android:icon="@drawable/ic_description"/>
         <item
             android:id="@+id/payment"
-            android:title="Betalingsmetode"
+            android:title="@string/payment_method"
             android:icon="@drawable/ic_payment"/>
     </group>
     <group
@@ -29,8 +29,8 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/logout"
-            android:title="Logg ut"
-            android:actionMenuTextColor="@color/red"
-            android:icon="@drawable/ic_power"/>
+            android:actionMenuTextColor="@drawable/delete"
+            android:icon="@drawable/ic_power"
+            android:title="@string/logout" />
     </group>
 </menu>

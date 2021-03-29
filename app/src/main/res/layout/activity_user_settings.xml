@@ -33,10 +33,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
                     android:paddingBottom="26dp"
-                    android:textSize="32sp"
+                    android:text="@string/usersettings_change_header_txt"
                     android:textColor="@color/black"
-                    android:text="@string/usersettings_change_header_txt" />
+                    android:textSize="32sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -82,7 +83,8 @@
                                             android:layout_height="wrap_content"
                                             android:background="@drawable/userprofile_button"
                                             android:textColor="@color/white"
-                                            android:text="@string/usrsettings_btn_savename"/>
+                                            android:text="@string/usrsettings_btn_savename"
+                                            android:textAllCaps="false"/>
             <!--                            android:background="@drawable/userprofile_button"-->
 
         <!--                            </com.google.android.material.textfield.TextInputLayout>-->

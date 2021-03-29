@@ -12,6 +12,7 @@ import android.widget.Toast;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
+import application.bop3000.login.Login;
 
 public class UserSettings extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class UserSettings extends AppCompatActivity {
     private MyDatabase mDb;
 
     // Email for bruker (blir hentet i onStart)
-    String email_usr = "";
+    String email_usr = Login.getUser().getEmail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +55,8 @@ public class UserSettings extends AppCompatActivity {
         super.onStart();
 
         // Finner email som ble sent fra brukerprofil
-        Intent user_settings = getIntent();
-        email_usr = user_settings.getStringExtra("useremail");
+        //Intent user_settings = getIntent();
+        //email_usr = user_settings.getStringExtra("useremail");
 
         //Viser data i inputfeltene om det er lagt inn noe
         showData();

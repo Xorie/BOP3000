@@ -19,6 +19,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.subscription.Subscription;
 
@@ -46,7 +47,7 @@ public class UserProfile extends AppCompatActivity {
 
 
     // Email for logget inn bruker (HARDKODET NÅ, MÅ KOMME FRA LOGG INN eller noe)
-    String email_usr = "hei@gmail.com";
+    String email_usr = Login.getUser().getEmail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +113,15 @@ public class UserProfile extends AppCompatActivity {
 
                         // Setter data på riktig plass
                         username.setText(user.getDisplayname());
-                        firstname.setText(full_name);
+                        //Sjekker om bruker har lagt til navn (fullt navn, fornavn, etternavn)
+                        if(full_name.equals(" ") || full_name.equals("null null")) {
+                            firstname.setText(R.string.userprofile_noname);
+                        } else if (user.getFirstname() == null || user.getFirstname().isEmpty()) {
+                            full_name = user.getLastname();
+                            firstname.setText(full_name);
+                        } else {
+                            firstname.setText(full_name);
+                        }
                         //lastname.setText(user.getLastname());
                         email.setText(user.getEmail());
                         street.setText(user.getStreetname());
@@ -145,7 +154,7 @@ public class UserProfile extends AppCompatActivity {
         Intent user_settings = new Intent(this, UserSettings.class);
 
         // Sender med email for bruker
-        user_settings.putExtra("useremail", email_usr);
+        //user_settings.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(user_settings);
@@ -158,7 +167,7 @@ public class UserProfile extends AppCompatActivity {
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
         // Sender med email for bruker
-        change_pwd.putExtra("useremail", email_usr);
+        //change_pwd.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(change_pwd);
@@ -171,25 +180,38 @@ public class UserProfile extends AppCompatActivity {
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
         Intent intent_payment = new Intent(this, Payment_method.class);
+        Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
+                break;
+            case R.id.logout:
+
+                startActivity(intent_loggout);
+                finish();
+
+
         }
     }
 

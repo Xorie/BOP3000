@@ -32,6 +32,7 @@ import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.inspiration.PostAdapter;
+import application.bop3000.login.Login;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
@@ -92,7 +93,7 @@ public class Payment_method extends AppCompatActivity {
         AtomicReference<String> myData = new AtomicReference<>("");
         AppExecutors.getInstance().diskIO().execute(() -> {
             Intent i = getIntent();
-            final String user = i.getStringExtra("SID"); //sjekk med Bjørge med navnet
+            final String user = Login.getUser().getEmail();
             final List<Payment> pay = DB.getKnittersboxDao().loadAllPay(user);
             runOnUiThread(() -> pAdapter.setTasks(pay));
         });
@@ -131,25 +132,36 @@ public class Payment_method extends AppCompatActivity {
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
         Intent intent_payment = new Intent(this, Payment_method.class);
+        Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
+                break;
+            case R.id.logout:
+                startActivity(intent_loggout);
+                finish();
+
         }
     }
 

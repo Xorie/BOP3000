@@ -3,30 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".subscription.Subscription_change">
+
+    <ImageButton
+        android:id="@+id/toolbarBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:srcCompat="@drawable/ic_arrow_back"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+    </ImageButton>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/subscription_tittle2"
         android:textAlignment="center"
-        android:textColor="@color/endcolor"
+        android:textColor="@color/black"
         android:textSize="40sp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:text="@string/subscription_spinnertext"
-        android:textColor="@color/endcolor"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -47,35 +60,44 @@
         android:id="@+id/subscription_postnr"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Postnr"
+        android:hint="@string/subscription_zipcode"
+        android:autofillHints="@string/subscription_zipcode"
+        android:textColorHint="@color/gray"
         android:maxLength="4"
         android:textColor="@color/endcolor"
         android:layout_gravity="center"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="25dp"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/subscription_city"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="By"
+        android:hint="@string/subscription_city"
+        android:autofillHints="@string/subscription_city"
+        android:textColorHint="@color/gray"
         android:textColor="@color/endcolor"
         android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="25dp"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/subscription_address"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Adresse"
+        android:hint="@string/subscription_adresse"
+        android:textColorHint="@color/gray"
         android:textColor="@color/endcolor"
         android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="25dp"
+        android:inputType="text"
+        android:autofillHints="@string/subscription_adresse" />
 
     <Button
         android:id="@+id/btn_save"
@@ -86,7 +108,7 @@
         android:textColor="@color/white"
         android:textSize="17sp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/endcolor"/>
+        android:background="@drawable/userprofile_button"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
