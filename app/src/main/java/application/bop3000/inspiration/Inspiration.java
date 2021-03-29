@@ -43,6 +43,9 @@ public class Inspiration extends AppCompatActivity {
     private NavigationView navigationView;
     private View itemLogout;
 
+    //Email fra logg inn
+    //String email_usr = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,12 +88,22 @@ public class Inspiration extends AppCompatActivity {
             Intent intent = new Intent(Inspiration.this, Inspiration_newpost.class);
             startActivity(intent);
         });
+
+        //Henter brukernavn fra logg inn. INN I ONSTART ELS????
+        Intent intent_insp = getIntent();
+        //email_usr = intent_insp.getStringExtra("useremail");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         retrieveTasks();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        drawerLayout.close();
     }
 
     private void retrieveTasks() {
@@ -115,6 +128,7 @@ public class Inspiration extends AppCompatActivity {
                 break;
 
             case R.id.userprofile:
+                //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
                 break;
 

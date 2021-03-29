@@ -12,6 +12,7 @@ import android.widget.Toast;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
+import application.bop3000.login.Login;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class ChangePassword extends AppCompatActivity {
     //String email_usr = "melon@gmail.com";
 
     // Email for bruker (blir hentet i onStart)
-    String email_usr = "";
+    String email_usr = Login.getUser().getEmail();
 
 
     @Override
@@ -50,8 +51,8 @@ public class ChangePassword extends AppCompatActivity {
         super.onStart();
 
         // Finner email som ble sent fra brukerprofil
-        Intent change_pwd = getIntent();
-        email_usr = change_pwd.getStringExtra("useremail");
+        //Intent change_pwd = getIntent();
+        //email_usr = change_pwd.getStringExtra("useremail");
 
     }
 

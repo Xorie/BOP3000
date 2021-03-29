@@ -1,6 +1,8 @@
 package application.bop3000.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +33,10 @@ public class Login extends AppCompatActivity {
     EditText email, password;
     Button login, registration;
 
+    SharedPreferences sp;
+
+    public static User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +64,7 @@ public class Login extends AppCompatActivity {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            User user = knittersboxDao.login(emailText, passwordText);
+                            user = knittersboxDao.login(emailText, passwordText);
                             if(user == null) {
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -73,7 +79,15 @@ public class Login extends AppCompatActivity {
                                     public void run() {
                                         Toast.makeText(getApplicationContext(), "Velkommen " + name, Toast.LENGTH_SHORT).show();
                                         Intent intent_logginn = new Intent(Login.this, Inspiration.class);
-                                        startActivity(intent_logginn); }
+                                        //intent_logginn.putExtra("useremail", emailText);
+//                                        sp = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+//                                        SharedPreferences.Editor editor = sp.edit();
+//                                        editor.putString("username", emailText);
+//                                        editor.commit();
+
+                                        startActivity(intent_logginn);
+                                        finish();
+                                    }
                                 });
                                 //Log.d("LOGIN", "Velkommen " + name);
                             }
@@ -90,5 +104,9 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+    public static User getUser() {
+        return user;
+    }
+
 
 }

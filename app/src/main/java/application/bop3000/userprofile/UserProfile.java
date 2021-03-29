@@ -19,6 +19,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.subscription.Subscription;
 
@@ -46,7 +47,10 @@ public class UserProfile extends AppCompatActivity {
 
 
     // Email for logget inn bruker (HARDKODET NÅ, MÅ KOMME FRA LOGG INN eller noe)
-    String email_usr = "hei@gmail.com";
+    //String email_usr = "hei@gmail.com";
+
+    // Email for bruker (blir hentet i onStart)
+    String email_usr = Login.getUser().getEmail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +94,27 @@ public class UserProfile extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        System.out.println("ONSTART: ");
+        //Intent intent_insp = getIntent();
+        //email_usr = intent_insp.getStringExtra("useremail");
         // Metode for å vise data om bruker
         showListData();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        System.out.println("ONPAUSE: ");
+        //Går ut av aktivitet
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("ONRESUME: ");
+
+//        User interacts with the app
+
     }
 
     // Metode for å vise data om bruker
@@ -112,8 +134,16 @@ public class UserProfile extends AppCompatActivity {
 
                         // Setter data på riktig plass
                         username.setText(user.getDisplayname());
-                        firstname.setText(full_name);
-                        //lastname.setText(user.getLastname());
+                        //Sjekker om bruker har lagt til navn (fullt navn, fornavn, etternavn)
+                        if(full_name.equals(" ") || full_name.equals("null null")) {
+                            firstname.setText(R.string.userprofile_noname);
+                        } else if (user.getFirstname() == null || user.getFirstname().isEmpty()) {
+                            full_name = user.getLastname();
+                            firstname.setText(full_name);
+                        }else {
+                            firstname.setText(full_name);
+                        }
+
                         email.setText(user.getEmail());
                         street.setText(user.getStreetname());
                         postnr.setText(user.getPostnr());
@@ -145,7 +175,7 @@ public class UserProfile extends AppCompatActivity {
         Intent user_settings = new Intent(this, UserSettings.class);
 
         // Sender med email for bruker
-        user_settings.putExtra("useremail", email_usr);
+        //user_settings.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(user_settings);
@@ -158,7 +188,7 @@ public class UserProfile extends AppCompatActivity {
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
         // Sender med email for bruker
-        change_pwd.putExtra("useremail", email_usr);
+        //change_pwd.putExtra("useremail", email_usr);
 
         // Starter aktivitet
         startActivity(change_pwd);
@@ -174,21 +204,28 @@ public class UserProfile extends AppCompatActivity {
 
         switch(menuItem.getItemId()) {
             case R.id.home:
+                //finish();
+                //intent_home.putExtra("useremail", email_usr);
                 startActivity(intent_home);
                 break;
 
             case R.id.userprofile:
+                finish();
+                //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
                 break;
 
             case R.id.subscription:
+                //intent_subscription.putExtra("useremail", email_usr);
                 startActivity(intent_subscription);
                 break;
 
             case R.id.faq:
+                //intent_faq.putExtra("useremail", email_usr);
                 startActivity(intent_faq);
                 break;
             case R.id.payment:
+                //intent_payment.putExtra("useremail", email_usr);
                 startActivity(intent_payment);
         }
     }

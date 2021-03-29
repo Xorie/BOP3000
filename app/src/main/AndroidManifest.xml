@@ -44,8 +44,6 @@
 
         <activity android:name=".userprofile.ChangePassword" />
         <activity android:name=".userprofile.UserSettings" />
-        <activity android:name=".userprofile.ChangeSubscriptionOLD" />
-        <activity android:name=".userprofile.UserSettingsOLD" />
         <activity android:name=".userprofile.UserProfile" />
         <activity android:name=".register.Register"/>
         android:theme="@style/Theme.BOP3000">

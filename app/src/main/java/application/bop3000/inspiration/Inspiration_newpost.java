@@ -31,6 +31,7 @@ import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
+import application.bop3000.login.Login;
 
 public class Inspiration_newpost extends AppCompatActivity implements View.OnClickListener {
     private static final int GALLERY_REQUEST = 100;
@@ -79,8 +80,9 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
             bitmap.compress(Bitmap.CompressFormat.JPEG, 50, fos);
             fos.flush();
             //lagrer innlegget i room databasen
-            Intent i = getIntent();
-            final String user = i.getStringExtra("SID"); //sjekk med Bjørge med navnet
+//            Intent i = getIntent();
+//            final String user = i.getStringExtra("SID"); //sjekk med Bjørge med navnet
+            final int user = Login.getUser().getUserID();
             String imagepath = file.toString();
             final String title = titleEdithText.getText().toString();
             final String post_text = textEdithText.getText().toString();
@@ -88,7 +90,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
             if (title.isEmpty()) {
                 Toast.makeText(this, "Du må fylle inn titelfeltet!", Toast.LENGTH_LONG).show();
             } else {
-                post.setUserID(user);
+                post.setUserID(String.valueOf(user));
                 post.setPost_tittle(title); //title på bildet
                 post.setPost_text(post_text); //teksten til bildet
                 post.setPost_imagepath(imagepath); //selve bildetveien

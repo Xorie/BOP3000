@@ -8,6 +8,7 @@
     <string name="userprofile_sub">Abonnement</string>
     <string name="userprofile_fname">Navn</string>
 <!--    <string name="userprofile_sname">Etternavn</string>-->
+    <string name="userprofile_noname">Ikke lagt til</string>
     <string name="userprofile_email">E-post</string>
     <string name="userprofile_settingsbtn">Rediger profil</string>
     <string name="userprofile_pwdbtn">Endre passord</string>
@@ -30,11 +31,11 @@
     <string name="usersettings_newpwdbtn">Endre passord</string>
 
     <!-- FRA GAMMEL: -->
-    <string name="usersettings_newemailtxt">Endre e-post</string>
-    <string name="usersettings_newaddrtxt">Endre leveringsaddresse</string>
-    <string name="usersettings_newsubtxt">Endre abonnement</string>
-    <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>
-    <string name="usersettings_changesubbtn">Endre abonnement</string>
+<!--    <string name="usersettings_newemailtxt">Endre e-post</string>-->
+<!--    <string name="usersettings_newaddrtxt">Endre leveringsaddresse</string>-->
+<!--    <string name="usersettings_newsubtxt">Endre abonnement</string>-->
+<!--    <string name="usersettings_choosesubtxt">Velg abonnement fra listen</string>-->
+<!--    <string name="usersettings_changesubbtn">Endre abonnement</string>-->
     <!-- ......    FRA MIKKEL SLUTT    ............................................................................................. -->
 
     <!-- Registration -->
