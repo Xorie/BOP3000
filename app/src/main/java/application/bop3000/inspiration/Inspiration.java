@@ -1,6 +1,7 @@
 package application.bop3000.inspiration;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -12,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -34,10 +37,13 @@ import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
 import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
 public class Inspiration extends AppCompatActivity {
+    private SharedPreferenceConfig sharedPreferenceConfig;
+
     MyDatabase DB;
     PostAdapter pAdapter;
     RecyclerView recView;
@@ -56,6 +62,9 @@ public class Inspiration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inspiration);
+
+        // SHAREDPREFERENCVFESS
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         recView = findViewById(R.id.insp_recview);
         recView.setLayoutManager(new LinearLayoutManager(this));
@@ -102,6 +111,7 @@ public class Inspiration extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         retrieveTasks();
+        Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
     }
 
     private void retrieveTasks() {
@@ -124,29 +134,24 @@ public class Inspiration extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
-                finish();
                 break;
 
             case R.id.userprofile:
                 startActivity(intent_profile);
-                finish();
                 break;
 
             case R.id.subscription:
                 startActivity(intent_subscription);
-                finish();
                 break;
 
             case R.id.faq:
                 startActivity(intent_faq);
-                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
-                finish();
                 break;
             case R.id.logout:
-
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
                 finish();
 

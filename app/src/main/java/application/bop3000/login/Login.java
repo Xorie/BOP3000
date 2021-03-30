@@ -1,6 +1,7 @@
 package application.bop3000.login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,8 +26,11 @@ import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.register.Register;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class Login extends AppCompatActivity {
+    private SharedPreferenceConfig sharedPreferenceConfig;
+
     EditText email, password;
     Button login, registration;
     private static User user;
@@ -43,6 +47,24 @@ public class Login extends AppCompatActivity {
         login = findViewById(R.id.login_loginbtn);
         registration = findViewById(R.id.login_registrerbtn);
 
+        // SharedPreference
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+
+        // Room DB and DAO
+        MyDatabase myDatabase = MyDatabase.getDatabase(getApplicationContext());
+        final KnittersboxDao knittersboxDao = myDatabase.getKnittersboxDao();
+
+        // If user has logged inn
+        if(sharedPreferenceConfig.read_login_status()) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    user = knittersboxDao.login(sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"), sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
+                    startActivity(new Intent(Login.this, Inspiration.class));
+                    finish();
+                }
+            }).start();
+        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +74,6 @@ public class Login extends AppCompatActivity {
                 if(emailText.isEmpty() || passwordText.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fyll alle feltene!", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Utfører query
-                    MyDatabase myDatabase = MyDatabase.getDatabase(getApplicationContext());
-                    final KnittersboxDao knittersboxDao = myDatabase.getKnittersboxDao();
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -73,7 +92,12 @@ public class Login extends AppCompatActivity {
                                     public void run() {
                                         Toast.makeText(getApplicationContext(), "Velkommen " + name, Toast.LENGTH_SHORT).show();
                                         Intent intent_logginn = new Intent(Login.this, Inspiration.class);
-                                        startActivity(intent_logginn); }
+                                        startActivity(intent_logginn);
+                                        sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_EMAIL", user.getEmail());
+                                        sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_PASSWORD", user.getPassword());
+                                        sharedPreferenceConfig.login_status(true);
+                                        finish();
+                                    }
                                 });
                                 //Log.d("LOGIN", "Velkommen " + name);
                             }
@@ -95,4 +119,9 @@ public class Login extends AppCompatActivity {
         return user;
     }
 
+    // Prevents user to login with back button
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }
