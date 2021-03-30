@@ -23,10 +23,11 @@ import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.userprofile.UserProfile;
 
 public class Subscription extends AppCompatActivity {
-
+    private SharedPreferenceConfig sharedPreferenceConfig;
     private MyDatabase mDb;
     private TextView userSub;
     private TextView userPost;
@@ -57,6 +58,8 @@ public class Subscription extends AppCompatActivity {
         userPost = findViewById(R.id.userPost);
         userCity = findViewById(R.id.userCity);
         userAddress = findViewById(R.id.userAddress);
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         //Menu
         toolbar = findViewById(R.id.toolbar);
@@ -175,7 +178,9 @@ public class Subscription extends AppCompatActivity {
                 startActivity(intent_payment);
                 break;
             case R.id.logout:
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
+                finish();
 
         }
     }

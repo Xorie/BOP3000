@@ -29,7 +29,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import application.bop3000.AppExecutors;
-import application.bop3000.MainActivity;
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;

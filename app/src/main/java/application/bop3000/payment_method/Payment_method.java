@@ -27,10 +27,12 @@ import application.bop3000.database.Payment;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
 public class Payment_method extends AppCompatActivity {
+    private SharedPreferenceConfig sharedPreferenceConfig;
     Button btn_change;
     MyDatabase DB;
     PayAdapter pAdapter;
@@ -44,6 +46,7 @@ public class Payment_method extends AppCompatActivity {
     private NavigationView navigationView;
     private View itemLogout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,8 @@ public class Payment_method extends AppCompatActivity {
         paymentexp = findViewById(R.id.srPaymentExp);
         pAdapter = new PayAdapter(this);
         recView.setAdapter(pAdapter);
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         //Menu
         toolbar = findViewById(R.id.toolbar);
@@ -154,7 +159,9 @@ public class Payment_method extends AppCompatActivity {
                 startActivity(intent_payment);
                 break;
             case R.id.logout:
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
+                finish();
 
         }
     }

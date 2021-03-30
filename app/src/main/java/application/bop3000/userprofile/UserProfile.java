@@ -21,9 +21,11 @@ import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 
 public class UserProfile extends AppCompatActivity {
+    private SharedPreferenceConfig sharedPreferenceConfig;
 
     // Database
     private MyDatabase mDb;
@@ -53,6 +55,8 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         // Database
         mDb = MyDatabase.getDatabase(getApplicationContext());
@@ -209,7 +213,9 @@ public class UserProfile extends AppCompatActivity {
                 startActivity(intent_payment);
                 break;
             case R.id.logout:
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
+                finish();
 
 
         }
