@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import application.bop3000.AppExecutors;
@@ -27,18 +30,8 @@ import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.userprofile.UserProfile;
 
 public class Subscription extends AppCompatActivity {
-    private SharedPreferenceConfig sharedPreferenceConfig;
-    private MyDatabase mDb;
-    private TextView userSub;
-    private TextView userPost;
-    private TextView userCity;
-    private TextView userAddress;
-    private Button button;
-    private String subDesc;
-    private String post;
-    private String city;
-    private String address;
 
+    private SharedPreferenceConfig sharedPreferenceConfig;
     //Menu
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -46,20 +39,10 @@ public class Subscription extends AppCompatActivity {
     private NavigationView navigationView;
     private View itemLogout;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
-
-        mDb = MyDatabase.getDatabase(getApplicationContext());
-        button = findViewById(R.id.subscription_btn_change);
-        userSub = findViewById(R.id.userSub);
-        userPost = findViewById(R.id.userPost);
-        userCity = findViewById(R.id.userCity);
-        userAddress = findViewById(R.id.userAddress);
-
-        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         //Menu
         toolbar = findViewById(R.id.toolbar);
@@ -80,67 +63,12 @@ public class Subscription extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
-
-        AppExecutors.getInstance().diskIO().execute( new Runnable() {
-            @Override
-            public void run() {
-                int userID = Login.getUser().getUserID();
-
-                // Henter informasjon på brukerID
-                User user = mDb.getKnittersboxDao().hentBrukerID(userID);
-
-                // Sjekker om man får nullverdi
-                if (user.getSubscription_subscriptionID() == null) {
-                    subDesc = "Ingen";
-                } else {
-                    String sub = user.getSubscription_subscriptionID();
-                    //Henter subscription desc fra ID
-                    int subscriptID = Integer.parseInt(sub);
-                    application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
-                    subDesc = subscription.getDescription();
-                }
-
-                if (user.getPostnr() == null) {
-                    post = "Ingen";
-                } else { post = user.getPostnr(); }
-
-                if (user.getCity() == null) {
-                    city = "Ingen";
-                } else { city = user.getCity(); }
-
-                if (user.getStreetname() == null) {
-                    address = "Ingen";
-                } else { address = user.getStreetname(); }
-
-
-
-
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //Fyller textview
-                        userSub.setText(subDesc);
-                        userPost.setText(post);
-                        userCity.setText(city);
-                        userAddress.setText(address);
-                    }
-                });
-            }
-        });
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Subscription_change.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
+        //Setter default visningsfragment
+        if (savedInstanceState == null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.fragment_container, new SubscriptionFragment());
+            transaction.commit();
+        }
     }
 
     @Override
@@ -193,10 +121,9 @@ public class Subscription extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerLayout.openDrawer( GravityCompat.START);
+                drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

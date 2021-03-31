@@ -9,7 +9,7 @@
     <string name="userprofile_sub">Abonnement</string>
     <string name="userprofile_fname">Navn</string>
     <string name="userprofile_noname">Ikke lagt til</string>
-<!--    <string name="userprofile_sname">Etternavn</string>-->
+    <!--    <string name="userprofile_sname">Etternavn</string>-->
     <string name="userprofile_email">E-post</string>
     <string name="userprofile_settingsbtn">Rediger profil</string>
     <string name="userprofile_pwdbtn">Endre passord</string>
@@ -78,7 +78,6 @@
     <string name="payment_method_writecvc">Skriv CVC</string>
 
 
-
     <!-- Menu -->
     <string name="menu_knittersbox">Knittersbox.no</string>
     <string name="drawer_open">Open navigation drawer</string>
@@ -101,6 +100,8 @@
     <string name="subscription_adresse">Endre adresse</string>
 
     <string name="personvern"><a href="https://knittersbox.no/personvern-2/">Godkjenner personvern og vilkår</a></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
