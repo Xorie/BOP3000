@@ -3,6 +3,7 @@ package application.bop3000.userprofile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class UserSettings extends AppCompatActivity {
 
@@ -33,6 +35,8 @@ public class UserSettings extends AppCompatActivity {
     // Email for bruker (blir hentet i onStart)
     String email_usr = Login.getUser().getEmail();
 
+    private SharedPreferenceConfig sharedPreferenceConfig;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,8 @@ public class UserSettings extends AppCompatActivity {
 
         //Kobler til database
         mDb = MyDatabase.getDatabase(getApplicationContext());
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
     }
 
@@ -114,7 +120,7 @@ public class UserSettings extends AppCompatActivity {
                 String emailnew = email.getText().toString(); //NB: MÅ FIKSES
 
                 // Henter data om brukeren
-                User user = mDb.getKnittersboxDao().loadUser(email_usr);
+                User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
 
                 // Hvis ingenting er endret
                 if(username.equals(user.getDisplayname()) && firstname.equals(user.getFirstname()) && lastname.equals(user.getLastname()) && emailnew.equals(user.getEmail())) {
@@ -158,6 +164,7 @@ public class UserSettings extends AppCompatActivity {
                     user.setLastname(lastname);
                     user.setEmail(emailnew); //NB: MÅ FIKSES
 
+
                     // Kjører sql og oppdaterer brukerinfo
                     mDb.getKnittersboxDao().updateName(user);
 
@@ -165,6 +172,8 @@ public class UserSettings extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
+                            System.out.println("EMAIL ER DEN DER: " + user.getEmail());
+                            sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
                         }
                     });
                 }

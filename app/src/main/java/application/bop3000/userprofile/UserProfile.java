@@ -41,6 +41,10 @@ public class UserProfile extends AppCompatActivity {
     private TextView postnr;
     private TextView city;
 
+    private String full_name;
+
+    private User user;
+
     //Menu
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -91,6 +95,14 @@ public class UserProfile extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                user = mDb.getKnittersboxDao().loadUser(email_usr);
+
+            }
+        });
+
     }
 
     @Override
@@ -107,6 +119,10 @@ public class UserProfile extends AppCompatActivity {
         drawerLayout.close();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     // Metode for å vise data om bruker
     private void showListData(){
@@ -115,13 +131,12 @@ public class UserProfile extends AppCompatActivity {
             public void run() {
 
                 // Finner data om bruker
-                User user = mDb.getKnittersboxDao().loadUser(email_usr);
+                //user = mDb.getKnittersboxDao().loadUser(email_usr);
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        String full_name = user.getFirstname() + " " + user.getLastname();
+                        full_name = user.getFirstname() + " " + user.getLastname();
 
                         // Setter data på riktig plass
                         username.setText(user.getDisplayname());

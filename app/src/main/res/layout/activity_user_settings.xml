@@ -42,13 +42,6 @@
                     android:layout_margin="40dp"
                     android:background="@color/white">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="26dp"
-                        android:textSize="26sp"
-                        android:textColor="@color/black"
-                        android:text="@string/usersettings_change_header_txt" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
