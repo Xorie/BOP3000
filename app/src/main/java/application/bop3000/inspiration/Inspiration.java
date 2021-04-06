@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.TextAppearanceSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;

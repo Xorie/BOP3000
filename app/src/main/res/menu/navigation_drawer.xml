@@ -29,7 +29,6 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/logout"
-            android:actionMenuTextColor="@drawable/delete"
             android:icon="@drawable/ic_power"
             android:title="@string/logout" />
     </group>
