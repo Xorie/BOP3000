@@ -29,9 +29,11 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".subscription.Subscription" />
+        <activity android:name=".subscription.Subscription"
+            android:label="Subscription"/>
         <activity android:name=".subscription.Subscription_change" />
-        <activity android:name=".faq.faq" />
+        <activity android:name=".faq.faq"
+            android:label="FAQ"/>
 
         <activity android:name=".login.Login" >
         <intent-filter>
@@ -44,11 +46,13 @@
 
         <activity android:name=".userprofile.ChangePassword" />
         <activity android:name=".userprofile.UserSettings" />
-        <activity android:name=".userprofile.UserProfile" />
+        <activity android:name=".userprofile.UserProfile"
+            android:label="Brukerprofil"/>
         <activity android:name=".register.Register"/>
         android:theme="@style/Theme.BOP3000">
         <activity android:name=".payment_method.newPayment_method" />
-        <activity android:name=".payment_method.Payment_method" />
+        <activity android:name=".payment_method.Payment_method"
+            android:label="Betalingsmetode"/>
         <activity android:name=".inspiration.Inspiration_newpost" />
         <activity
             android:name=".inspiration.Inspiration"

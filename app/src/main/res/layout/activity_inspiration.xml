@@ -27,6 +27,7 @@
             android:background="@drawable/userprofile_button"
             android:clickable="true"
             android:contentDescription="@string/inspiration_newpost"
+            app:backgroundTint="@color/endcolor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.954"
@@ -47,17 +48,17 @@
             android:id="@+id/textView9"
             android:layout_width="214dp"
             android:layout_height="51dp"
-            android:background="@drawable/userprofile_button"
             android:fontFamily="@font/roboto_thin"
             android:text="Knitterbox"
             android:textAllCaps="false"
+            android:textColor="@color/endcolor"
             android:textSize="40sp"
             app:layout_constraintBottom_toTopOf="@+id/insp_recview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.448" />
+            app:layout_constraintVertical_bias="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
