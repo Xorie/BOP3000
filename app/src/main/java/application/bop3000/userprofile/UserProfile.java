@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
@@ -169,6 +170,7 @@ public class UserProfile extends AppCompatActivity {
 
         // Starter aktivitet
         startActivity(user_settings);
+        finish();
     }
 
     // Metode for knapp til endring av passord
@@ -182,6 +184,15 @@ public class UserProfile extends AppCompatActivity {
 
         // Starter aktivitet
         startActivity(change_pwd);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back_to_insp = new Intent(this, Inspiration.class);
+        startActivity(back_to_insp);
+        finish();
     }
 
     //Menu
@@ -200,6 +211,7 @@ public class UserProfile extends AppCompatActivity {
 
             case R.id.userprofile:
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:
