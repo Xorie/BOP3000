@@ -55,7 +55,6 @@ public class SubscriptionChangeFragment extends Fragment {
     private ImageButton backbutton;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -163,13 +162,14 @@ public class SubscriptionChangeFragment extends Fragment {
                                 @Override
                                 public void run() {
                                     Toast.makeText(getActivity().getApplicationContext(), "Bruker er oppdatert", Toast.LENGTH_SHORT ).show();
-                                        FragmentManager manager = getActivity().getSupportFragmentManager();
-                                        SubscriptionFragment fragment = new SubscriptionFragment();
-                                        manager.beginTransaction()
-                                                .replace(R.id.fragment_container, fragment)
-                                                .addToBackStack(null)
-                                                .setTransition( FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                                                .commit();
+                                    //Sender tilbake til forrige fragment
+                                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                                    SubscriptionFragment fragment = new SubscriptionFragment();
+                                    manager.beginTransaction()
+                                            .replace(R.id.fragment_container, fragment)
+                                            .addToBackStack(null)
+                                            .setTransition( FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                                            .commit();
                                 }
                             });
                         }

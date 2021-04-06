@@ -2,6 +2,7 @@ package application.bop3000.inspiration;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -21,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.Group;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -54,7 +56,7 @@ public class Inspiration extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private NavigationView navigationView;
-    //private MenuItem itemLogout;
+    private MenuItem itemLogout;
     private Menu mOptionsMenu;
 
     @Override
@@ -85,14 +87,11 @@ public class Inspiration extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.naviView);
 
-        //SKAL BLI RØD
-        //itemLogout = findViewById(R.id.logout);
-
-
-
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
+        //Setter fargen på alle MenuItems
+        //navigationView.setItemTextColor(ColorStateList.valueOf(Color.RED));
 
         pAdapter = new PostAdapter(this);
         recView.setAdapter(pAdapter);
@@ -134,15 +133,12 @@ public class Inspiration extends AppCompatActivity {
             case R.id.home:
                 startActivity(intent_home);
                 break;
-
             case R.id.userprofile:
                 startActivity(intent_profile);
                 break;
-
             case R.id.subscription:
                 startActivity(intent_subscription);
                 break;
-
             case R.id.faq:
                 startActivity(intent_faq);
                 break;

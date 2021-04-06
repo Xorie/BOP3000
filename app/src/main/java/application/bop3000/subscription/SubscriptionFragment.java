@@ -22,7 +22,6 @@ import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 
 public class SubscriptionFragment extends Fragment {
-
     private SharedPreferenceConfig sharedPreferenceConfig;
     private MyDatabase mDb;
     private TextView userSub;

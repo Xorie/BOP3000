@@ -3,35 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/delete"
     tools:context=".subscription.SubscriptionChangeFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/white"
         android:orientation="vertical"
-        tools:context=".subscription.Subscription_change">
-
-        <ImageButton
-            android:id="@+id/toolbarBack"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            app:srcCompat="@drawable/ic_arrow_back"
-            android:background="@color/white"
-            android:clickable="true"
-            android:focusable="true">
-        </ImageButton>
+        tools:context=".subscription.Subscription">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/subscription_tittle2"
@@ -117,8 +105,5 @@
             android:layout_gravity="center"
             android:background="@drawable/userprofile_button"/>
 
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
 </FrameLayout>
