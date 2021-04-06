@@ -10,9 +10,6 @@
 
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".userprofile.UserProfile"
@@ -39,14 +36,14 @@
                 android:layout_marginBottom="20dp">
     <!--            android:background="@drawable/userprofile_header_color"-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Profil"
-                    android:textSize="22sp"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    android:paddingTop="10dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Profil"-->
+<!--                    android:textSize="22sp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:paddingTop="10dp"/>-->
 
     <!--        <LinearLayout-->
     <!--            android:layout_width="wrap_content"-->
@@ -374,7 +371,7 @@
                 android:paddingStart="40dp"
                 android:paddingRight="40dp"
                 android:paddingEnd="40dp"
-                android:background="@color/white">
+                android:background="@drawable/userprofile_shadow">
 
                 <!--            <Button-->
                 <!--                android:id="@+id/userprofile_postsbtn"-->
@@ -434,6 +431,7 @@
                     android:background="@drawable/userprofile_button"
                     android:text="@string/userprofile_settingsbtn"
                     android:textColor="@color/white"
+                    android:textAllCaps="false"
                     android:layout_marginBottom="16dp"/>
 
                 <Button
@@ -443,7 +441,8 @@
                     android:layout_height="54dp"
                     android:background="@drawable/userprofile_button"
                     android:text="@string/userprofile_pwdbtn"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"/>
                 <!--            android:background="@drawable/background"-->
 
             </LinearLayout>

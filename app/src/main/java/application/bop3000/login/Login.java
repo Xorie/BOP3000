@@ -86,7 +86,6 @@ public class Login extends AppCompatActivity {
 //                                        editor.commit();
 
                                         startActivity(intent_logginn);
-                                        finish();
                                     }
                                 });
                                 //Log.d("LOGIN", "Velkommen " + name);

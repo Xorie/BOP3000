@@ -63,6 +63,20 @@ public class UserSettings extends AppCompatActivity {
 
     }
 
+    public void userprofileBack(View view) {
+        Intent user_profile_back = new Intent(this, UserProfile.class);
+        startActivity(user_profile_back);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent user_profile_back = new Intent(this, UserProfile.class);
+        startActivity(user_profile_back);
+        finish();
+    }
+
     // Viser data i inputfeltene om det er lagt inn noe
     private void showData(){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -88,7 +102,7 @@ public class UserSettings extends AppCompatActivity {
     }
 
     //Knapp for å oppdatere info som er skrevet inn
-    public void updateName(View view){
+    public void updateUserinfo(View view){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
@@ -104,7 +118,6 @@ public class UserSettings extends AppCompatActivity {
 
                 // Hvis ingenting er endret
                 if(username.equals(user.getDisplayname()) && firstname.equals(user.getFirstname()) && lastname.equals(user.getLastname()) && emailnew.equals(user.getEmail())) {
-
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -112,7 +125,32 @@ public class UserSettings extends AppCompatActivity {
                         }
                     });
                 // Hvis endringer er gjort
-                } else {
+                }
+                else if(emailnew.isEmpty() || emailnew.equals(" ")) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "E-post kan ikke være tom!", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                else if(mDb.getKnittersboxDao().displayname(username) != null && !username.equals(user.getDisplayname())) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Visningsnavn eksisterer!", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                else if(mDb.getKnittersboxDao().userEmail(emailnew) != null && !emailnew.equals(user.getEmail())) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "E-post eksisterer!", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                else {
 
                     // Setter data om brukeren
                     user.setDisplayname(username);

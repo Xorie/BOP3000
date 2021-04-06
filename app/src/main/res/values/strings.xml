@@ -4,6 +4,7 @@
 
     <!-- .......   FRA MIKKEL START    ............................................................. -->
     <!-- Userprofile: -->
+    <string name="userprofile_toolbar_name">Profil</string>
     <string name="userprofile_username">Brukernavn</string>
     <string name="userprofile_sub">Abonnement</string>
     <string name="userprofile_fname">Navn</string>

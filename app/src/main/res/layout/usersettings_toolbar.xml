@@ -1,0 +1,35 @@
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_simpel"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/endcolor">
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/btnTilbake"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:srcCompat="@drawable/ic_arrow_back"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true" />-->
+
+    <ImageButton
+        android:id="@+id/toolbarBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="userprofileBack"
+        app:srcCompat="@drawable/ic_arrow_back"
+        android:background="@color/endcolor"
+        android:clickable="true"
+        android:focusable="true">
+    </ImageButton>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"/>
+</androidx.appcompat.widget.Toolbar>

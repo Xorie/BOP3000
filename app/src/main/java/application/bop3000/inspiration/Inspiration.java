@@ -130,6 +130,7 @@ public class Inspiration extends AppCompatActivity {
             case R.id.userprofile:
                 //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
+                finish();
                 break;
 
             case R.id.subscription:

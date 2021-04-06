@@ -9,89 +9,114 @@
     tools:context=".userprofile.UserSettings"
     android:fillViewport="true">
 
+<!--    <ImageButton-->
+<!--        android:id="@+id/toolbarBack"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_margin="10dp"-->
+<!--        app:srcCompat="@drawable/ic_arrow_back"-->
+<!--        android:background="@color/white"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true">-->
+<!--    </ImageButton>-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/userprofile_gray"
-        android:gravity="center">
+        android:background="@color/userprofile_gray">
+
+        <include
+            layout="@layout/usersettings_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/userprofile_shadow">
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="40dp"
-                android:background="@color/white">
+                android:background="@drawable/userprofile_shadow">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="26dp"
-                    android:textSize="26sp"
-                    android:textColor="@color/black"
-                    android:text="@string/usersettings_change_header_txt" />
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/usrname"
-                        android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="40dp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/usrsettings_hint_usrname" />
+                        android:paddingBottom="26dp"
+                        android:textSize="26sp"
+                        android:textColor="@color/black"
+                        android:text="@string/usersettings_change_header_txt" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/fname"
+                            android:id="@+id/usrname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/usrsettings_hint_fname" />
+                            android:hint="@string/usrsettings_hint_usrname" />
 
-                            <com.google.android.material.textfield.TextInputLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fname"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/sname"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/usrsettings_hint_sname" />
+                                android:layout_height="wrap_content"
+                                android:hint="@string/usrsettings_hint_fname" />
 
                                 <com.google.android.material.textfield.TextInputLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
                                     <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/email"
+                                        android:id="@+id/sname"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:hint="@string/usrsettings_hint_email" />
+                                        android:hint="@string/usrsettings_hint_sname" />
 
-                                        <Button
-                                            android:id="@+id/btn_updatename"
-                                            android:onClick="updateName"
-                                            android:layout_marginTop="30dp"
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/email"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:background="@drawable/userprofile_button"
-                                            android:textColor="@color/white"
-                                            android:text="@string/usrsettings_btn_savename"/>
-            <!--                            android:background="@drawable/userprofile_button"-->
+                                            android:hint="@string/usrsettings_hint_email" />
 
-        <!--                            </com.google.android.material.textfield.TextInputLayout>-->
-        <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+                                            <Button
+                                                android:id="@+id/btn_updatename"
+                                                android:onClick="updateUserinfo"
+                                                android:layout_marginTop="30dp"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/userprofile_button"
+                                                android:textColor="@color/white"
+                                                android:text="@string/usrsettings_btn_savename"
+                                                android:textAllCaps="false"/>
+                <!--                            android:background="@drawable/userprofile_button"-->
+
+            <!--                            </com.google.android.material.textfield.TextInputLayout>-->
+            <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+                                    </com.google.android.material.textfield.TextInputLayout>
                                 </com.google.android.material.textfield.TextInputLayout>
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
-                    </com.google.android.material.textfield.TextInputLayout>
 
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
