@@ -47,7 +47,7 @@ public interface KnittersboxDao {
     User hentBrukerID(int userID);
 
     //FAQ
-    @Query("Select * from `APPLICATION/BOP3000/FAQ`")
+    @Query("Select * from FAQ")
     List<FAQ> faqList();
 
     //Subscription

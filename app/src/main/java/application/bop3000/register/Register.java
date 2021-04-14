@@ -112,6 +112,7 @@ public class Register extends AppCompatActivity {
                                                     }
                                                 });
                                                 startActivity(new Intent(Register.this, Login.class));
+                                                finish();
                                             }
                                         }).start();
                                     } else {

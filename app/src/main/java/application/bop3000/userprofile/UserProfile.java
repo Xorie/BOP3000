@@ -165,6 +165,10 @@ public class UserProfile extends AppCompatActivity {
                         else if(sub_type.equals("1")) {
                             sub_type = "Jordboksen";
                         }
+                        else if(sub_type.equals("2")) {
+                            sub_type = "Fargeboksen";
+
+                        }
                         //NB: IF FOR RESTEN AV ABONNEMENTTYPENE!
                         subscription.setText(sub_type);
 
