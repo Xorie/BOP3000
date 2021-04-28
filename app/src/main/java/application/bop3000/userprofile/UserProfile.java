@@ -95,7 +95,7 @@ public class UserProfile extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
                 user = mDb.getKnittersboxDao().loadUser(email_usr);
@@ -126,7 +126,7 @@ public class UserProfile extends AppCompatActivity {
 
     // Metode for å vise data om bruker
     private void showListData(){
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 

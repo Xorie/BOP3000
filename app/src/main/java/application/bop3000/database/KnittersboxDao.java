@@ -31,13 +31,8 @@ public interface KnittersboxDao {
     @Query("Select * from User Where email = (:email_usr)")
     User loadUser(String email_usr);
 
-    // Insert/Oppdatering for navn
-//    @Query("Update  User Set firstname = (:fname), lastname = (:sname) Where email = (:email)")
-//    User updateName(String email);
-
     @Update
     void updateName(User user);
-
     // ------ BRUKERPROFIL SLUTT -----------
 
 

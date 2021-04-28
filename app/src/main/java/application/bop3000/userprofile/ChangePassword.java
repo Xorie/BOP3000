@@ -72,7 +72,7 @@ public class ChangePassword extends AppCompatActivity {
 
     //Knapp for å oppdatere info som er skrevet inn
     public void updatePassword(View view){
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 
@@ -90,15 +90,13 @@ public class ChangePassword extends AppCompatActivity {
                         if(pass_old.matches("") && pass_new.matches("")) {
                             Toast.makeText(getApplicationContext(), "Feltene er ikke fylt inn", Toast.LENGTH_LONG).show();
                         }
-
                         else if(!user.getPassword().equals(pass_old)) {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
-
                         else {
                             user.setPassword(pass_new);
 
-                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
                                 @Override
                                 public void run() {
                                     mDb.getKnittersboxDao().updateName(user);
@@ -112,5 +110,4 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
     }
-
 }

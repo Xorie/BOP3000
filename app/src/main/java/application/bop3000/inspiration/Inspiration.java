@@ -36,7 +36,7 @@ import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
-import application.bop3000.login.Login;
+import application.bop3000.login.Login; 
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
@@ -108,7 +108,7 @@ public class Inspiration extends AppCompatActivity {
         });
 
         //Henter brukernavn fra logg inn. INN I ONSTART ELS????
-        Intent intent_insp = getIntent();
+        //Intent intent_insp = getIntent();
         //email_usr = intent_insp.getStringExtra("useremail");
     }
 
@@ -116,7 +116,7 @@ public class Inspiration extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         retrieveTasks();
-        Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

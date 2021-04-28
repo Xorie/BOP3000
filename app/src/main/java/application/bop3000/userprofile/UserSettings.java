@@ -3,7 +3,6 @@ package application.bop3000.userprofile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -85,7 +84,7 @@ public class UserSettings extends AppCompatActivity {
 
     // Viser data i inputfeltene om det er lagt inn noe
     private void showData(){
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 
@@ -109,7 +108,7 @@ public class UserSettings extends AppCompatActivity {
 
     //Knapp for å oppdatere info som er skrevet inn
     public void updateUserinfo(View view){
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+        AppExecutors_OLD.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 
