@@ -2,11 +2,13 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <target>android-30</target>
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="LOGIN" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="BranchesTreeState">
@@ -28,36 +30,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="Registrering med room db">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/appexecutors/AppExecutors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/login/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/register/Register.java" afterDir="false" />
-	</list>
-    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="Merge remote-tracking branch 'origin/Bjorge' into Fredrik, restored strings.xml&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/checksums/checksums.lock&#10;#&#9;.gradle/checksums/sha1-checksums.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/modules/app/BOP3000.app.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build.gradle&#10;#&#9;app/src/main/res/values/colors.xml&#10;#&#9;app/src/main/res/values/strings.xml">
+    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="brukerprofil endringer">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/FAQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/FAQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/KnittersboxDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/KnittersboxDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/MyDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/MyDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/FAQ/MainAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/FAQ/MainAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/FAQ/faq.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/FAQ/faq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_faq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_faq.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +58,22 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
@@ -82,40 +83,54 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Bjorge" />
+        <entry key="$PROJECT_DIR$" value="Mikkel" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nFInjHgcrTwuLu2I8AbhxtEOut" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-04T13:14:28.044Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_XL_API_29_-_6.0" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-06T12:10:19.928Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Android Projects/MOB3000v1-PREFINAL/MOB3000v1" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MOB3000v1" />
+    <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="application.bop3000.inspiration" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="application.bop3000" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\bjorg\StudioProjects\BOP3000\app\src\main\java\appexecutors" />
+      <recent name="C:\Users\Nyxys\AndroidStudioProjects\BOP3000\app\src\main\res\drawable" />
     </key>
-    <key name="android.template.-1502319205">
-      <recent name="login" />
-      <recent name="register" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="userlogin" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="application.bop3000.database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nyxys\AndroidStudioProjects\BOP3000\app\src\main\res\drawable" />
+      <recent name="C:\Users\Nyxys\AndroidStudioProjects\BOP3000\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\bjorg\StudioProjects\BOP3000\app\src\main\res\drawable-v24" />
     </key>
   </component>
@@ -210,14 +225,42 @@
       <option name="project" value="LOCAL" />
       <updated>1612437046836</updated>
     </task>
-    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/Bjorge' into Fredrik, restored strings.xml&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/checksums/checksums.lock&#10;#&#9;.gradle/checksums/sha1-checksums.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/modules/app/BOP3000.app.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build.gradle&#10;#&#9;app/src/main/res/values/colors.xml&#10;#&#9;app/src/main/res/values/strings.xml">
-      <created>1612448357889</created>
+    <task id="LOCAL-00003" summary="med knapp">
+      <created>1612450737926</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1612448357889</updated>
+      <updated>1612450737926</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="liten meny ved klikking på last opp bilde&#10;fungerer å åpne kamera og det interne filsystemet&#10;&#10;mangler kameratillatelse(fungerer ikke)">
+      <created>1612626033797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612626033797</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lagring av tekst til nytt innlegg fungerer og blir vist frem i insp siden, begynt på langring av bilde">
+      <created>1612957027982</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612957027982</updated>
+    </task>
+    <task id="LOCAL-00006" summary="betalingsmetode ca ferdig&#10;insp ferdig">
+      <created>1615991071900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615991071900</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fjernet themes">
+      <created>1616506532248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616506532248</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -233,11 +276,6 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="1">
-          <value>
-            <State />
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -246,7 +284,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Bjorge" />
+                        <option value="origin/Fredrik" />
                       </list>
                     </value>
                   </entry>
@@ -262,84 +300,209 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start av prosjekt" />
     <MESSAGE value="Fortsettelse på registrer og login" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/Bjorge' into Fredrik, restored strings.xml&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/checksums/checksums.lock&#10;#&#9;.gradle/checksums/sha1-checksums.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/modules/app/BOP3000.app.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build.gradle&#10;#&#9;app/src/main/res/values/colors.xml&#10;#&#9;app/src/main/res/values/strings.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/Bjorge' into Fredrik, restored strings.xml&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/checksums/checksums.lock&#10;#&#9;.gradle/checksums/sha1-checksums.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/modules/app/BOP3000.app.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build.gradle&#10;#&#9;app/src/main/res/values/colors.xml&#10;#&#9;app/src/main/res/values/strings.xml" />
+    <MESSAGE value="med knapp" />
+    <MESSAGE value="liten meny ved klikking på last opp bilde&#10;fungerer å åpne kamera og det interne filsystemet&#10;&#10;mangler kameratillatelse(fungerer ikke)" />
+    <MESSAGE value="lagring av tekst til nytt innlegg fungerer og blir vist frem i insp siden, begynt på langring av bilde" />
+    <MESSAGE value="betalingsmetode ca ferdig&#10;insp ferdig" />
+    <MESSAGE value="fjernet themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fjernet themes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="477" y="266" key="#PSD" timestamp="1610979888618">
+    <state x="476" y="266" key="#PSD" timestamp="1618352174191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="339" y="186" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1614006342285" />
     <state x="477" y="266" key="#PSD/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610979888618" />
-    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser" timestamp="1612443382049">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443382049" />
-    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611137160885">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137160885" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612446226704">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446226704" />
-    <state x="92" y="92" width="1736" height="866" key="AVDManager" timestamp="1612444466462">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="AVDManager/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612444466462" />
-    <state x="531" y="291" key="AndroidCreateResourceFileDialog" timestamp="1611243505100">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="531" y="291" key="AndroidCreateResourceFileDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243505100" />
-    <state x="805" y="332" key="AndroidCreateXmlResourceDialog" timestamp="1611243415516">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="805" y="332" key="AndroidCreateXmlResourceDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243415516" />
-    <state x="71" y="90" width="1736" height="906" key="DiffContextDialog" timestamp="1612448606002">
+    <state x="476" y="266" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1618352174191" />
+    <state x="476" y="268" key="#PSD/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617045219677" />
+    <state x="508" y="284" key="#PSD/0.0.2048.1112@0.0.2048.1112" timestamp="1617707278671" />
+    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser" timestamp="1616682190028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="71" y="90" width="1736" height="906" key="DiffContextDialog/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1612448606002" />
-    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1611137690941">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="544" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614781685747" />
+    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616682190028" />
+    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443382049" />
+    <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1613572865045">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1613572865045" />
+    <state x="449" y="189" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1616671631339">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="449" y="189" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1616671631339" />
+    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137160885" />
+    <state x="387" y="141" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1612709897155">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="387" y="141" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612709897155" />
+    <state x="458" y="411" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1616504313022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="326" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1614778360818" />
+    <state x="458" y="411" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616504313022" />
+    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612617621647">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1612617621647" />
+    <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616677381582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1616677381582" />
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616503825450" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446226704" />
+    <state x="98" y="97" width="1852" height="918" key="AVDManager" timestamp="1617711035419">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="65" y="64" width="1236" height="601" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1612699718682" />
+    <state x="92" y="92" width="1736" height="866" key="AVDManager/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617118093244" />
+    <state x="98" y="97" width="1852" height="918" key="AVDManager/0.0.2048.1112@0.0.2048.1112" timestamp="1617711035419" />
+    <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog" timestamp="1613939590404">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939590404" />
+    <state x="59" y="27" key="AndroidCreateResourceFileDialog" timestamp="1616676284420">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="59" y="27" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1616676284420" />
+    <state x="83" y="39" key="AndroidCreateResourceFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616508435686" />
+    <state x="531" y="291" key="AndroidCreateResourceFileDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243505100" />
+    <state x="573" y="230" key="AndroidCreateXmlResourceDialog" timestamp="1613939157219">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="573" y="230" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939157219" />
+    <state x="805" y="332" key="AndroidCreateXmlResourceDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243415516" />
+    <state x="30" y="0" key="CommitChangelistDialog2" timestamp="1616506531169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="21" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1615991065949" />
+    <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616506531169" />
+    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog" timestamp="1612448796907">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1612448796907" />
+    <state x="363" y="119" key="Downloadable.Font.Dialog.Size" timestamp="1616673778812">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="119" key="Downloadable.Font.Dialog.Size/0.0.1366.728@0.0.1366.728" timestamp="1616673778812" />
+    <state x="739" y="276" key="FileChooserDialogImpl" timestamp="1616682194791">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615894429841" />
+    <state x="739" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616682194791" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610980031243" />
     <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137690941" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1612446685506">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446685506" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1612446685504">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446685504" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1612446685502">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446685502" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1612446685505">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446685505" />
-    <state x="84" y="233" key="SettingsEditor" timestamp="1610982635632">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="84" y="233" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1610982635632" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1612448363170">
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom" timestamp="1618355955119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1612448363170" />
+    <state width="1322" height="569" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1692" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616680850441" />
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617117555458" />
+    <state width="2003" height="278" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866535" />
+    <state width="1876" height="280" key="GridCell.Tab.0.center" timestamp="1618355955119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1616679162301" />
+    <state width="1692" height="263" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616680850441" />
+    <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617117555457" />
+    <state width="2003" height="278" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866534" />
+    <state width="1876" height="280" key="GridCell.Tab.0.left" timestamp="1618355955119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1616679162300" />
+    <state width="1692" height="263" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616680850440" />
+    <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617117555457" />
+    <state width="2003" height="278" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866534" />
+    <state width="1876" height="280" key="GridCell.Tab.0.right" timestamp="1618355955119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1692" height="263" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616680850441" />
+    <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617117555458" />
+    <state width="2003" height="278" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866534" />
+    <state width="1876" height="281" key="GridCell.Tab.1.bottom" timestamp="1618353231559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1876" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618353231559" />
+    <state width="1876" height="281" key="GridCell.Tab.1.center" timestamp="1618353231559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1876" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618353231559" />
+    <state width="1876" height="281" key="GridCell.Tab.1.left" timestamp="1618353231559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1876" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618353231559" />
+    <state width="1876" height="281" key="GridCell.Tab.1.right" timestamp="1618353231559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1322" height="569" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1616679162302" />
+    <state width="1876" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618353231559" />
+    <state x="263" y="107" key="IDE.errors.dialog" timestamp="1613926550177">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="107" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1613926550177" />
+    <state x="75" y="92" width="1790" height="924" key="MergeDialog" timestamp="1617707210622">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="246" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617703701967" />
+    <state x="75" y="92" width="1790" height="924" key="MergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707210622" />
+    <state x="656" y="318" key="MultipleFileMergeDialog" timestamp="1617707220496">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="656" y="318" key="MultipleFileMergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707220496" />
+    <state x="242" y="49" key="SettingsEditor" timestamp="1617707259328">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="60" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1614166538406" />
+    <state x="84" y="233" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1610982635632" />
+    <state x="242" y="49" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1617707259328" />
+    <state x="516" y="146" key="Vcs.Push.Dialog.v2" timestamp="1616506535070">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="367" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1615991084427" />
+    <state x="516" y="146" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616506535070" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612437081146" />
-    <state x="667" y="258" width="585" height="592" key="find.popup" timestamp="1611239880644">
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1613939231419">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939231419" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618352660772">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618352660772" />
+    <state x="447" y="48" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1612966234914">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="447" y="48" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1612966234914" />
+    <state x="667" y="258" width="585" height="592" key="find.popup" timestamp="1617114406003">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611239880644" />
-    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog" timestamp="1611243478734">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617114406003" />
+    <state x="779" y="252" key="git4idea.branch.GitSmartOperationDialog" timestamp="1617706477953">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state x="730" y="236" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617703668001" />
     <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243478734" />
+    <state x="779" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617706477953" />
     <state x="412" y="297" width="700" height="530" key="recent.locations.popup" timestamp="1610979630422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="412" y="297" width="700" height="530" key="recent.locations.popup/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610979630422" />
+    <state x="547" y="175" key="refactoring.ChangeSignatureDialog" timestamp="1617115427407">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="389" y="121" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1613572959696" />
+    <state x="547" y="175" key="refactoring.ChangeSignatureDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617115427407" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1616675225135">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1616675225135" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1612443803781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

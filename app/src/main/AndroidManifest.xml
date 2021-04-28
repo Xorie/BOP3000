@@ -1,33 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="application.bop3000">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
 
+    package="application.bop3000"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="30" />
+
+    <!-- Permissions for external db -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Cleartext HTTP traffic for external db -->
     <application
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".subscription.Subscription"
+            android:label="Subscription"/>
+        <activity android:name=".subscription.Subscription_change" />
+        <activity android:name=".faq.faq"
+            android:label="FAQ"/>
+
+        <activity android:name=".login.Login" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity android:name=".userprofile.ChangePassword" />
+        <activity android:name=".userprofile.UserSettings" />
+        <activity android:name=".userprofile.UserProfile"
+            android:label="Brukerprofil"/>
+        <activity android:name=".register.Register"/>
         android:theme="@style/Theme.BOP3000">
-        <activity android:name="login.Login"></activity>
-        <activity android:name="register.Register">
-        <activity android:name=".FAQ.faq"></activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <activity android:name=".payment_method.newPayment_method" />
+        <activity android:name=".payment_method.Payment_method"
+            android:label="Betalingsmetode"/>
+        <activity android:name=".inspiration.Inspiration_newpost" />
+        <activity
+            android:name=".inspiration.Inspiration"
+            android:label="@string/title_activity_inspiration" />
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
