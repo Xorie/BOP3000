@@ -18,6 +18,11 @@ public class PostOffice implements Serializable {
     @ColumnInfo (name = "post_office")
     private String post_office;
 
+    public PostOffice(int postnr, String post_office) {
+        this.postnr = postnr;
+        this.post_office = post_office;
+    }
+
     public int getPostnr() {
         return postnr;
     }
@@ -32,5 +37,16 @@ public class PostOffice implements Serializable {
 
     public void setPost_office(String post_office) {
         this.post_office = post_office;
+    }
+
+    public static PostOffice[] populatePostOfficeData() {
+        return new PostOffice[] {
+                new PostOffice(3510, "Hønefoss"),
+                new PostOffice(3511, "Hønefoss"),
+                new PostOffice(3512, "Hønefoss"),
+                new PostOffice(3513, "Hønefoss"),
+                new PostOffice(3514, "Hønefoss"),
+                new PostOffice(3515, "Hønefoss"),
+        };
     }
 }

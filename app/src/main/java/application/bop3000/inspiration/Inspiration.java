@@ -116,7 +116,7 @@ public class Inspiration extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         retrieveTasks();
-        Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

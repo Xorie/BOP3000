@@ -85,6 +85,7 @@ public class faq extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
+
     }
 
 
@@ -186,5 +187,7 @@ public class faq extends AppCompatActivity {
                     }
                 });
     }
+
+
 
 }

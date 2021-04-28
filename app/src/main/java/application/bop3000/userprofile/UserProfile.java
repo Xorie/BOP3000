@@ -162,13 +162,17 @@ public class UserProfile extends AppCompatActivity {
                             sub_type = "Ingen";
                         }
                         // Hvis bruker har abonnement (NB: MÅ LEGGE INN FLERE)
-                        else if(sub_type.equals("1")) {
+                        else if(sub_type.equals("2")) {
+                            sub_type = "Fargeboksen";
+                        }
+                        else if(sub_type.equals("3")) {
                             sub_type = "Jordboksen";
                         }
                         else if(sub_type.equals("2")) {
                             sub_type = "Fargeboksen";
 
                         }
+
                         //NB: IF FOR RESTEN AV ABONNEMENTTYPENE!
                         subscription.setText(sub_type);
 

@@ -72,7 +72,30 @@ public class SubscriptionChangeFragment extends Fragment {
         adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, subscriptionList);
 
         getSub();
+        showUserData();
         return view;
+    }
+
+    private void showUserData(){
+        AppExecutors.getInstance().diskIO().execute( new Runnable() {
+            @Override
+            public void run() {
+                String userMail = Login.getUser().getEmail();
+
+                //Henter data om brukeren
+                User user = mDb.getKnittersboxDao().loadUser(userMail);
+
+                // Setter data på riktig plass
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        et_postnr.setText(user.getPostnr());
+                        et_city.setText(user.getCity());
+                        et_address.setText(user.getStreetname());
+                    }
+                });
+            }
+        });
     }
 
     private void getSub() {

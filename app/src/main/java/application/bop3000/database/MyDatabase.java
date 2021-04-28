@@ -2,9 +2,13 @@ package application.bop3000.database;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import java.util.concurrent.Executors;
 
 @Database(entities = {User.class, FAQ.class, Post.class, PostOffice.class, Subscription.class, Payment.class}, version=16)
 public abstract class MyDatabase extends RoomDatabase {
@@ -27,7 +31,22 @@ public abstract class MyDatabase extends RoomDatabase {
                             MyDatabase.class, DBNAME)
                             // Wipes and rebuilds instead of migrating // if no Migration object.
                             // Migration is not part of this practical.
-                            .fallbackToDestructiveMigration()
+                            //.createFromAsset("database/prefill_script.sql")
+                            //.fallbackToDestructiveMigration()
+                            .addCallback(new Callback() {
+                                @Override
+                                public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                                    super.onCreate(db);
+                                    Executors.newSingleThreadScheduledExecutor().execute( new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            getDatabase(context).getKnittersboxDao().registerFaq(FAQ.populateFAQData());
+                                            getDatabase(context).getKnittersboxDao().registerSubscription(Subscription.populateSubscriptionData());
+                                            getDatabase(context).getKnittersboxDao().registerPostOffice(PostOffice.populatePostOfficeData());
+                                        }
+                                    } );
+                                }
+                            } )
                             .build();
                 }
             }

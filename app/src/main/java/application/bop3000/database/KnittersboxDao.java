@@ -20,8 +20,14 @@ public interface KnittersboxDao {
     @Insert
     void registerPostnr(PostOffice postnr);
 
+    //INITAL DATA
     @Insert
-    void registerFaq(FAQ faq);
+    void registerFaq(FAQ... faq);
+    @Insert
+    void registerSubscription(Subscription... subscription);
+    @Insert
+    void registerPostOffice(PostOffice... postOffice);
+
 
     @Update
     void updateUser(User user);
@@ -49,6 +55,10 @@ public interface KnittersboxDao {
     //FAQ
     @Query("Select * from FAQ")
     List<FAQ> faqList();
+
+    //For initialDataInput
+    @Query("Select COUNT(*) from FAQ")
+    int count();
 
     //Subscription
     @Query("Select * from Subscription")

@@ -21,6 +21,12 @@ public class Subscription implements Serializable {
     @ColumnInfo (name = "description")
     private String description;
 
+    public Subscription(int subscriptionID, int type, String description) {
+        this.subscriptionID = subscriptionID;
+        this.type = type;
+        this.description = description;
+    }
+
     @NonNull
     public int getSubscriptionID() {
         return subscriptionID;
@@ -45,4 +51,13 @@ public class Subscription implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public static Subscription[] populateSubscriptionData() {
+        return new Subscription[] {
+                new Subscription(1, 1, "Fargeboksen 349,- /m"),
+                new Subscription(2, 1, "Jordboksen 349,- /m")
+        };
+    }
 }
+
+
