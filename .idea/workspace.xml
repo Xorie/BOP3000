@@ -32,6 +32,7 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/java/appexecutors/AppExecutors.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/login/Login.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/register/Register.java" afterDir="false" />
+	</list>
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="Merge remote-tracking branch 'origin/Bjorge' into Fredrik, restored strings.xml&#10;&#10;# Conflicts:&#10;#&#9;.gradle/6.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/6.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/checksums/checksums.lock&#10;#&#9;.gradle/checksums/sha1-checksums.bin&#10;#&#9;.idea/caches/build_file_checksums.ser&#10;#&#9;.idea/modules/app/BOP3000.app.iml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/build.gradle&#10;#&#9;app/src/main/res/values/colors.xml&#10;#&#9;app/src/main/res/values/strings.xml">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
