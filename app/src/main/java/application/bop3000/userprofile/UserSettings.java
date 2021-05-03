@@ -120,7 +120,9 @@ public class UserSettings extends AppCompatActivity {
                 String emailnew = email.getText().toString(); //NB: MÅ FIKSES
 
                 // Henter data om brukeren
-                User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
+                User user = Login.getUser();
+                //mDb.getKnittersboxDao().loadUser(email_usr);
+                String emailold = user.getEmail();
 
                 // Hvis ingenting er endret
                 if(username.equals(user.getDisplayname()) && firstname.equals(user.getFirstname()) && lastname.equals(user.getLastname()) && emailnew.equals(user.getEmail())) {
@@ -166,7 +168,7 @@ public class UserSettings extends AppCompatActivity {
 
 
                     // Kjører sql og oppdaterer brukerinfo
-                    mDb.getKnittersboxDao().updateName(user);
+                    mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
 
                     runOnUiThread(new Runnable() {
                         @Override
