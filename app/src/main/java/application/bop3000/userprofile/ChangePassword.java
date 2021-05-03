@@ -13,6 +13,7 @@ import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.network.DatabasePost;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -83,6 +84,7 @@ public class ChangePassword extends AppCompatActivity {
 
                         else {
                             user.setPassword(pass_new);
+                            DatabasePost.syncUserData(Login.getUser().getEmail(), Login.getUser().getPassword(), getApplicationContext());
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
