@@ -36,7 +36,7 @@ public class DatabaseGet {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
-        String url = "http://192.168.10.199/BACH/syncUserId.php?";
+        String url = "http://192.168.1.160/BACH/syncUserId.php?";
         url += "email=" + mail;
 
         // Request a string response from the provided URL.

@@ -9,10 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.network.DatabasePost;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class UserSettings extends AppCompatActivity {
@@ -22,8 +30,6 @@ public class UserSettings extends AppCompatActivity {
     EditText fname;
     EditText sname;
     EditText email;
-    EditText password_old;
-    EditText password_new;
 
     // Lagre knapp
     Button update;
@@ -121,6 +127,9 @@ public class UserSettings extends AppCompatActivity {
                 // Henter data om brukeren
                 User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
 
+                // For oppdatering av ekstern database
+                String emailold = user.getEmail();
+
                 // Hvis ingenting er endret
                 if(username.equals(user.getDisplayname()) && firstname.equals(user.getFirstname()) && lastname.equals(user.getLastname()) && emailnew.equals(user.getEmail())) {
                     runOnUiThread(new Runnable() {
@@ -164,14 +173,40 @@ public class UserSettings extends AppCompatActivity {
                     user.setEmail(emailnew); //NB: MÅ FIKSES
 
 
-                    // Kjører sql og oppdaterer brukerinfo
-                    mDb.getKnittersboxDao().updateName(user);
+                    // Oppdaterer lokal database
+                    //mDb.getKnittersboxDao().updateName(user);
+                    mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
+
+                    // Oppdaterer ekstern database
+//                    RequestQueue queue = Volley.newRequestQueue(UserSettings.this);
+//                    String url = "http://192.168.1.160/bach/updateUser.php?";
+//                    url += "email=" + emailold;
+//
+//                    url += "&displayname=" + username + "&firstname=" + firstname + "&lastname=" + lastname + "&emailnew=" + emailnew;
+//
+//                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+//                        @Override
+//                        public void onResponse(String response) {
+//                            if(!response.isEmpty()) {
+//                                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_LONG).show();
+//                            }
+//                        }
+//                    }, new Response.ErrorListener() {
+//                        @Override
+//                        public void onErrorResponse(VolleyError error) {
+//                            Toast.makeText(getApplicationContext(),"Error: sjekk internett-tilkobling",Toast.LENGTH_LONG).show();
+//                        }
+//                    });
+//
+//                    queue.add(stringRequest);
+
+                    DatabasePost.syncUserData(emailnew, user.getPassword(), UserSettings.this);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
-                            System.out.println("EMAIL ER DEN DER: " + user.getEmail());
+                            //System.out.println("EMAIL ER DEN DER: " + user.getEmail());
                             sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
                         }
                     });

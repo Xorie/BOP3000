@@ -22,6 +22,7 @@ public class DatabasePost {
     static String mail, pass, firstname, lastname, city, streetName, displayName, postnr, sub;
     static int userID;
     private static volatile Boolean success = false;
+    private static User user;
 
     public static void sendUser(String email, String password, Context context) {
         //Room DB connection
@@ -45,7 +46,7 @@ public class DatabasePost {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
-        String url = "http://192.168.10.199/BACH/user.php?";
+        String url = "http://192.168.1.160/BACH/user.php?";
 
         url += "PW=" + password + "&email=" + mail + "&FN=" + firstname + "&LN=" + lastname + "&city=" +
                 city + "&SN=" + streetName + "&DN=" + displayName + "&PN=" + postnr + "&sub=" + sub;
@@ -88,7 +89,7 @@ public class DatabasePost {
             RequestQueue queue = Volley.newRequestQueue(context);
 
             // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
-            String url = "http://192.168.10.199/BACH/syncUserData.php?";
+            String url = "http://192.168.1.160/BACH/syncUserData.php?";
             url += "userID=" + userID + "&PW=" + pass + "&email=" + mail + "&FN=" + firstname + "&LN=" + lastname + "&city=" +
                     city + "&SN=" + streetName + "&DN=" + displayName + "&PN=" + postnr + "&sub=" + sub;
 
@@ -126,36 +127,42 @@ public class DatabasePost {
     }
 
     public static Boolean localUserData(String email, String password, Context context) {
-        new Thread(new Runnable() {
+        //Room DB connection
+        userDatabase = MyDatabase.getDatabase(context.getApplicationContext());
+        userDao = userDatabase.getKnittersboxDao();
+
+        Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                //Room DB connection
-                userDatabase = MyDatabase.getDatabase(context.getApplicationContext());
-                userDao = userDatabase.getKnittersboxDao();
-
-                // Find the right user
-                User user = userDao.login(email, password);
-
-                if (user != null) {
-                    // Get user data
-                    userID = user.getUserID();
-                    mail = user.getEmail();
-                    pass = user.getPassword();
-                    firstname = user.getFirstname();
-                    lastname = user.getLastname();
-                    city = user.getCity();
-                    streetName = user.getStreetname();
-                    displayName = user.getDisplayname();
-                    postnr = user.getPostnr();
-                    sub = user.getSubscription_subscriptionID();
-
-                    success = true;
-                } else {
-                    success = false;
-                }
+                user = userDao.login(email, password);
+                System.out.println("Brukeren i post: " + email + password);
             }
-        }).start();
-        return success;
+        });
+
+        t.start();
+
+        try {
+            t.join();
+            if (user != null) {
+                // Get user data
+                userID = user.getUserID();
+                mail = user.getEmail();
+                pass = user.getPassword();
+                firstname = user.getFirstname();
+                lastname = user.getLastname();
+                city = user.getCity();
+                streetName = user.getStreetname();
+                displayName = user.getDisplayname();
+                postnr = user.getPostnr();
+                sub = user.getSubscription_subscriptionID();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
 
