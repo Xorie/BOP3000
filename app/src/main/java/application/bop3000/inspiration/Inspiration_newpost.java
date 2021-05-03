@@ -95,6 +95,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
                 post.setPost_imagepath(imagepath); //selve bildetveien
                 new Thread(() -> postDao.insertNewPost(post)).start();
                 Toast.makeText(getApplicationContext(), "Innlegget er lagret!", Toast.LENGTH_LONG).show();
+                finish();
             }
         }catch(Exception e){
                 e.printStackTrace();

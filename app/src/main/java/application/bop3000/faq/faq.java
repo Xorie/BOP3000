@@ -13,6 +13,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
@@ -40,6 +41,7 @@ import java.util.List;
 
 public class faq extends AppCompatActivity {
 
+    private SharedPreferenceConfig sharedPreferenceConfig;
     private List<String> itemSet;
     private MyDatabase mDb;
     private ExpandableListView expandableListView;
@@ -63,6 +65,8 @@ public class faq extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
         mDb = MyDatabase.getDatabase(getApplicationContext());
         faqList = new ArrayList<>();
@@ -206,12 +210,16 @@ public class faq extends AppCompatActivity {
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
                 break;
             case R.id.logout:
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
+                finish();
+
 
         }
     }

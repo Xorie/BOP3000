@@ -157,6 +157,7 @@ public class Payment_method extends AppCompatActivity {
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
+                finish();
                 break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);

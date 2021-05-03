@@ -145,11 +145,11 @@ public class Inspiration extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
             case R.id.userprofile:
                 //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
-                finish();
                 break;
             case R.id.subscription:
                 startActivity(intent_subscription);

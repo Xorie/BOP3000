@@ -44,6 +44,8 @@ public class Subscription extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
 
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+
         //Menu
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -97,6 +99,7 @@ public class Subscription extends AppCompatActivity {
 
             case R.id.subscription:
                 startActivity(intent_subscription);
+                finish();
                 break;
 
             case R.id.faq:
