@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,16 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import application.bop3000.AppExecutors;
@@ -26,6 +36,7 @@ import application.bop3000.database.PostOffice;
 import application.bop3000.database.Subscription;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.network.DatabasePost;
 
 
 public class SubscriptionChangeFragment extends Fragment {
@@ -71,7 +82,29 @@ public class SubscriptionChangeFragment extends Fragment {
         postOfficeList = new ArrayList<>();
         adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, subscriptionList);
 
-        getSub();
+        //getSub();
+
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        String url = "http://192.168.1.29/BACH/spinner.php?";
+
+        StringRequest stringRequest = new StringRequest( Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        String[] desc = response.split("¤" );
+                        subscriptionList.addAll(Arrays.asList(desc));
+
+                        setSub();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error);
+            }
+        });
+        //RequestQueue
+        queue.add(stringRequest);
+
         showUserData();
         return view;
     }
@@ -81,7 +114,6 @@ public class SubscriptionChangeFragment extends Fragment {
             @Override
             public void run() {
                 String userMail = Login.getUser().getEmail();
-
                 //Henter data om brukeren
                 User user = mDb.getKnittersboxDao().loadUser(userMail);
 
@@ -180,6 +212,8 @@ public class SubscriptionChangeFragment extends Fragment {
                             user.setSubscription_subscriptionID(str_subID);
                             //Oppdaterer bruker
                             mDb.getKnittersboxDao().updateUser(user);
+
+                            DatabasePost.syncUserData(user.getEmail(), user.getPassword(), getContext());
 
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override

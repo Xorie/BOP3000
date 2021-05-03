@@ -44,6 +44,10 @@ public interface KnittersboxDao {
     @Update
     void updateName(User user);
 
+    @Query("UPDATE User SET displayname = (:username), firstname = (:firstname), lastname = (:lastname), email = (:emailnew) WHERE email = (:email)")
+    void updateUserInfo(String username, String firstname, String lastname, String emailnew, String email);
+
+
     // ------ BRUKERPROFIL SLUTT -----------
 
 
