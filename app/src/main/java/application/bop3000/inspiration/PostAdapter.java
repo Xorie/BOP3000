@@ -23,6 +23,7 @@ import application.bop3000.login.Login;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     static Context context;
     private List<Post> PostList;
+
     public User user;
 
     public PostAdapter(Context context) {this.context = context;}
@@ -36,6 +37,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder PostViewholder, int i) {
+
         // Room DB and DAO
         MyDatabase myDatabase = MyDatabase.getDatabase(context);
         final KnittersboxDao knittersboxDao = myDatabase.getKnittersboxDao();
@@ -51,11 +53,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             }
         });
 
-        // Start thread
         t.start();
 
         try {
-            // join() waits for thread to finish
             t.join();
             PostViewholder.post_image.setImageURI(mUri);
             PostViewholder.post_user.setText(user.getDisplayname());

@@ -17,9 +17,11 @@
         <!-- Customize your theme here. -->
     </style>
 
-<!--   <style name="Theme.Profile" parent="Theme.AppCompat.Light.NoActionBar">-->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
-<!--    </style>-->
+<!--    <style name="Theme.Profile" parent="Theme.AppCompat.Light.NoActionBar">
+       <item name="colorPrimary">@color/userprofile_header</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+-->
 
 <!--
     <style name="Theme.BOP3000.NoActionBar">
