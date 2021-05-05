@@ -27,7 +27,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="">
@@ -35,11 +41,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/Subscription.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +80,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Bjornar" />
+        <entry key="$PROJECT_DIR$" value="Bjorge" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -287,7 +290,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Fredrik" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -450,15 +453,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="107" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1613926550177" />
-    <state x="75" y="92" width="1790" height="924" key="MergeDialog" timestamp="1617707210622">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="70" y="87" width="1790" height="924" key="MergeDialog" timestamp="1620210450226">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="246" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617703701967" />
+    <state x="70" y="87" key="MergeDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620210450226" />
     <state x="75" y="92" width="1790" height="924" key="MergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707210622" />
-    <state x="615" y="297" key="MultipleFileMergeDialog" timestamp="1620067662746">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="615" y="300" key="MultipleFileMergeDialog" timestamp="1620210450237">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="615" y="297" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620067662746" />
+    <state x="615" y="300" key="MultipleFileMergeDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620210450237" />
     <state x="656" y="318" key="MultipleFileMergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707220496" />
     <state x="242" y="49" key="SettingsEditor" timestamp="1617707259328">
       <screen x="0" y="0" width="2048" height="1112" />
@@ -475,10 +480,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939231419" />
-    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618352660772">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620209935403">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618352660772" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620209935403" />
     <state x="447" y="48" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1612966234914">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -487,10 +493,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617114406003" />
-    <state x="730" y="236" key="git4idea.branch.GitSmartOperationDialog" timestamp="1620067627532">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog" timestamp="1620209963081">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="730" y="236" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620067627532" />
+    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620209963081" />
     <state x="779" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617706477953" />
     <state x="547" y="173" key="refactoring.ChangeSignatureDialog" timestamp="1618874573122">
       <screen x="0" y="0" width="1920" height="1040" />
