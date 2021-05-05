@@ -31,9 +31,9 @@ public interface KnittersboxDao {
     @Query("Select * from User Where email = (:email_usr)")
     User loadUser(String email_usr);
 
-    // Insert/Oppdatering for navn
-//    @Query("Update  User Set firstname = (:fname), lastname = (:sname) Where email = (:email)")
-//    User updateName(String email);
+    //Oppdatering for passord
+    //@Query("Update  User Set password = (:pass_encrypted) Where password = (:pass_decrypted)")
+    //User updatePass(String pass_encrypted, String pass_decrypted);
 
     @Update
     void updateName(User user);

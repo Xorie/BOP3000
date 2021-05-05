@@ -12,7 +12,9 @@ import android.widget.Toast;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
+import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
+import application.bop3000.security.EncryptDecrypt;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -79,24 +81,25 @@ public class ChangePassword extends AppCompatActivity {
                 String pass_old = password_old.getText().toString();
                 String pass_new = password_new.getText().toString();
 
-//                String usrname = "mikkelix";
                 User user = mDb.getKnittersboxDao().loadUser(email_usr);
 
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        String pass_decrypted = user.getPassword();
+                        pass_decrypted = EncryptDecrypt.decrypt(pass_decrypted);
 
                         if(pass_old.matches("") && pass_new.matches("")) {
                             Toast.makeText(getApplicationContext(), "Feltene er ikke fylt inn", Toast.LENGTH_LONG).show();
                         }
-
-                        else if(!user.getPassword().equals(pass_old)) {
+                        else if(!pass_decrypted.equals(pass_old)) {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
 
                         else {
-                            user.setPassword(pass_new);
+                            String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new);
+                            user.setPassword(pass_new_encrypted);
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
@@ -105,7 +108,9 @@ public class ChangePassword extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(getApplicationContext(), "Passord endret", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Passord endret", Toast.LENGTH_LONG).show();
+                            Intent intent_userprofile = new Intent(ChangePassword.this, UserProfile.class);
+                            startActivity(intent_userprofile);
                         }
                     }
                 });
