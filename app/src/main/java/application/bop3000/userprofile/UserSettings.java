@@ -65,10 +65,6 @@ public class UserSettings extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        // Finner email som ble sent fra brukerprofil
-        //Intent user_settings = getIntent();
-        //email_usr = user_settings.getStringExtra("useremail");
-
         //Viser data i inputfeltene om det er lagt inn noe
         showData();
 
@@ -177,29 +173,6 @@ public class UserSettings extends AppCompatActivity {
                     //mDb.getKnittersboxDao().updateName(user);
                     mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
 
-                    // Oppdaterer ekstern database
-//                    RequestQueue queue = Volley.newRequestQueue(UserSettings.this);
-//                    String url = "http://192.168.1.160/bach/updateUser.php?";
-//                    url += "email=" + emailold;
-//
-//                    url += "&displayname=" + username + "&firstname=" + firstname + "&lastname=" + lastname + "&emailnew=" + emailnew;
-//
-//                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-//                        @Override
-//                        public void onResponse(String response) {
-//                            if(!response.isEmpty()) {
-//                                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_LONG).show();
-//                            }
-//                        }
-//                    }, new Response.ErrorListener() {
-//                        @Override
-//                        public void onErrorResponse(VolleyError error) {
-//                            Toast.makeText(getApplicationContext(),"Error: sjekk internett-tilkobling",Toast.LENGTH_LONG).show();
-//                        }
-//                    });
-//
-//                    queue.add(stringRequest);
-
                     DatabasePost.syncUserData(emailnew, user.getPassword(), UserSettings.this);
 
                     runOnUiThread(new Runnable() {
@@ -210,6 +183,9 @@ public class UserSettings extends AppCompatActivity {
                             sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
                         }
                     });
+                    finish();
+                    Intent intent_profile = new Intent(UserSettings.this, UserProfile.class);
+                    startActivity(intent_profile);
                 }
             }
         });

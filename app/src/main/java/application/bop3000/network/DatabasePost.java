@@ -135,7 +135,6 @@ public class DatabasePost {
             @Override
             public void run() {
                 user = userDao.login(email, password);
-                System.out.println("Brukeren i post: " + email + password);
             }
         });
 
