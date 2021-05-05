@@ -106,8 +106,8 @@ public class Register extends AppCompatActivity {
                                                             }
                                                             // Register user Room DB
                                                             userDao.registerUser(user);
-                                                            // Registrer user external DB ->
-                                                            // Eventuelt try catch om netter er tilkoblet
+
+                                                            // Register user external DB ->
                                                             try {
                                                                 DatabasePost.sendUser(email.getText().toString(), psw, getApplicationContext());
                                                                 runOnUiThread(new Runnable() {

@@ -75,13 +75,7 @@ public class Login extends AppCompatActivity {
                 public void run() {
                     user = knittersboxDao.login(sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"), sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
                     startActivity(new Intent(Login.this, Inspiration.class));
-                    Log.d("CRYPT", "ÅPNER APPEN " + sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
-                    Log.d("CRYPT", "ÅPNER APPEN " + sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"));
-                    if(user == null) {
-                        Log.d("CRYPT", "OBJEKTET ER NULL");
-                    } else {
-                        Log.d("CRYPT", "OBJEKTET ER IKKE NULL");
-                    }
+
                     finish();
                 }
             }).start();
@@ -128,8 +122,7 @@ public class Login extends AppCompatActivity {
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_EMAIL", user.getEmail());
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_PASSWORD", user.getPassword());
                                         sharedPreferenceConfig.login_status(true);
-                                        Log.d("CRYPT", "NÅR LOGGER INN " + user.getPassword());
-                                        Log.d("CRYPT", "NÅR LOGGER INN " + user.getEmail());
+
                                         finish();
                                     }
                                 });
@@ -179,8 +172,6 @@ public class Login extends AppCompatActivity {
             sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_EMAIL", email);
             sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_PASSWORD", password);
             sharedPreferenceConfig.login_status(true);
-            Log.d("CRYPT", "NÅR LOGGER INN " + password);
-            Log.d("CRYPT", "NÅR LOGGER INN " + email);
 
             activity.finish();
         }
