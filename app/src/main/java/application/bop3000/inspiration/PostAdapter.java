@@ -58,7 +58,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         try {
             t.join();
             PostViewholder.post_image.setImageURI(mUri);
-            PostViewholder.post_user.setText(user.getDisplayname());
+            int checkbox = PostList.get(i).getPost_checkbox();
+            if (checkbox == 0) {
+                PostViewholder.post_user.setText(user.getDisplayname());
+            }
+            else {
+                PostViewholder.post_user.setText("Anonym Bruker");
+            }
             PostViewHolder.post_text.setText(PostList.get(i).getPost_text());
             PostViewHolder.post_title.setText(PostList.get(i).getPost_tittle());
         } catch (InterruptedException e) {

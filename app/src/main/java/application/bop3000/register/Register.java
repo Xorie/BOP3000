@@ -20,6 +20,7 @@ import application.bop3000.database.User;
 import appexecutors.AppExecutors;
 import application.bop3000.login.Login;
 import application.bop3000.network.DatabasePost;
+import application.bop3000.security.EncryptDecrypt;
 
 public class Register extends AppCompatActivity {
     EditText firstname, lastname, email, displayname, password, rePassword;
@@ -89,6 +90,13 @@ public class Register extends AppCompatActivity {
                                         new Thread(new Runnable() {
                                             @Override
                                             public void run() {
+                                                try {
+                                                    String psw = EncryptDecrypt.encrypt(user.getPassword());
+                                                    user.setPassword(psw);
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+
                                                 // Register user Room DB
                                                 userDao.registerUser(user);
                                                 // Registrer user external DB ->
@@ -102,7 +110,7 @@ public class Register extends AppCompatActivity {
                                                         }
                                                     });
                                                 } catch (Exception e) {
-                                                    Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
                                                 }
 
                                                 runOnUiThread(new Runnable() {
@@ -170,7 +178,8 @@ public class Register extends AppCompatActivity {
     }
 
     private Boolean validatePassword(User user) {
-        if(user.getPassword().equals(rePassword.getText().toString())){
+        String psw = rePassword.getText().toString();
+        if(user.getPassword().equals(psw)){
             return true;
         }
         return false;

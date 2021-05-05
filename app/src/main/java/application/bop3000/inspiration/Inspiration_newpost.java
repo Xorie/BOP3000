@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
     private ImageView selectedImageview;
     private EditText titleEdithText, textEdithText;
     Button btn_save;
+    CheckBox inspiration_checkBox;
     Bitmap bitmap;
     private MyDatabase DB;
 
@@ -51,6 +53,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
         this.selectedImageview = (ImageView) findViewById(R.id.new_memory_selected_image);
         this.titleEdithText = (EditText) findViewById(R.id.new_memory_title);
         this.textEdithText = (EditText) findViewById(R.id.new_memory_txt);
+        this.inspiration_checkBox = findViewById(R.id.inspiration_checkBox);
 
         //sjekker om kamera har tillatelse eller ikke
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -87,12 +90,18 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
             final String post_text = textEdithText.getText().toString();
 
             if (title.isEmpty()) {
-                Toast.makeText(this, "Du må fylle inn titelfeltet!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Du må fylle inn tittelfeltet!", Toast.LENGTH_LONG).show();
             } else {
                 post.setUserID(String.valueOf(user));
                 post.setPost_tittle(title); //title på bildet
                 post.setPost_text(post_text); //teksten til bildet
                 post.setPost_imagepath(imagepath); //selve bildetveien
+                if (inspiration_checkBox.isChecked()) {
+                    post.setPost_checkbox(1);
+                }
+                else {
+                    post.setPost_checkbox(0);
+                }
                 new Thread(() -> postDao.insertNewPost(post)).start();
                 Toast.makeText(getApplicationContext(), "Innlegget er lagret!", Toast.LENGTH_LONG).show();
                 finish();

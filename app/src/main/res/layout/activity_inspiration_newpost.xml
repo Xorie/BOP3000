@@ -66,6 +66,24 @@
                 android:autofillHints="@string/inspiration_saysomething"
                 android:inputType="text" />
 
+            <View
+                android:id="@+id/divider11"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@drawable/white" />
+
+            <CheckBox
+                android:id="@+id/inspiration_checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/inspiration_checkbox" />
+
+            <View
+                android:id="@+id/divider13"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@drawable/white" />
+
             <Button
                 android:id="@+id/gallery"
                 android:layout_width="match_parent"

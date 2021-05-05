@@ -41,6 +41,9 @@ public class Post implements Serializable {
     @ColumnInfo (name = "post_imagepath")
     private String post_imagepath;
 
+    @ColumnInfo (name = "post_checkbox")
+    private int post_checkbox;
+
     public Post() {
 
     }
@@ -86,5 +89,11 @@ public class Post implements Serializable {
     }
 
     public void setPost_imagepath(String post_imagepath){this.post_imagepath = post_imagepath;}
+
+    public int getPost_checkbox() {
+        return post_checkbox;
+    }
+
+    public void setPost_checkbox(int post_checkbox){this.post_checkbox = post_checkbox;}
 
 }

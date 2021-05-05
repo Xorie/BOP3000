@@ -14,9 +14,11 @@ import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
+import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.network.DatabasePost;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
+import application.bop3000.security.EncryptDecrypt;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -93,15 +95,19 @@ public class ChangePassword extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        String pass_decrypted = user.getPassword();
+                        pass_decrypted = EncryptDecrypt.decrypt(pass_decrypted);
 
                         if(pass_old.matches("") && pass_new.matches("")) {
                             Toast.makeText(getApplicationContext(), "Feltene er ikke fylt inn", Toast.LENGTH_LONG).show();
                         }
-                        else if(!user.getPassword().equals(pass_old)) {
+                        else if(!pass_decrypted.equals(pass_old)) {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
+
                         else {
-                            user.setPassword(pass_new);
+                            String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new);
+                            user.setPassword(pass_new_encrypted);
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override

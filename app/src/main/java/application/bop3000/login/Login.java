@@ -31,6 +31,7 @@ import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.network.DatabaseGet;
 import application.bop3000.register.Register;
+import application.bop3000.security.EncryptDecrypt;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class Login extends AppCompatActivity {
@@ -42,6 +43,7 @@ public class Login extends AppCompatActivity {
     EditText email, password;
     Button login, registration;
     private static User user;
+   // private static User user2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +89,20 @@ public class Login extends AppCompatActivity {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            user = knittersboxDao.login(emailText, passwordText);
+                            try {
+                                user = knittersboxDao.userEmail(emailText);
+                                String passwordCheck = null;
+                                String psw = user.getPassword();
+                                String psw2 = psw;
+                                psw = EncryptDecrypt.decrypt(psw);
+                                System.out.println(psw);
+                                if (psw.equals(passwordText)) {
+                                    passwordCheck = psw2;
+                                }
+                                user = knittersboxDao.login(emailText, passwordCheck);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                             if(user == null) {
                                 // Get user data from external to local
                                 DatabaseGet.getUserFromExternal(emailText, passwordText, getApplicationContext());

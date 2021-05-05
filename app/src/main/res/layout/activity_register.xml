@@ -73,6 +73,26 @@
         android:inputType="textPassword"
         android:drawablePadding="10dp" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/terms_condition_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"></CheckBox>
+
+        <TextView
+            android:id="@+id/terms_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/personvern"></TextView>
+    </LinearLayout>
+
     <Button
         android:id="@+id/registration_button"
         android:layout_width="match_parent"
@@ -98,25 +118,5 @@
         android:background="@drawable/registration_lagre"
         android:textAllCaps="false">
     </Button>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp">
-        <CheckBox
-            android:id="@+id/terms_condition_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false">
-        </CheckBox>
-        <TextView
-            android:id="@+id/terms_condition"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/personvern">
-        </TextView>
-    </LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
