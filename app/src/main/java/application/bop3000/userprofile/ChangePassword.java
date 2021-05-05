@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
@@ -35,7 +38,7 @@ public class ChangePassword extends AppCompatActivity {
     //String email_usr = "melon@gmail.com";
 
     // Email fra login
-    String email_usr = Login.getUser().getEmail();
+    String email_usr;
 
     private SharedPreferenceConfig sharedPreferenceConfig;
 
@@ -48,6 +51,8 @@ public class ChangePassword extends AppCompatActivity {
         password_new = findViewById(R.id.password_new);
 
         update = findViewById(R.id.btn_updatepwd);
+
+        email_usr = Login.getUser().getEmail();
 
         mDb = MyDatabase.getDatabase(getApplicationContext());
 
@@ -104,7 +109,9 @@ public class ChangePassword extends AppCompatActivity {
                         else if(!pass_decrypted.equals(pass_old)) {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
-
+                        else if (!isValidPassword(pass_new)) {
+                            Toast.makeText(getApplicationContext(), "Passord må innehholde en stor bokstav og et tall", Toast.LENGTH_LONG).show();
+                        }
                         else {
                             String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new);
                             user.setPassword(pass_new_encrypted);
@@ -129,4 +136,17 @@ public class ChangePassword extends AppCompatActivity {
             }
         });
     }
+
+    public boolean isValidPassword(String password) {
+        Pattern pattern;
+        Matcher matcher;
+
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{4,}$";
+
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+    }
+
 }

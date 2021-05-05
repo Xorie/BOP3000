@@ -54,8 +54,8 @@ public class UserProfile extends AppCompatActivity {
     private View itemLogout;
 
 
-    // Email for logget inn bruker (HARDKODET NÅ, MÅ KOMME FRA LOGG INN eller noe)
-    String email_usr = Login.getUser().getEmail();
+    // Email for logget inn bruker
+    String email_usr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +96,15 @@ public class UserProfile extends AppCompatActivity {
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        email_usr = Login.getUser().getEmail();
+
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
@@ -103,13 +112,6 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         // Metode for å vise data om bruker
         showListData();
     }

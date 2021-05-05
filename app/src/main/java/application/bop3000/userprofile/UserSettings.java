@@ -9,13 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
 import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
@@ -181,7 +174,7 @@ public class UserSettings extends AppCompatActivity {
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
                             //System.out.println("EMAIL ER DEN DER: " + user.getEmail());
-                            sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
+                            sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL", emailnew);
                         }
                     });
                     finish();
