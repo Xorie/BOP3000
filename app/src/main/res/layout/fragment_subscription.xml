@@ -5,41 +5,83 @@
     android:layout_height="match_parent"
     tools:context=".subscription.SubscriptionFragment">
 
+    <!-- Hovudlayout -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/userprofile_gray"
         android:orientation="vertical"
         tools:context=".subscription.Subscription">
 
+    <!-- Overskrift -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/userprofile_button"
+        android:layout_marginBottom="20dp">
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:fontFamily="@font/roboto_thin"
             android:text="@string/subscription_tittle"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40sp" />
+    </LinearLayout>
 
+    <!-- Brukers abonnement -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:text="@string/subscription_aktiv"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp" />
         <TextView
             android:id="@+id/userSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/endcolor"
-            android:textSize="20sp" />
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
 
+    <!-- Brukers adresse -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="40dp" >
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/black"
+            android:text="@string/subscription_visadresse"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"/>
         <TextView
             android:id="@+id/userPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/endcolor"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             android:layout_marginBottom="10dp" />
 
         <TextView
@@ -47,8 +89,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/endcolor"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             android:layout_marginBottom="10dp" />
 
         <TextView
@@ -56,20 +98,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/endcolor"
-            android:textSize="20sp"
-            android:layout_marginBottom="100dp" />
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
         <Button
             android:id="@+id/subscription_btn_change"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/userprofile_button"
             android:layout_gravity="center"
             android:text="@string/subscription_change"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="17sp" />
+    </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 </FrameLayout>

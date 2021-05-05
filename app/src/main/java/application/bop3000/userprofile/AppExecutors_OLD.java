@@ -29,25 +29,25 @@ import java.util.concurrent.Executors;
  * Grouping tasks like this avoids the effects of task starvation (e.g. disk reads don't wait behind
  * webservice requests).
  */
-public class AppExecutors {
+public class AppExecutors_OLD {
 
     // For Singleton instantiation
     private static final Object LOCK = new Object();
-    private static AppExecutors sInstance;
+    private static AppExecutors_OLD sInstance;
     private final Executor diskIO;
     private final Executor mainThread;
     private final Executor networkIO;
 
-    private AppExecutors(Executor diskIO, Executor networkIO, Executor mainThread) {
+    private AppExecutors_OLD(Executor diskIO, Executor networkIO, Executor mainThread) {
         this.diskIO = diskIO;
         this.networkIO = networkIO;
         this.mainThread = mainThread;
     }
 
-    public static AppExecutors getInstance() {
+    public static AppExecutors_OLD getInstance() {
         if (sInstance == null) {
             synchronized (LOCK) {
-                sInstance = new AppExecutors(Executors.newSingleThreadExecutor(),
+                sInstance = new AppExecutors_OLD(Executors.newSingleThreadExecutor(),
                         Executors.newFixedThreadPool(3),
                         new MainThreadExecutor());
             }

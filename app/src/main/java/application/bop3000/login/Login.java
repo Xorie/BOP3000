@@ -1,14 +1,19 @@
 package application.bop3000.login;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Looper;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,11 +29,15 @@ import application.bop3000.database.Subscription;
 import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
+import application.bop3000.network.DatabaseGet;
 import application.bop3000.register.Register;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class Login extends AppCompatActivity {
-    private SharedPreferenceConfig sharedPreferenceConfig;
+    private static SharedPreferenceConfig sharedPreferenceConfig;
+
+    // This activity, used for closing after login
+    public static Activity activity = null;
 
     EditText email, password;
     Button login, registration;
@@ -38,6 +47,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        activity = this;
 
         // Fields
         email = findViewById(R.id.login_email);
@@ -78,18 +89,13 @@ public class Login extends AppCompatActivity {
                         public void run() {
                             user = knittersboxDao.login(emailText, passwordText);
                             if(user == null) {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(getApplicationContext(), "Ugyldig informasjon!", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                                // Get user data from external to local
+                                DatabaseGet.getUserFromExternal(emailText, passwordText, getApplicationContext());
                             } else {
-                                String name = user.getDisplayname();
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(getApplicationContext(), "Velkommen " + name, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Velkommen " + user.getDisplayname(), Toast.LENGTH_SHORT).show();
                                         Intent intent_logginn = new Intent(Login.this, Inspiration.class);
                                         startActivity(intent_logginn);
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_EMAIL", user.getEmail());
@@ -122,5 +128,28 @@ public class Login extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
+    }
+
+    public static void userExternalLogin(Boolean success, Context context, String email, String password, String dName) {
+        // Room DB and DAO
+        MyDatabase myDatabase = MyDatabase.getDatabase(context);
+        final KnittersboxDao knittersboxDao = myDatabase.getKnittersboxDao();
+
+        if(success) {
+            // Get correct user object after external login
+            user = knittersboxDao.login(email, password);
+
+            Looper.prepare();
+            Toast.makeText(context, "Velkommen " + dName, Toast.LENGTH_LONG).show();
+
+            Intent intent_logginn = new Intent(context, Inspiration.class);
+            intent_logginn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent_logginn);
+            sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_EMAIL", email);
+            sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_PASSWORD", password);
+            sharedPreferenceConfig.login_status(true);
+
+            activity.finish();
+        }
     }
 }

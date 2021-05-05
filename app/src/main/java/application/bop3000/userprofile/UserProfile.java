@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
 
+import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
@@ -163,12 +164,12 @@ public class UserProfile extends AppCompatActivity {
                         }
                         // Hvis bruker har abonnement (NB: MÅ LEGGE INN FLERE)
                         else if(sub_type.equals("1")) {
-                            sub_type = "Jordboksen";
+                            sub_type = "Fargeboksen";
                         }
                         else if(sub_type.equals("2")) {
-                            sub_type = "Fargeboksen";
-
+                            sub_type = "Jordboksen";
                         }
+
                         //NB: IF FOR RESTEN AV ABONNEMENTTYPENE!
                         subscription.setText(sub_type);
 
@@ -184,9 +185,6 @@ public class UserProfile extends AppCompatActivity {
         // Kobling til redigere profil aktivitet
         Intent user_settings = new Intent(this, UserSettings.class);
 
-        // Sender med email for bruker
-        //user_settings.putExtra("useremail", email_usr);
-
         // Starter aktivitet
         startActivity(user_settings);
         finish();
@@ -198,21 +196,18 @@ public class UserProfile extends AppCompatActivity {
         // Kobling til endre passord aktivitet
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
-        // Sender med email for bruker
-        //change_pwd.putExtra("useremail", email_usr);
-
         // Starter aktivitet
         startActivity(change_pwd);
-        finish();
+        //finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent back_to_insp = new Intent(this, Inspiration.class);
-        startActivity(back_to_insp);
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent back_to_insp = new Intent(this, Inspiration.class);
+//        startActivity(back_to_insp);
+//        finish();
+//    }
 
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {

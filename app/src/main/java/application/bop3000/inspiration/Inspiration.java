@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.TextAppearanceSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -116,7 +117,7 @@ public class Inspiration extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         retrieveTasks();
-        Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "USER USER USER: " + Login.getUser().getDisplayname(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -145,11 +146,11 @@ public class Inspiration extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
+                finish();
                 break;
             case R.id.userprofile:
                 //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
-                finish();
                 break;
             case R.id.subscription:
                 startActivity(intent_subscription);

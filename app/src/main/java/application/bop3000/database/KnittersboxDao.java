@@ -20,8 +20,14 @@ public interface KnittersboxDao {
     @Insert
     void registerPostnr(PostOffice postnr);
 
+    //INITAL DATA
     @Insert
-    void registerFaq(FAQ faq);
+    void registerFaq(FAQ... faq);
+    @Insert
+    void registerSubscription(Subscription... subscription);
+    @Insert
+    void registerPostOffice(PostOffice... postOffice);
+
 
     @Update
     void updateUser(User user);
@@ -31,13 +37,12 @@ public interface KnittersboxDao {
     @Query("Select * from User Where email = (:email_usr)")
     User loadUser(String email_usr);
 
-    // Insert/Oppdatering for navn
-//    @Query("Update  User Set firstname = (:fname), lastname = (:sname) Where email = (:email)")
-//    User updateName(String email);
-
     @Update
     void updateName(User user);
 
+    //Oppdaterer brukerinfo i UserSettings
+    @Query("UPDATE User SET displayname = (:username), firstname = (:firstname), lastname = (:lastname), email = (:emailnew) WHERE email = (:email)")
+    void updateUserInfo(String username, String firstname, String lastname, String emailnew, String email);
     // ------ BRUKERPROFIL SLUTT -----------
 
 
@@ -49,6 +54,10 @@ public interface KnittersboxDao {
     //FAQ
     @Query("Select * from FAQ")
     List<FAQ> faqList();
+
+    //For initialDataInput
+    @Query("Select COUNT(*) from FAQ")
+    int count();
 
     //Subscription
     @Query("Select * from Subscription")

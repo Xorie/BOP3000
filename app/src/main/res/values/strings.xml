@@ -91,6 +91,8 @@
 
     <!-- Subscription -->
     <string name="subscription_tittle">Abonnement</string>
+    <string name="subscription_aktiv">Aktivt abonnement</string>
+    <string name="subscription_visadresse">Adresse</string>
     <string name="subscription_change">Endre</string>
     <string name="subscription_tittle2">Endre abonnement</string>
     <string name="subscription_spinnertext">Velg abonnement</string>
@@ -98,6 +100,10 @@
     <string name="subscription_zipcode">Endre postnr</string>
     <string name="subscription_city">Endre by</string>
     <string name="subscription_adresse">Endre adresse</string>
+
+    <!-- FAQ -->
+    <string name="FAQ_tittle">FAQ</string>
+    <string name="FAQ_tittle2">Ofte stilte spørsmål</string>
 
     <string name="personvern"><a href="https://knittersbox.no/personvern-2/">Godkjenner personvern og vilkår</a></string>
     <!-- TODO: Remove or change this placeholder text -->

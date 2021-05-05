@@ -13,25 +13,35 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.payment_method.Payment_method;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 public class faq extends AppCompatActivity {
 
+    private SharedPreferenceConfig sharedPreferenceConfig;
     private List<String> itemSet;
     private MyDatabase mDb;
     private ExpandableListView expandableListView;
@@ -56,6 +66,8 @@ public class faq extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
 
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
+
         mDb = MyDatabase.getDatabase(getApplicationContext());
         faqList = new ArrayList<>();
         itemSet = new ArrayList<>();
@@ -64,7 +76,13 @@ public class faq extends AppCompatActivity {
         listItem = new HashMap<>();
         adapter = new MainAdapter(this, listGroup, listItem);
         expandableListView.setAdapter(adapter);
+
+        //Henter FAQ fra intern database
         getFaq();
+
+        //Henter FAQ fra ekstern database
+        //getFaqEksternt();
+
 
         //Menu
         toolbar = findViewById(R.id.toolbar);
@@ -84,7 +102,6 @@ public class faq extends AppCompatActivity {
 
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
-
     }
 
 
@@ -118,6 +135,7 @@ public class faq extends AppCompatActivity {
             @Override
             public void run() {
                 increment = 0;
+                Log.d( "SIZE", String.valueOf( size ) );
                 for (count = 0; count < size; count++) {
                     listItem.put(listGroup.get(increment), Collections.singletonList(itemSet.get(increment)));
                     ++increment;
@@ -125,6 +143,47 @@ public class faq extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void getFaqEksternt() {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://192.168.1.29/BACH/faq.php?";
+
+        StringRequest stringRequest = new StringRequest( Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        String[] kombo = response.split( "¤" );
+                        String[] question = kombo[0].split( "#" );
+                        String[] answer = kombo[1].split( "#" );
+
+                        listGroup.addAll(Arrays.asList(question));
+                        itemSet.addAll(Arrays.asList(answer));
+
+                        Log.d( "TUSS", String.valueOf( listGroup ) );
+                        Log.d( "TATT", String.valueOf( itemSet ) );
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                increment = 0;
+                                size = listGroup.size();
+                                for (count = 0; count < size; count++) {
+                                    listItem.put(listGroup.get(increment), Collections.singletonList(itemSet.get(increment)));
+                                    ++increment;
+                                }
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error);
+            }
+        });
+        //RequestQueue
+        queue.add(stringRequest);
     }
 
     //Menu
@@ -151,12 +210,16 @@ public class faq extends AppCompatActivity {
 
             case R.id.faq:
                 startActivity(intent_faq);
+                finish();
                 break;
             case R.id.payment:
                 startActivity(intent_payment);
                 break;
             case R.id.logout:
+                sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
+                finish();
+
 
         }
     }
@@ -186,5 +249,7 @@ public class faq extends AppCompatActivity {
                     }
                 });
     }
+
+
 
 }
