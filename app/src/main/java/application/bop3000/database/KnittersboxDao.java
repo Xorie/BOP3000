@@ -37,17 +37,12 @@ public interface KnittersboxDao {
     @Query("Select * from User Where email = (:email_usr)")
     User loadUser(String email_usr);
 
-    // Insert/Oppdatering for navn
-//    @Query("Update  User Set firstname = (:fname), lastname = (:sname) Where email = (:email)")
-//    User updateName(String email);
-
     @Update
     void updateName(User user);
 
+    //Oppdaterer brukerinfo i UserSettings
     @Query("UPDATE User SET displayname = (:username), firstname = (:firstname), lastname = (:lastname), email = (:emailnew) WHERE email = (:email)")
     void updateUserInfo(String username, String firstname, String lastname, String emailnew, String email);
-
-
     // ------ BRUKERPROFIL SLUTT -----------
 
 

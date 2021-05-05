@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
 import application.bop3000.network.DatabasePost;
+import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class ChangePassword extends AppCompatActivity {
 
@@ -29,9 +31,10 @@ public class ChangePassword extends AppCompatActivity {
 
     //String email_usr = "melon@gmail.com";
 
-    // Email for bruker (blir hentet i onStart)
+    // Email fra login
     String email_usr = Login.getUser().getEmail();
 
+    private SharedPreferenceConfig sharedPreferenceConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,8 @@ public class ChangePassword extends AppCompatActivity {
         update = findViewById(R.id.btn_updatepwd);
 
         mDb = MyDatabase.getDatabase(getApplicationContext());
+
+        sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
 
     }
 
@@ -63,13 +68,13 @@ public class ChangePassword extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent user_profile_back = new Intent(this, UserProfile.class);
-        startActivity(user_profile_back);
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent user_profile_back = new Intent(this, UserProfile.class);
+//        startActivity(user_profile_back);
+//        finish();
+//    }
 
     //Knapp for å oppdatere info som er skrevet inn
     public void updatePassword(View view){
@@ -80,9 +85,9 @@ public class ChangePassword extends AppCompatActivity {
                 String pass_old = password_old.getText().toString();
                 String pass_new = password_new.getText().toString();
 
-//                String usrname = "mikkelix";
                 User user = mDb.getKnittersboxDao().loadUser(email_usr);
 
+                //User user = Login.getUser();
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -91,28 +96,30 @@ public class ChangePassword extends AppCompatActivity {
                         if(pass_old.matches("") && pass_new.matches("")) {
                             Toast.makeText(getApplicationContext(), "Feltene er ikke fylt inn", Toast.LENGTH_LONG).show();
                         }
-
                         else if(!user.getPassword().equals(pass_old)) {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
-
                         else {
                             user.setPassword(pass_new);
-                            DatabasePost.syncUserData(Login.getUser().getEmail(), Login.getUser().getPassword(), getApplicationContext());
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
                                 public void run() {
                                     mDb.getKnittersboxDao().updateName(user);
+                                    Log.d("LOKAL oppdatert", "Med passord: " + user.getPassword());
+                                    DatabasePost.syncUserData(email_usr, pass_new, ChangePassword.this);
+                                    Log.d("Ekstern oppdatert?", "parameters: " + email_usr + ", " + pass_new);
+                                    //DatabasePost.syncUserData(user.getEmail(), pass_old, ChangePassword.this);
                                 }
                             });
 
                             Toast.makeText(getApplicationContext(), "Passord endret", Toast.LENGTH_SHORT).show();
+                            sharedPreferenceConfig.setPreference(ChangePassword.this,"PREFS_LOGIN_PASSWORD",pass_new);
+                            finish();
                         }
                     }
                 });
             }
         });
     }
-
 }

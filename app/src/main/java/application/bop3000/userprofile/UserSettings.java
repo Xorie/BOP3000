@@ -3,17 +3,24 @@ package application.bop3000.userprofile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.network.DatabasePost;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class UserSettings extends AppCompatActivity {
@@ -23,8 +30,6 @@ public class UserSettings extends AppCompatActivity {
     EditText fname;
     EditText sname;
     EditText email;
-    EditText password_old;
-    EditText password_new;
 
     // Lagre knapp
     Button update;
@@ -59,10 +64,6 @@ public class UserSettings extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        // Finner email som ble sent fra brukerprofil
-        //Intent user_settings = getIntent();
-        //email_usr = user_settings.getStringExtra("useremail");
 
         //Viser data i inputfeltene om det er lagt inn noe
         showData();
@@ -120,8 +121,9 @@ public class UserSettings extends AppCompatActivity {
                 String emailnew = email.getText().toString(); //NB: MÅ FIKSES
 
                 // Henter data om brukeren
-                User user = Login.getUser();
-                //mDb.getKnittersboxDao().loadUser(email_usr);
+                User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
+
+                // For oppdatering av ekstern database
                 String emailold = user.getEmail();
 
                 // Hvis ingenting er endret
@@ -167,17 +169,23 @@ public class UserSettings extends AppCompatActivity {
                     user.setEmail(emailnew); //NB: MÅ FIKSES
 
 
-                    // Kjører sql og oppdaterer brukerinfo
+                    // Oppdaterer lokal database
+                    //mDb.getKnittersboxDao().updateName(user);
                     mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
+
+                    DatabasePost.syncUserData(emailnew, user.getPassword(), UserSettings.this);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
-                            System.out.println("EMAIL ER DEN DER: " + user.getEmail());
+                            //System.out.println("EMAIL ER DEN DER: " + user.getEmail());
                             sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
                         }
                     });
+                    finish();
+                    Intent intent_profile = new Intent(UserSettings.this, UserProfile.class);
+                    startActivity(intent_profile);
                 }
             }
         });

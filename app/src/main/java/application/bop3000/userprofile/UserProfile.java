@@ -162,15 +162,11 @@ public class UserProfile extends AppCompatActivity {
                             sub_type = "Ingen";
                         }
                         // Hvis bruker har abonnement (NB: MÅ LEGGE INN FLERE)
-                        else if(sub_type.equals("2")) {
+                        else if(sub_type.equals("1")) {
                             sub_type = "Fargeboksen";
                         }
-                        else if(sub_type.equals("3")) {
+                        else if(sub_type.equals("2")) {
                             sub_type = "Jordboksen";
-                        }
-                        else if(sub_type.equals("2")) {
-                            sub_type = "Fargeboksen";
-
                         }
 
                         //NB: IF FOR RESTEN AV ABONNEMENTTYPENE!
@@ -188,9 +184,6 @@ public class UserProfile extends AppCompatActivity {
         // Kobling til redigere profil aktivitet
         Intent user_settings = new Intent(this, UserSettings.class);
 
-        // Sender med email for bruker
-        //user_settings.putExtra("useremail", email_usr);
-
         // Starter aktivitet
         startActivity(user_settings);
         finish();
@@ -202,21 +195,18 @@ public class UserProfile extends AppCompatActivity {
         // Kobling til endre passord aktivitet
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
-        // Sender med email for bruker
-        //change_pwd.putExtra("useremail", email_usr);
-
         // Starter aktivitet
         startActivity(change_pwd);
-        finish();
+        //finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent back_to_insp = new Intent(this, Inspiration.class);
-        startActivity(back_to_insp);
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent back_to_insp = new Intent(this, Inspiration.class);
+//        startActivity(back_to_insp);
+//        finish();
+//    }
 
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {
