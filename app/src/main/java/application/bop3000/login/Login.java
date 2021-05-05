@@ -22,6 +22,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.security.Security;
+
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
@@ -73,6 +75,7 @@ public class Login extends AppCompatActivity {
                 public void run() {
                     user = knittersboxDao.login(sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"), sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
                     startActivity(new Intent(Login.this, Inspiration.class));
+
                     finish();
                 }
             }).start();
@@ -104,8 +107,11 @@ public class Login extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             if(user == null) {
+                                // Encrypt user password to check in external
+                                String encryptPass = EncryptDecrypt.encrypt(passwordText);
+
                                 // Get user data from external to local
-                                DatabaseGet.getUserFromExternal(emailText, passwordText, getApplicationContext());
+                                DatabaseGet.getUserFromExternal(emailText, encryptPass, getApplicationContext());
                             } else {
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -116,6 +122,7 @@ public class Login extends AppCompatActivity {
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_EMAIL", user.getEmail());
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_PASSWORD", user.getPassword());
                                         sharedPreferenceConfig.login_status(true);
+
                                         finish();
                                     }
                                 });
