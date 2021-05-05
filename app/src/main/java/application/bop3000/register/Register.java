@@ -98,6 +98,8 @@ public class Register extends AppCompatActivity {
                                                             String psw = null;
                                                             try {
                                                                 psw = EncryptDecrypt.encrypt(user.getPassword());
+                                                                // Trim to remove whitespace at end of string, problems with sharedPreferences
+                                                                psw = psw.trim();
                                                                 user.setPassword(psw);
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
@@ -114,6 +116,8 @@ public class Register extends AppCompatActivity {
                                                                         Toast.makeText(Register.this, "Bruker registert eksternt", Toast.LENGTH_SHORT).show();
                                                                     }
                                                                 });
+                                                                // End registration activity (for back-pressed)
+                                                                finish();
                                                             } catch (Exception e) {
                                                                 Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
                                                             }
