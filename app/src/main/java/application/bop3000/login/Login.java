@@ -127,13 +127,15 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        registration.setOnClickListener(new View.OnClickListener() {
+
+                registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Register.class));
             }
         });
     }
+
 
     public static User getUser(){
         return user;

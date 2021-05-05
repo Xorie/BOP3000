@@ -114,14 +114,14 @@ public class ChangePassword extends AppCompatActivity {
                                 public void run() {
                                     mDb.getKnittersboxDao().updateName(user);
                                     Log.d("LOKAL oppdatert", "Med passord: " + user.getPassword());
-                                    DatabasePost.syncUserData(email_usr, pass_new, ChangePassword.this);
-                                    Log.d("Ekstern oppdatert?", "parameters: " + email_usr + ", " + pass_new);
+                                    DatabasePost.syncUserData(email_usr, pass_new_encrypted, ChangePassword.this);
+                                    Log.d("Ekstern oppdatert?", "parameters: " + email_usr + ", " + pass_new_encrypted);
                                     //DatabasePost.syncUserData(user.getEmail(), pass_old, ChangePassword.this);
                                 }
                             });
 
                             Toast.makeText(getApplicationContext(), "Passord endret", Toast.LENGTH_SHORT).show();
-                            sharedPreferenceConfig.setPreference(ChangePassword.this,"PREFS_LOGIN_PASSWORD",pass_new);
+                            sharedPreferenceConfig.setPreference(ChangePassword.this,"PREFS_LOGIN_PASSWORD",pass_new_encrypted);
                             finish();
                         }
                     }

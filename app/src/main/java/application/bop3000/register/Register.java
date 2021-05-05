@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
@@ -73,61 +76,86 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                    // Creating User Entity
-                    User user = new User();
-                    // userEntity.setFirstname(firstname.getText().toString());
-                    // userEntity.setLastname(lastname.getText().toString());
-                    user.setEmail(email.getText().toString());
-                    user.setDisplayname(displayname.getText().toString());
-                    user.setPassword(password.getText().toString());
+                        // Creating User Entity
+                        User user = new User();
+                        // userEntity.setFirstname(firstname.getText().toString());
+                        // userEntity.setLastname(lastname.getText().toString());
+                        user.setEmail(email.getText().toString());
+                        user.setDisplayname(displayname.getText().toString());
+                        user.setPassword(password.getText().toString());
 
-                    if(validateInput(user)) {
-                        if(validateDisplayname(user)) {
-                            if(validateEmail(user)) {
-                                if (validatePassword(user)) {
-                                    if (checkBox.isChecked()) {
-                                        // Do insert operation
-                                        new Thread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                try {
-                                                    String psw = EncryptDecrypt.encrypt(user.getPassword());
-                                                    user.setPassword(psw);
-                                                } catch (Exception e) {
-                                                    e.printStackTrace();
-                                                }
+                        if(validateInput(user)) {
+                            if(validateDisplayname(user)) {
+                                if(isValidEmail(email.getText().toString())) {
+                                    if (validateEmail(user)) {
+                                        if (isValidPassword(password.getText().toString())) {
+                                            if (validatePassword(user)) {
+                                                if (checkBox.isChecked()) {
+                                                    // Do insert operation
+                                                    new Thread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            String psw = null;
+                                                            try {
+                                                                psw = EncryptDecrypt.encrypt(user.getPassword());
+                                                                user.setPassword(psw);
+                                                            } catch (Exception e) {
+                                                                e.printStackTrace();
+                                                            }
+                                                            // Register user Room DB
+                                                            userDao.registerUser(user);
+                                                            // Registrer user external DB ->
+                                                            // Eventuelt try catch om netter er tilkoblet
+                                                            try {
+                                                                DatabasePost.sendUser(email.getText().toString(), psw, getApplicationContext());
+                                                                runOnUiThread(new Runnable() {
+                                                                    @Override
+                                                                    public void run() {
+                                                                        Toast.makeText(Register.this, "Bruker registert eksternt", Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                });
+                                                            } catch (Exception e) {
+                                                                Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
+                                                            }
 
-                                                // Register user Room DB
-                                                userDao.registerUser(user);
-                                                // Registrer user external DB ->
-                                                // Eventuelt try catch om netter er tilkoblet
-                                                try {
-                                                    DatabasePost.sendUser(email.getText().toString(), password.getText().toString(), getApplicationContext());
+                                                            runOnUiThread(new Runnable() {
+                                                                @Override
+                                                                public void run() {
+                                                                    Toast.makeText(getApplicationContext(), "Bruker registrert!", Toast.LENGTH_SHORT).show();
+                                                                }
+                                                            });
+                                                            startActivity(new Intent(Register.this, Login.class));
+                                                        }
+                                                    }).start();
+                                                } else {
                                                     runOnUiThread(new Runnable() {
                                                         @Override
                                                         public void run() {
-                                                            Toast.makeText(Register.this, "Bruker registert eksternt", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getApplicationContext(), "Godta personvern!", Toast.LENGTH_SHORT).show();
                                                         }
                                                     });
-                                                } catch (Exception e) {
-                                                    //Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
                                                 }
-
+                                            } else {
                                                 runOnUiThread(new Runnable() {
                                                     @Override
                                                     public void run() {
-                                                        Toast.makeText(getApplicationContext(), "Bruker registrert!", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Passord samsvarer ikke!", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
-                                                startActivity(new Intent(Register.this, Login.class));
-                                                finish();
                                             }
-                                        }).start();
+                                        } else {
+                                            runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Toast.makeText(getApplicationContext(), "Passord må ha en stor bokstav, et tall og tegn!", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                        }
                                     } else {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                Toast.makeText(getApplicationContext(), "Godta personvern!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getApplicationContext(), "Email finnes fra før!", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                     }
@@ -135,7 +163,7 @@ public class Register extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            Toast.makeText(getApplicationContext(), "Passord samsvarer ikke!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Ugyldig emailadresse!", Toast.LENGTH_SHORT).show();
                                         }
                                     });
                                 }
@@ -143,7 +171,7 @@ public class Register extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(getApplicationContext(), "Email finnes fra før!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Visningsnavn eksisterer!", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }
@@ -151,19 +179,11 @@ public class Register extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(getApplicationContext(), "Visningsnavn eksisterer!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Fyll alle feltene", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
-                    } else {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), "Fyll alle feltene", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                }});
+                    }});
             }
         });
     }
@@ -177,9 +197,31 @@ public class Register extends AppCompatActivity {
         return true;
     }
 
+    public boolean isValidEmail(String email) {
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+
+        return matcher.matches();
+    }
+
+    public boolean isValidPassword(String password) {
+        Pattern pattern;
+        Matcher matcher;
+
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{4,}$";
+
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+    }
+
     private Boolean validatePassword(User user) {
-        String psw = rePassword.getText().toString();
-        if(user.getPassword().equals(psw)){
+        if(user.getPassword().equals(rePassword.getText().toString())){
             return true;
         }
         return false;

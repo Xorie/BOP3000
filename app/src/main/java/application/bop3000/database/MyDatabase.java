@@ -10,7 +10,8 @@ import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, FAQ.class, Post.class, PostOffice.class, Subscription.class, Payment.class}, version=17) {
+@Database(entities = {User.class, FAQ.class, Post.class, PostOffice.class, Subscription.class, Payment.class}, version=17)
+public abstract class MyDatabase extends RoomDatabase{
 
     // Database name to be used
     public static final String DBNAME = "Knittersbox";

@@ -82,7 +82,7 @@ public class SubscriptionChangeFragment extends Fragment {
         postOfficeList = new ArrayList<>();
         adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, subscriptionList);
 
-        //getSub();
+        getSub();
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
         String url = "http://192.168.1.29/BACH/spinner.php?";
