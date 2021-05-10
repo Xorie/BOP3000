@@ -4,53 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/insp_recview"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ScrollView
-        android:layout_width="361dp"
-        android:layout_height="574dp"
-        android:layout_marginTop="24dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/userprofile_shadow">
+
+<!--            android:layout_gravity="center"-->
 
             <TextView
                 android:id="@+id/srPostUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black" />
+                android:text="@string/noe"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/ic_person"
+                android:drawablePadding="5dp"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
 
 
             <ImageView
                 android:id="@+id/srPostImage"
                 android:layout_width="match_parent"
-                android:layout_height="319dp"
+                android:layout_height="350dp"
                 tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/app_name"
                 />
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="@color/white"/>
+<!--            <View-->
+<!--                android:id="@+id/divider"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:background="@drawable/white"-->
+<!--                />-->
 
             <TextView
                 android:id="@+id/srPostTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/black"/>
+                android:text="@string/noe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="10dp"/>
 
             <TextView
                 android:id="@+id/srPostTxt"
-                android:layout_width="209dp"
-                android:layout_height="139dp"
-                android:text="TextView"
-                android:textColor="@color/black"/>
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:text="@string/noe"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingRight="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp"/>
+
         </LinearLayout>
     </ScrollView>
 

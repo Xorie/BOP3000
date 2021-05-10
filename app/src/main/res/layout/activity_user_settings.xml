@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userprofile.UserSettings"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/userprofile_gray">
+
+        <include
+            layout="@layout/usersettings_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/userprofile_shadow">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="40dp"
+                    android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="26dp"
+                    android:text="@string/usersettings_change_header_txt"
+                    android:textColor="@color/black"
+                    android:textSize="32sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/usrname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/usrsettings_hint_usrname" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/usrsettings_hint_fname" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/sname"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/usrsettings_hint_sname" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/email"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/usrsettings_hint_email" />
+
+                                            <Button
+                                                android:id="@+id/btn_updatename"
+                                                android:onClick="updateUserinfo"
+                                                android:layout_marginTop="30dp"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/userprofile_button"
+                                                android:textColor="@color/white"
+                                                android:text="@string/usrsettings_btn_savename"
+                                                android:textAllCaps="false"/>
+                <!--                            android:background="@drawable/userprofile_button"-->
+
+            <!--                            </com.google.android.material.textfield.TextInputLayout>-->
+            <!--                        </com.google.android.material.textfield.TextInputLayout>-->
+                                    </com.google.android.material.textfield.TextInputLayout>
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

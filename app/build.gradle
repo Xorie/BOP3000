@@ -30,20 +30,25 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.navigation:navigation-fragment:2.3.2'
     implementation 'androidx.navigation:navigation-ui:2.3.2'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.drawerlayout:drawerlayout:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Volley, php request and response
+    implementation 'com.android.volley:volley:1.1.1'
 
     //OAESIJNAOEUINGo
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     // Room Database
-    implementation "androidx.room:room-runtime:2.2.6"
+    implementation 'androidx.room:room-runtime:2.2.6'
     annotationProcessor "androidx.room:room-compiler:2.2.6"
 }

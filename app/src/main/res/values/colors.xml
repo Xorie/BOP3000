@@ -13,4 +13,17 @@
     <color name="gray">#bbbbbb</color>
     <color name="save">#99897f</color>
     <color name="delete">#FF0000</color>
+
+
+    <!-- Userprofile -->
+<!--    <color name="userprofile_background">#BBA49E</color>-->
+<!--    <color name="userprofile_headertest">#a8908a</color>-->
+    <color name="userprofile_button">#a8908a</color>
+    <color name="userprofile_gray">#ebebeb</color>
+    <color name="userprofile_green">#3f7336</color>
+    <color name="userprofile_pink">#e65269</color>
+    <color name="userprofile_main">#BBA49E</color>
+
+    <!-- Menu -->
+    <color name="red">#8B0000</color>
 </resources>

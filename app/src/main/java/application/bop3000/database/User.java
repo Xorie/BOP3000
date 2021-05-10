@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -52,12 +51,12 @@ public class User implements Serializable {
     @ColumnInfo (name = "subscription_subscriptionID")
     private String subscription_subscriptionID;
 
-    @NonNull
+
     public int getUserID() {
         return userID;
     }
 
-    public void setUserID(@NonNull int userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -121,8 +120,8 @@ public class User implements Serializable {
         return postnr;
     }
 
-    public void setPostnr(String postnr) {
-        this.postnr = postnr;
+    public void setPostnr(String postoffice_postnr) {
+        this.postnr = postoffice_postnr;
     }
 
     public String getSubscription_subscriptionID() {
