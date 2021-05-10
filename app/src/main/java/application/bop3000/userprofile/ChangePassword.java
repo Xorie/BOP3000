@@ -110,10 +110,11 @@ public class ChangePassword extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Gammelt passord stemmer ikke", Toast.LENGTH_LONG).show();
                         }
                         else if (!isValidPassword(pass_new)) {
-                            Toast.makeText(getApplicationContext(), "Passord må innehholde en stor bokstav og et tall", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Passord må innehholde minst en stor bokstav og et tall", Toast.LENGTH_LONG).show();
                         }
                         else {
-                            String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new);
+                            String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new).trim();
+                            //pass_new_encrypted = pass_new_encrypted.trim();
                             user.setPassword(pass_new_encrypted);
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
