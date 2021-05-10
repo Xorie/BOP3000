@@ -11,6 +11,9 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -38,15 +41,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment_method.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment_method.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5X_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Nyxys\.android\avd\Nexus_5X_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,7 +86,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Bjorge" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,6 +104,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-04T13:14:28.044Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MOB3000" />
@@ -142,6 +152,7 @@
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -192,6 +203,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -296,7 +308,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="186" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1614006342285" />
-    <state x="477" y="266" key="#PSD/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610979888618" />
     <state x="544" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1614781685747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -306,10 +317,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1613572865045" />
-    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611137160885">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1620641616185">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="631" y="272" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137160885" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1620641616185" />
     <state x="387" y="141" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1612709897155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -340,12 +351,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="59" y="27" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1614779967912" />
-    <state x="531" y="291" key="AndroidCreateResourceFileDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243505100" />
     <state x="573" y="230" key="AndroidCreateXmlResourceDialog" timestamp="1613939157219">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="573" y="230" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939157219" />
-    <state x="805" y="332" key="AndroidCreateXmlResourceDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243415516" />
     <state x="21" y="0" key="CommitChangelistDialog2" timestamp="1615991065949">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -358,8 +367,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615894429841" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610980031243" />
-    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611137690941" />
     <state width="1322" height="527" key="GridCell.Tab.0.bottom" timestamp="1615991294382">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -404,7 +411,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="60" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1614166538406" />
-    <state x="84" y="233" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1610982635632" />
     <state x="367" y="102" key="Vcs.Push.Dialog.v2" timestamp="1615991084427">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -418,18 +424,6 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="447" y="48" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1366.728@0.0.1366.728" timestamp="1612966234914" />
-    <state x="667" y="258" width="585" height="592" key="find.popup" timestamp="1611239880644">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611239880644" />
-    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog" timestamp="1611243478734">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1611243478734" />
-    <state x="412" y="297" width="700" height="530" key="recent.locations.popup" timestamp="1610979630422">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="412" y="297" width="700" height="530" key="recent.locations.popup/0.0.1920.1040/-3840.-487.2560.1440@0.0.1920.1040" timestamp="1610979630422" />
     <state x="389" y="121" key="refactoring.ChangeSignatureDialog" timestamp="1613572959696">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
