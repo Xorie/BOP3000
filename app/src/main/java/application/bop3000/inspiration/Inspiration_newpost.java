@@ -2,6 +2,7 @@ package application.bop3000.inspiration;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Context;
@@ -55,10 +56,6 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
         this.textEdithText = (EditText) findViewById(R.id.new_memory_txt);
         this.inspiration_checkBox = findViewById(R.id.inspiration_checkBox);
 
-        //sjekker om kamera har tillatelse eller ikke
-        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
-        }
         //lagre knapp
         btn_save = findViewById(R.id.inspiration_save);
         btn_save.setOnClickListener((View.OnClickListener) this);
@@ -121,18 +118,51 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
     }
 
     //åpner galleri
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void openGallery(View view) {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Velge bilde"), GALLERY_REQUEST);
+        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Velge bilde"), GALLERY_REQUEST);
+        } else {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, GALLERY_REQUEST);
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(Inspiration_newpost.this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, GALLERY_REQUEST);
+            } else {
+                Toast.makeText(getApplicationContext(), "Endre tillatelser i appinnstillinger!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     //åpner kamera
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void openCamera(View view) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, CAMERA_REQUEST);
+        //sjekker om kamera har tillatelse eller ikke
+        if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, CAMERA_REQUEST);
+        } else {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(Inspiration_newpost.this,
+                    Manifest.permission.CAMERA)) {
+                requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+            } else {
+                Toast.makeText(getApplicationContext(), "Endre tillatelser i appinnstillinger!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
+
+    //sjekker om kamera har tillatelse eller ikke
+//        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//        requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+//    } else {
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        startActivityForResult(intent, CAMERA_REQUEST);
+//    }
 
 
     //https://www.youtube.com/watch?v=ykbU41xhDrY
