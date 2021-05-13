@@ -22,6 +22,7 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
+import application.bop3000.security.EncryptDecrypt;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class DatabaseGet {
@@ -42,7 +43,6 @@ public class DatabaseGet {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
         String url = Constants.IP + "syncUserId.php?";
         url += "email=" + mail;
 
@@ -86,9 +86,14 @@ public class DatabaseGet {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
         String url = Constants.IP + "getUser.php?";
         url += "email=" + email + "&PW=" + password;
+
+        Log.d("EEE", password);
+
+        Log.d("EEE", EncryptDecrypt.encrypt(password).trim());
+
+        Log.d("EEE", url);
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -108,43 +113,41 @@ public class DatabaseGet {
 
                                     //UserID
                                     user.setUserID(Integer.valueOf(lines[1].substring(1)));
-                                    Log.d("UPDATE", "ID: " + user.getUserID());
 
                                     // Checks if there are information //
                                     // Firstname
                                     if(!lines[2].substring(1).isEmpty()) {
                                         user.setFirstname(lines[2].substring(1));
                                     }
-                                    Log.d("UPDATE", "FIRSTANME: " + user.getFirstname());
+
                                     // Lastname
                                     if(!lines[3].substring(1).isEmpty()) {
                                         user.setLastname(lines[3].substring(1));
                                     }
-                                    Log.d("UPDATE", "LASTNAME: " + user.getLastname());
+
                                     // Streetname
                                     if(!lines[4].substring(1).isEmpty()) {
                                         user.setStreetname(lines[4].substring(1));
                                     }
-                                    Log.d("UPDATE", "STREETNAME: " + user.getStreetname());
+
                                     // Displayname
                                     if(!lines[5].substring(1).isEmpty()) {
                                         user.setDisplayname(lines[5].substring(1));
                                     }
-                                    Log.d("UPDATE", "DISPLAYNAME: " + user.getDisplayname());
+
                                     // Postnr
                                     if(!lines[6].substring(1).isEmpty()) {
                                         user.setPostnr(lines[6].substring(1));
                                     }
-                                    Log.d("UPDATE", "POSTNR: " + user.getPostnr());
+
                                     // SubscriptionID
                                     if(!lines[7].substring(1).isEmpty()) {
                                         user.setSubscription_subscriptionID(lines[7].substring(1));
                                     }
-                                    Log.d("UPDATE", "SUBSCRIPTION: " + user.getSubscription_subscriptionID());
 
                                     // Register user Room DB
                                     userDao.registerUser(user);
-                                    Login.userExternalLogin(true, context, user.getEmail(), user.getPassword(), user.getDisplayname());
+
                                 } else {
                                     // User does not exist external = User is not registered
                                     Looper.prepare();

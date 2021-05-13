@@ -53,14 +53,10 @@ public class DatabasePost {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
         String url = Constants.IP + "user.php?";
-
         url += "PW=" + password + "&email=" + mail + "&FN=" + firstname + "&LN=" + lastname + "&city=" +
                 city + "&SN=" + streetName + "&DN=" + displayName + "&PN=" + postnr + "&sub=" + sub;
 
-        Log.d("USER", url);
-        Log.d("USER", mail + pass + firstname + lastname + city + streetName + displayName + postnr + sub);
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -71,6 +67,7 @@ public class DatabasePost {
                             @Override
                             public void run() {
                                 if (response.contains("Brukeren er registrert")) {
+                                    // Sync userID after registered to external to get correct ID in local DB
                                     DatabaseGet.syncUserId(email, password, context);
                                 } else {
                                     Log.d("USER", "SQL FEIL: " + response);
@@ -96,12 +93,9 @@ public class DatabasePost {
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(context);
 
-            // HA EN EGEN STRING SOM BRUKES OVERALT!!!!!!!!!!!!!!!!!!!!!!!!!
             String url = Constants.IP + "syncUserData.php?";
             url += "userID=" + userID + "&PW=" + pass + "&email=" + mail + "&FN=" + firstname + "&LN=" + lastname + "&city=" +
                     city + "&SN=" + streetName + "&DN=" + displayName + "&PN=" + postnr + "&sub=" + sub;
-
-            Log.d("UPDATE", url);
 
             // Request a string response from the provided URL.
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -146,10 +140,14 @@ public class DatabasePost {
             }
         });
 
+        // Start thread
         t.start();
 
         try {
+            // After thread finish
             t.join();
+
+            // Set class variabels to correct user
             if (user != null) {
                 // Get user data
                 userID = user.getUserID();

@@ -3,33 +3,25 @@ package application.bop3000.login;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.WorkerThread;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
-
-import java.security.Security;
 
 import application.bop3000.R;
 import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
-import application.bop3000.database.Subscription;
+
 import application.bop3000.database.User;
-import application.bop3000.faq.faq;
+
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.network.DatabaseGet;
 import application.bop3000.register.Register;
@@ -45,13 +37,13 @@ public class Login extends AppCompatActivity {
     EditText email, password;
     Button login, registration;
     private static User user;
-   // private static User user2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Set activity to this activity
         activity = this;
 
         // Fields
@@ -73,15 +65,10 @@ public class Login extends AppCompatActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    // Get correct user object, do local sql query from sharedPreference
                     user = knittersboxDao.login(sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"), sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
                     startActivity(new Intent(Login.this, Inspiration.class));
-                    Log.d("CRYPT", "ÅPNER APPEN " + sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_PASSWORD"));
-                    Log.d("CRYPT", "ÅPNER APPEN " + sharedPreferenceConfig.getPreference(Login.this, "PREFS_LOGIN_EMAIL"));
-                    if(user == null) {
-                        Log.d("CRYPT", "OBJEKTET ER NULL");
-                    } else {
-                        Log.d("CRYPT", "OBJEKTET ER IKKE NULL");
-                    }
+
                     finish();
                 }
             }).start();
@@ -128,12 +115,10 @@ public class Login extends AppCompatActivity {
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_EMAIL", user.getEmail());
                                         sharedPreferenceConfig.setPreference(Login.this, "PREFS_LOGIN_PASSWORD", user.getPassword());
                                         sharedPreferenceConfig.login_status(true);
-                                        Log.d("CRYPT", "NÅR LOGGER INN " + user.getPassword());
-                                        Log.d("CRYPT", "NÅR LOGGER INN " + user.getEmail());
+
                                         finish();
                                     }
                                 });
-                                //Log.d("LOGIN", "Velkommen " + name);
                             }
                         }
                     }).start();
@@ -150,7 +135,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-
+    // Return user object
     public static User getUser(){
         return user;
     }
@@ -170,6 +155,7 @@ public class Login extends AppCompatActivity {
             // Get correct user object after external login
             user = knittersboxDao.login(email, password);
 
+
             Looper.prepare();
             Toast.makeText(context, "Velkommen " + dName, Toast.LENGTH_LONG).show();
 
@@ -179,8 +165,6 @@ public class Login extends AppCompatActivity {
             sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_EMAIL", email);
             sharedPreferenceConfig.setPreference(context, "PREFS_LOGIN_PASSWORD", password);
             sharedPreferenceConfig.login_status(true);
-            Log.d("CRYPT", "NÅR LOGGER INN " + password);
-            Log.d("CRYPT", "NÅR LOGGER INN " + email);
 
             activity.finish();
         }
