@@ -3,9 +3,6 @@ package application.bop3000.sharedpreference;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import application.bop3000.R;
-import application.bop3000.database.User;
-
 public class SharedPreferenceConfig {
     private SharedPreferences sharedPreferences;
     private Context context;

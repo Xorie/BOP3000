@@ -38,8 +38,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //firstname = findViewById(R.id.registration_firstname);
-        //lastname = findViewById(R.id.registration_lastname);
+        // Variabels for user input
         email = findViewById(R.id.registration_email);
         displayname = findViewById(R.id.registration_displayname);
         password = findViewById(R.id.registration_password);
@@ -78,8 +77,7 @@ public class Register extends AppCompatActivity {
 
                         // Creating User Entity
                         User user = new User();
-                        // userEntity.setFirstname(firstname.getText().toString());
-                        // userEntity.setLastname(lastname.getText().toString());
+
                         user.setEmail(email.getText().toString());
                         user.setDisplayname(displayname.getText().toString());
                         user.setPassword(password.getText().toString());
@@ -107,7 +105,7 @@ public class Register extends AppCompatActivity {
                                                             // Register user Room DB
                                                             userDao.registerUser(user);
 
-                                                            // Register user external DB ->
+                                                            // Registrer user external DB ->
                                                             try {
                                                                 DatabasePost.sendUser(email.getText().toString(), psw, getApplicationContext());
                                                                 runOnUiThread(new Runnable() {
@@ -201,9 +199,11 @@ public class Register extends AppCompatActivity {
         return true;
     }
 
+    // Method to check for correct user input
     public boolean isValidEmail(String email) {
         Pattern pattern;
         Matcher matcher;
+        //Email must contain letter from a-z, @, a-z, ., and a-z
         final String EMAIL_PATTERN = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         pattern = Pattern.compile(EMAIL_PATTERN);
@@ -212,10 +212,12 @@ public class Register extends AppCompatActivity {
         return matcher.matches();
     }
 
+    //Method to check for correct user password
     public boolean isValidPassword(String password) {
         Pattern pattern;
         Matcher matcher;
 
+        // Must contain 1-9, a-z, A-Z with a length of minimum 4
         final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{4,}$";
 
         pattern = Pattern.compile(PASSWORD_PATTERN);
@@ -224,6 +226,7 @@ public class Register extends AppCompatActivity {
         return matcher.matches();
     }
 
+    // Check password against re-password
     private Boolean validatePassword(User user) {
         if(user.getPassword().equals(rePassword.getText().toString())){
             return true;
@@ -231,6 +234,7 @@ public class Register extends AppCompatActivity {
         return false;
     }
 
+    // Checks database for already registered user on displayname
     private Boolean validateDisplayname(User user) {
         if(userDao.displayname(user.getDisplayname()) == null) {
             return true;
@@ -238,24 +242,11 @@ public class Register extends AppCompatActivity {
         return false;
     }
 
+    // Checks database for already registered user on email
     private Boolean validateEmail(User user) {
         if(userDao.userEmail(user.getEmail()) == null) {
             return true;
         }
         return false;
     }
-
-//    private Boolean registerExternal() {
-//        if(DatabasePost.sendUser(email.getText().toString(), password.getText().toString(), getApplicationContext())) {
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    private Boolean syncUserId() {
-//        if(DatabaseGet.syncUserId(email.getText().toString(), password.getText().toString(), getApplicationContext())) {
-//            return true;
-//        }
-//        return false;
-//    }
 }
