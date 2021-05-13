@@ -23,9 +23,7 @@ import application.bop3000.login.Login;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     static Context context;
     private List<Post> PostList;
-
     public User user;
-
     public PostAdapter(Context context) {this.context = context;}
 
     @NonNull
@@ -37,15 +35,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder PostViewholder, int i) {
-
         // Room DB and DAO
         MyDatabase myDatabase = MyDatabase.getDatabase(context);
         final KnittersboxDao knittersboxDao = myDatabase.getKnittersboxDao();
-
         String hentimage = PostList.get(i).getPost_imagepath();
         Uri mUri = Uri.parse(hentimage);
         int userID = Integer.parseInt(PostList.get(i).getUserID());
-
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -55,6 +50,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         t.start();
 
+        //if checkbox in new post is checked
+        //the user name is set to anonymous user
         try {
             t.join();
             PostViewholder.post_image.setImageURI(mUri);
