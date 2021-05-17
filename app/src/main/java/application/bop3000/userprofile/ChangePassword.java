@@ -25,19 +25,17 @@ import application.bop3000.security.EncryptDecrypt;
 
 public class ChangePassword extends AppCompatActivity {
 
-    // Inputfelt
+    // Input fields
     EditText password_old;
     EditText password_new;
 
-    // Lagre knapp
+    // Update button
     Button update;
 
     // Database
     private MyDatabase mDb;
 
-    //String email_usr = "melon@gmail.com";
-
-    // Email fra login
+    // E-mail for logged in user
     String email_usr;
 
     private SharedPreferenceConfig sharedPreferenceConfig;
@@ -47,13 +45,15 @@ public class ChangePassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
+        // Finding views
         password_old = findViewById(R.id.password_old);
         password_new = findViewById(R.id.password_new);
-
         update = findViewById(R.id.btn_updatepwd);
 
+        // Finding E-mail for logged in user in the database
         email_usr = Login.getUser().getEmail();
 
+        // Database connection
         mDb = MyDatabase.getDatabase(getApplicationContext());
 
         sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
@@ -70,6 +70,7 @@ public class ChangePassword extends AppCompatActivity {
 
     }
 
+    // Back button in the toolbar
     public void userprofileBack(View view) {
         Intent user_profile_back = new Intent(this, UserProfile.class);
         startActivity(user_profile_back);
@@ -90,9 +91,11 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             public void run() {
 
+                // Getting data/text from inputs
                 String pass_old = password_old.getText().toString();
                 String pass_new = password_new.getText().toString();
 
+                // Retrieving user
                 User user = mDb.getKnittersboxDao().loadUser(email_usr);
 
                 //User user = Login.getUser();
@@ -100,9 +103,11 @@ public class ChangePassword extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        // Decrypting password
                         String pass_decrypted = user.getPassword();
                         pass_decrypted = EncryptDecrypt.decrypt(pass_decrypted);
 
+                        // Checking if inputfields are filled, if old password matches, if password follows rules
                         if(pass_old.matches("") && pass_new.matches("")) {
                             Toast.makeText(getApplicationContext(), "Feltene er ikke fylt inn", Toast.LENGTH_LONG).show();
                         }
@@ -113,6 +118,7 @@ public class ChangePassword extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Passord må innehholde minst en stor bokstav og et tall", Toast.LENGTH_LONG).show();
                         }
                         else {
+                            // Encrypting new password
                             String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new).trim();
                             //pass_new_encrypted = pass_new_encrypted.trim();
                             user.setPassword(pass_new_encrypted);
@@ -120,14 +126,16 @@ public class ChangePassword extends AppCompatActivity {
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
                                 public void run() {
+                                    // Updating local database
                                     mDb.getKnittersboxDao().updateName(user);
-                                    Log.d("LOKAL oppdatert", "Med passord: " + user.getPassword());
+
+                                    // Syncing new data with external database
                                     DatabasePost.syncUserData(email_usr, pass_new_encrypted, ChangePassword.this);
-                                    Log.d("Ekstern oppdatert?", "parameters: " + email_usr + ", " + pass_new_encrypted);
                                     //DatabasePost.syncUserData(user.getEmail(), pass_old, ChangePassword.this);
                                 }
                             });
 
+                            // Message, updating sharedPreferences with new password
                             Toast.makeText(getApplicationContext(), "Passord endret", Toast.LENGTH_SHORT).show();
                             sharedPreferenceConfig.setPreference(ChangePassword.this,"PREFS_LOGIN_PASSWORD",pass_new_encrypted);
                             finish();
@@ -138,6 +146,7 @@ public class ChangePassword extends AppCompatActivity {
         });
     }
 
+    // Method for password rules
     public boolean isValidPassword(String password) {
         Pattern pattern;
         Matcher matcher;
