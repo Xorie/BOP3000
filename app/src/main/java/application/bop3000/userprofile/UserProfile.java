@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
 
 import appexecutors.AppExecutors;
 import application.bop3000.R;
@@ -22,7 +24,6 @@ import application.bop3000.database.User;
 import application.bop3000.faq.faq;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
-import application.bop3000.payment_method.Payment_method;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 
@@ -49,9 +50,6 @@ public class UserProfile extends AppCompatActivity {
     //Menu
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerToggle;
-    private NavigationView navigationView;
-    private View itemLogout;
 
 
     // Email for logged-in user
@@ -79,8 +77,10 @@ public class UserProfile extends AppCompatActivity {
         //Menu
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        ActionBarDrawerToggle drawerToggle;
+        NavigationView navigationView;
         drawerLayout = findViewById(R.id.drawerLayout);
         drawerToggle = setupDrawerToggle();
         drawerToggle.syncState();
@@ -89,10 +89,9 @@ public class UserProfile extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.naviView);
 
-        itemLogout = findViewById(R.id.logout);
 
         setupDrawerContent(navigationView);
-        View header = navigationView.getHeaderView(0);
+        //View header = navigationView.getHeaderView(0);
     }
 
     @Override
@@ -191,12 +190,12 @@ public class UserProfile extends AppCompatActivity {
     }
 
     //Menu
+    @SuppressLint("NonConstantResourceId")
     private void selectDrawerItem(MenuItem menuItem) {
         Intent intent_home = new Intent(this, Inspiration.class);
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
-        Intent intent_payment = new Intent(this, Payment_method.class);
         Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
@@ -216,9 +215,6 @@ public class UserProfile extends AppCompatActivity {
             case R.id.faq:
                 startActivity(intent_faq);
                 break;
-            case R.id.payment:
-                startActivity(intent_payment);
-                break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);
@@ -234,10 +230,9 @@ public class UserProfile extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                drawerLayout.openDrawer( GravityCompat.START);
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            drawerLayout.openDrawer( GravityCompat.START );
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -245,13 +240,10 @@ public class UserProfile extends AppCompatActivity {
 
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        selectDrawerItem(menuItem);
-                        return true;
-                    }
-                });
+                menuItem -> {
+                    selectDrawerItem(menuItem);
+                    return true;
+                } );
     }
 
 }

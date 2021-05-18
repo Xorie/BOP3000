@@ -32,27 +32,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="endring av encrypta passord String, passordet hadde whitespace på slutten som ødela for sharedpreferences... sql for lokal database fjerner automatisk whitespace ved sql så det ble feil resultat ved sql spørring når man logger inn. User objektet for blir dermed null og appen krasjer">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Mikkel\.android\avd\Pixel_4_XL_API_30_6.3.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\sdk\.android\.android\avd\Pixel_2_API_29_1.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -460,16 +447,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="107" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1613926550177" />
-    <state x="70" y="87" width="1790" height="924" key="MergeDialog" timestamp="1620241745138">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="246" y="86" width="1790" height="924" key="MergeDialog" timestamp="1621336477899">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="246" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1617703701967" />
+    <state x="246" y="86" key="MergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1621336477899" />
     <state x="70" y="87" key="MergeDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620241745138" />
     <state x="75" y="92" width="1790" height="924" key="MergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707210622" />
-    <state x="615" y="300" key="MultipleFileMergeDialog" timestamp="1620210450237">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="615" y="297" key="MultipleFileMergeDialog" timestamp="1621336480902">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="615" y="297" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620067662746" />
+    <state x="615" y="297" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1621336480902" />
     <state x="615" y="300" key="MultipleFileMergeDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620210450237" />
     <state x="656" y="318" key="MultipleFileMergeDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617707220496" />
     <state x="242" y="49" key="SettingsEditor" timestamp="1617707259328">
