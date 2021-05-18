@@ -56,8 +56,6 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
         this.titleEdithText = findViewById(R.id.new_memory_title);
         this.textEdithText = findViewById(R.id.new_memory_txt);
         this.inspiration_checkBox = findViewById(R.id.inspiration_checkBox);
-
-        //save button
         btn_save = findViewById(R.id.inspiration_save);
         btn_save.setOnClickListener(this);
     }

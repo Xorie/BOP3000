@@ -33,6 +33,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return new PostViewHolder(view);
     }
 
+    // Viewholder gets the handles for each view items in a row
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder PostViewholder, int i) {
         // Room DB and DAO

@@ -13,7 +13,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="BranchesTreeState">
     <expand>
@@ -40,22 +40,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="endring av encrypta passord String, passordet hadde whitespace på slutten som ødela for sharedpreferences... sql for lokal database fjerner automatisk whitespace ved sql så det ble feil resultat ved sql spørring når man logger inn. User objektet for blir dermed null og appen krasjer">
+    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/PostAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/PostAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +107,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -288,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620249309574</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="skrevet kommentarer og fjernet unødvendig kode. Usikker på inspiration, mye warning som er knyttet til meny.">
+      <created>1620911679004</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620911679004</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -336,7 +335,8 @@
     <MESSAGE value="Design endring på abonnement og faq&#10;lagt til testdata når database opprettes&#10;viser registrert adresse i textfield" />
     <MESSAGE value="endring av encrypta passord, passordet hadde whitespace på slutten som ødela for sharedpreferences... sql for lokal database fjerner automatisk whitespace ved sql så det ble feil resultat" />
     <MESSAGE value="endring av encrypta passord String, passordet hadde whitespace på slutten som ødela for sharedpreferences... sql for lokal database fjerner automatisk whitespace ved sql så det ble feil resultat ved sql spørring når man logger inn. User objektet for blir dermed null og appen krasjer" />
-    <option name="LAST_COMMIT_MESSAGE" value="endring av encrypta passord String, passordet hadde whitespace på slutten som ødela for sharedpreferences... sql for lokal database fjerner automatisk whitespace ved sql så det ble feil resultat ved sql spørring når man logger inn. User objektet for blir dermed null og appen krasjer" />
+    <MESSAGE value="skrevet kommentarer og fjernet unødvendig kode. Usikker på inspiration, mye warning som er knyttet til meny." />
+    <option name="LAST_COMMIT_MESSAGE" value="skrevet kommentarer og fjernet unødvendig kode. Usikker på inspiration, mye warning som er knyttet til meny." />
   </component>
   <component name="WindowStateProjectService">
     <state x="476" y="268" key="#PSD" timestamp="1620241832224">
@@ -355,7 +355,6 @@
     </state>
     <state x="544" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614781685747" />
     <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618873727996" />
-    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443382049" />
     <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1613572865045">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -377,16 +376,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620249106651" />
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612617621647">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1612617621647" />
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616677381582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1616677381582" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616503825450" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446226704" />
     <state x="92" y="92" width="1736" height="866" key="AVDManager" timestamp="1620828351840">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -407,52 +401,48 @@
     </state>
     <state x="573" y="230" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939157219" />
     <state x="805" y="329" key="AndroidCreateXmlResourceDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618913536630" />
-    <state x="30" y="0" key="CommitChangelistDialog2" timestamp="1620068986029">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="21" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1615991065949" />
-    <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068986029" />
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog" timestamp="1612448796907">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1620911677048">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1612448796907" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620911677048" />
+    <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068986029" />
     <state x="363" y="119" key="Downloadable.Font.Dialog.Size" timestamp="1616673778812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="119" key="Downloadable.Font.Dialog.Size/0.0.1366.728@0.0.1366.728" timestamp="1616673778812" />
-    <state x="739" y="276" key="FileChooserDialogImpl" timestamp="1618872484983">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615894429841" />
-    <state x="739" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872484983" />
-    <state width="1323" height="416" key="GridCell.Tab.0.bottom" timestamp="1620910858400">
+    <state x="526" y="193" key="FileChooserDialogImpl" timestamp="1621331934888">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="416" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620910858400" />
+    <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1621331934888" />
+    <state x="739" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872484983" />
+    <state width="1323" height="416" key="GridCell.Tab.0.bottom" timestamp="1621333067131">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="416" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1621333067131" />
     <state width="1692" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068481508" />
     <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
     <state width="1877" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620407821643" />
     <state width="2003" height="278" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866535" />
-    <state width="1323" height="416" key="GridCell.Tab.0.center" timestamp="1620910858400">
+    <state width="1323" height="416" key="GridCell.Tab.0.center" timestamp="1621333067131">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="416" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1620910858400" />
+    <state width="1323" height="416" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1621333067131" />
     <state width="1692" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068481508" />
     <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
     <state width="1877" height="238" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620407821643" />
     <state width="2003" height="278" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866534" />
-    <state width="1323" height="416" key="GridCell.Tab.0.left" timestamp="1620910858399">
+    <state width="1323" height="416" key="GridCell.Tab.0.left" timestamp="1621333067130">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="416" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1620910858399" />
+    <state width="1323" height="416" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1621333067130" />
     <state width="1692" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068481508" />
     <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
     <state width="1877" height="238" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620407821643" />
     <state width="2003" height="278" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1617710866534" />
-    <state width="1323" height="416" key="GridCell.Tab.0.right" timestamp="1620910858400">
+    <state width="1323" height="416" key="GridCell.Tab.0.right" timestamp="1621333067131">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="416" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1620910858400" />
+    <state width="1323" height="416" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1621333067131" />
     <state width="1692" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068481508" />
     <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618355955119" />
     <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620407821643" />
@@ -498,10 +488,10 @@
     </state>
     <state x="60" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1614166538406" />
     <state x="242" y="49" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1617707259328" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1620249316749">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="367" y="102" key="Vcs.Push.Dialog.v2" timestamp="1620911681363">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="367" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1615991084427" />
+    <state x="367" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620911681363" />
     <state x="516" y="146" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616506535070" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620249316749" />
     <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1613939231419">
@@ -541,6 +531,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="672" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872126699" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443803781" />
   </component>
 </project>
