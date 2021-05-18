@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room DB table for Payment
 @Entity(tableName = "Payment",
         foreignKeys = @ForeignKey(entity = User.class,
                 parentColumns = "userID",

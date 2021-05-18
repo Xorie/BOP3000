@@ -10,6 +10,7 @@ import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.Executors;
 
+//Main room DB. Version needs to be updated when changes to tables occur.
 @Database(entities = {User.class, FAQ.class, Post.class, PostOffice.class, Subscription.class, Payment.class}, version=17)
 public abstract class MyDatabase extends RoomDatabase{
 

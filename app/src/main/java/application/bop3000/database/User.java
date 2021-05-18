@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room DB table for users
 @Entity(tableName = "User",
         foreignKeys = {
                 @ForeignKey(entity = PostOffice.class,

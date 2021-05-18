@@ -16,6 +16,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
+//Room DB table for user posts
 @Entity(tableName = "Post",
         foreignKeys = @ForeignKey(entity = User.class,
                 parentColumns = "userID",
