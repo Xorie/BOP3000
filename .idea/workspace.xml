@@ -12,27 +12,21 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Mikkel" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -42,22 +36,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/BOP3000.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabaseGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabaseGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabasePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabasePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/sharedpreference/SharedPreferenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/sharedpreference/SharedPreferenceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Mikkel\.android\avd\Pixel_4_XL_API_30_6.3.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -157,6 +152,7 @@
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -348,7 +344,6 @@
     </state>
     <state x="544" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614781685747" />
     <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618873727996" />
-    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443382049" />
     <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1613572865045">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -370,16 +365,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="743" y="394" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620249106651" />
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612617621647">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1612617621647" />
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616677381582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1616677381582" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616503825450" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446226704" />
     <state x="92" y="92" width="1736" height="866" key="AVDManager" timestamp="1620828351840">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -405,10 +395,6 @@
     </state>
     <state x="21" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1615991065949" />
     <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068986029" />
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog" timestamp="1612448796907">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1612448796907" />
     <state x="363" y="119" key="Downloadable.Font.Dialog.Size" timestamp="1616673778812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -514,9 +500,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617114406003" />
-    <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog" timestamp="1620241623820">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="649" y="209" key="git4idea.branch.GitSmartOperationDialog" timestamp="1621333741435">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
+    <state x="649" y="209" key="git4idea.branch.GitSmartOperationDialog/0.0.1707.920@0.0.1707.920" timestamp="1621333741435" />
     <state x="730" y="236" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620067627532" />
     <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620241623820" />
     <state x="779" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617706477953" />
@@ -534,6 +521,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="672" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872126699" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443803781" />
   </component>
 </project>
