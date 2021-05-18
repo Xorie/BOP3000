@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     tools:openDrawer="start">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +35,8 @@
         app:headerLayout="@menu/header_navigation_drawer"
         app:menu="@menu/navigation_drawer"
         tools:ignore="MissingConstraints" />
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

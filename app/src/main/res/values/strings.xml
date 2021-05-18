@@ -58,7 +58,7 @@
     <string name="inspiration_title">Titel på innlegget</string>
     <string name="inspiration_newpost">Nytt innlegg</string>
     <string name="inspiration_newpic">Last opp bilde</string>
-    <string name="inspiration_save">Lagre</string>
+    <string name="inspiration_save">Publiser</string>
     <string name="inspiration_back">Tilbake</string>
     <string name="inspiration_checkbox">Ønsker du å være annonym?</string>
     <string name="inspiration_hint">Skriv tekst til bilde</string>

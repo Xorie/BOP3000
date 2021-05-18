@@ -160,6 +160,11 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
             }
         }
     }
+    public void userprofileBack(View view) {
+        Intent user_profile_back = new Intent(this, Inspiration.class);
+        startActivity(user_profile_back);
+        finish();
+    }
 
     //displays the selected image in an imageview
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

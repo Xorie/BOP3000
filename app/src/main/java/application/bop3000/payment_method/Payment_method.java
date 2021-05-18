@@ -155,10 +155,6 @@ public class Payment_method extends AppCompatActivity {
             case R.id.faq:
                 startActivity(intent_faq);
                 break;
-            case R.id.payment:
-                startActivity(intent_payment);
-                finish();
-                break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);
                 startActivity(intent_loggout);

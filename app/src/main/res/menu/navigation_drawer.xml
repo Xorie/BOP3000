@@ -20,10 +20,6 @@
             android:id="@+id/subscription"
             android:title="@string/subcripstion"
             android:icon="@drawable/ic_description"/>
-        <item
-            android:id="@+id/payment"
-            android:title="@string/payment_method"
-            android:icon="@drawable/ic_payment"/>
     </group>
     <group
         android:id="@+id/group2"

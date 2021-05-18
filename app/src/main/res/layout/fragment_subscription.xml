@@ -4,6 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".subscription.SubscriptionFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <!-- Hovudlayout -->
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -110,9 +113,11 @@
         android:background="@color/white">
         <Button
             android:id="@+id/subscription_btn_change"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/userprofile_button"
             android:layout_gravity="center"
             android:text="@string/subscription_change"
@@ -121,6 +126,8 @@
             android:textSize="17sp" />
     </LinearLayout>
 
+
     </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 
 </FrameLayout>

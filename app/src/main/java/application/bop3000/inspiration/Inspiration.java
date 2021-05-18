@@ -1,5 +1,6 @@
 package application.bop3000.inspiration;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import application.bop3000.AppExecutors;
 import application.bop3000.R;
@@ -24,7 +26,6 @@ import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 import application.bop3000.faq.faq;
 import application.bop3000.login.Login;
-import application.bop3000.payment_method.Payment_method;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
 import application.bop3000.userprofile.UserProfile;
@@ -40,10 +41,10 @@ public class Inspiration extends AppCompatActivity {
     //Menu
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle drawerToggle;
-    private NavigationView navigationView;
-    private MenuItem itemLogout;
-    private Menu mOptionsMenu;
+    //private ActionBarDrawerToggle drawerToggle;
+    //private NavigationView navigationView;
+
+    //private Menu mOptionsMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +64,11 @@ public class Inspiration extends AppCompatActivity {
         //Menu
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        ActionBarDrawerToggle drawerToggle;
+        NavigationView navigationView;
         drawerLayout = findViewById(R.id.drawerLayout);
         drawerToggle = setupDrawerToggle();
         drawerToggle.syncState();
@@ -74,7 +78,7 @@ public class Inspiration extends AppCompatActivity {
         navigationView = findViewById(R.id.naviView);
 
         setupDrawerContent(navigationView);
-        View header = navigationView.getHeaderView(0);
+        //View header = navigationView.getHeaderView(0);
 
         pAdapter = new PostAdapter(this);
         recView.setAdapter(pAdapter);
@@ -84,6 +88,7 @@ public class Inspiration extends AppCompatActivity {
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(Inspiration.this, Inspiration_newpost.class);
             startActivity(intent);
+            finish();
         });
         Intent intent_insp = getIntent();
     }
@@ -110,12 +115,12 @@ public class Inspiration extends AppCompatActivity {
     }
 
     //Menu
+    @SuppressLint("NonConstantResourceId")
     private void selectDrawerItem(MenuItem menuItem) {
         Intent intent_home = new Intent(this, Inspiration.class);
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
-        Intent intent_payment = new Intent(this, Payment_method.class);
         Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
@@ -124,7 +129,6 @@ public class Inspiration extends AppCompatActivity {
                 finish();
                 break;
             case R.id.userprofile:
-                //intent_profile.putExtra("useremail", email_usr);
                 startActivity(intent_profile);
                 break;
             case R.id.subscription:
@@ -132,9 +136,6 @@ public class Inspiration extends AppCompatActivity {
                 break;
             case R.id.faq:
                 startActivity(intent_faq);
-                break;
-            case R.id.payment:
-                startActivity(intent_payment);
                 break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);
@@ -149,22 +150,18 @@ public class Inspiration extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                drawerLayout.openDrawer( GravityCompat.START);
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            drawerLayout.openDrawer( GravityCompat.START );
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        selectDrawerItem(menuItem);
-                        return true;
-                    }
-                });
+                menuItem -> {
+                    selectDrawerItem(menuItem);
+                    return true;
+                } );
     }
 }
