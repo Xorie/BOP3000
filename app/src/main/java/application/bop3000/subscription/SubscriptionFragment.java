@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import application.bop3000.AppExecutors;
@@ -18,17 +17,15 @@ import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
-import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 
 public class SubscriptionFragment extends Fragment {
-    private SharedPreferenceConfig sharedPreferenceConfig;
+
     private MyDatabase mDb;
     private TextView userSub;
     private TextView userPost;
     private TextView userCity;
     private TextView userAddress;
-    private Button button;
     private String subDesc;
     private String post;
     private String city;
@@ -44,50 +41,42 @@ public class SubscriptionFragment extends Fragment {
         userCity = view.findViewById(R.id.userCity);
         userAddress = view.findViewById(R.id.userAddress);
 
-        sharedPreferenceConfig = new SharedPreferenceConfig(getActivity().getApplicationContext());
+        AppExecutors.getInstance().diskIO().execute( () -> {
+            int userID = Login.getUser().getUserID();
 
-        AppExecutors.getInstance().diskIO().execute( new Runnable() {
-            @Override
-            public void run() {
-                int userID = Login.getUser().getUserID();
+            //Getting information on user
+            User user = mDb.getKnittersboxDao().hentBrukerID(userID);
 
-                //Getting information on user
-                User user = mDb.getKnittersboxDao().hentBrukerID(userID);
-
-                //Checking for NULL values
-                if (user.getSubscription_subscriptionID() == null) {
-                    subDesc = "Ingen";
-                } else {
-                    String sub = user.getSubscription_subscriptionID();
-                    //Displaying the description instead of subscription ID
-                    int subscriptID = Integer.parseInt(sub);
-                    application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
-                    subDesc = subscription.getDescription();
-                }
-                if (user.getPostnr() == null) {
-                    post = "Ingen";
-                } else { post = user.getPostnr(); }
-
-                if (user.getCity() == null) {
-                    city = "Ingen";
-                } else { city = user.getCity(); }
-
-                if (user.getStreetname() == null) {
-                    address = "Ingen";
-                } else { address = user.getStreetname(); }
-
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //Filling the textview
-                        userSub.setText(subDesc);
-                        userPost.setText(post);
-                        userCity.setText(city);
-                        userAddress.setText(address);
-                    }
-                });
+            //Checking for NULL values
+            if (user.getSubscription_subscriptionID() == null) {
+                subDesc = "Ingen";
+            } else {
+                String sub = user.getSubscription_subscriptionID();
+                //Displaying the description instead of subscription ID
+                int subscriptID = Integer.parseInt(sub);
+                application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
+                subDesc = subscription.getDescription();
             }
-        });
+            if (user.getPostnr() == null) {
+                post = "Ingen";
+            } else { post = user.getPostnr(); }
+
+            if (user.getCity() == null) {
+                city = "Ingen";
+            } else { city = user.getCity(); }
+
+            if (user.getStreetname() == null) {
+                address = "Ingen";
+            } else { address = user.getStreetname(); }
+
+            getActivity().runOnUiThread( () -> {
+                //Filling the textview
+                userSub.setText(subDesc);
+                userPost.setText(post);
+                userCity.setText(city);
+                userAddress.setText(address);
+            } );
+        } );
         return view;
     }
 

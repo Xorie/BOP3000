@@ -40,31 +40,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="ekstern database">
+    <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/Payment_method.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/Payment_method.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/Subscription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/SubscriptionChangeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/SubscriptionChangeFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/SubscriptionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/SubscriptionFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/ChangePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/ChangePassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_inspiration_newpost.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_inspiration_newpost.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_subscription.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_subscription.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_subscription_change.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_subscription_change.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +276,13 @@
       <option name="project" value="LOCAL" />
       <updated>1619612873117</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="endring av kommentarer">
+      <created>1621332382352</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1621332382352</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -336,7 +328,8 @@
     <MESSAGE value="betalingsmetode ca ferdig&#10;insp ferdig" />
     <MESSAGE value="fjernet themes" />
     <MESSAGE value="Design endring på abonnement og faq&#10;lagt til testdata når database opprettes&#10;viser registrert adresse i textfield" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design endring på abonnement og faq&#10;lagt til testdata når database opprettes&#10;viser registrert adresse i textfield" />
+    <MESSAGE value="endring av kommentarer" />
+    <option name="LAST_COMMIT_MESSAGE" value="endring av kommentarer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="476" y="268" key="#PSD" timestamp="1620241832224">
@@ -350,12 +343,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872567706" />
-    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser" timestamp="1618873727996">
+    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser" timestamp="1621332544752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="544" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1614781685747" />
-    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618873727996" />
-    <state x="765" y="209" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443382049" />
+    <state x="765" y="137" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1621332544752" />
     <state x="412" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1613572865045">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -373,16 +365,11 @@
     </state>
     <state x="326" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1614778360818" />
     <state x="458" y="411" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616504313022" />
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612617621647">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="479" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1612617621647" />
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616677381582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="491" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1616677381582" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616503825450" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612446226704" />
     <state x="98" y="97" width="1852" height="918" key="AVDManager" timestamp="1617711035419">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
@@ -403,15 +390,11 @@
     </state>
     <state x="573" y="230" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939157219" />
     <state x="805" y="329" key="AndroidCreateXmlResourceDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618913536630" />
-    <state x="30" y="0" key="CommitChangelistDialog2" timestamp="1620068986029">
+    <state x="30" y="0" key="CommitChangelistDialog2" timestamp="1621332381508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="21" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1615991065949" />
-    <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620068986029" />
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog" timestamp="1612448796907">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="85" y="0" width="1182" height="653" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1612448796907" />
+    <state x="30" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1621332381508" />
     <state x="363" y="119" key="Downloadable.Font.Dialog.Size" timestamp="1616673778812">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -494,12 +477,11 @@
     </state>
     <state x="60" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1614166538406" />
     <state x="242" y="49" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1617707259328" />
-    <state x="516" y="146" key="Vcs.Push.Dialog.v2" timestamp="1616506535070">
+    <state x="516" y="146" key="Vcs.Push.Dialog.v2" timestamp="1621332392461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1615991084427" />
-    <state x="516" y="146" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1616506535070" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612437081146" />
+    <state x="516" y="146" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1621332392461" />
     <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1613939231419">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -537,6 +519,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="672" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872126699" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1612443803781" />
   </component>
 </project>
