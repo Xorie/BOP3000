@@ -32,11 +32,10 @@ public class UserProfile extends AppCompatActivity {
     // Database
     private MyDatabase mDb;
 
-    // Tekstfelt
+    // Textfields
     private TextView username;
     private TextView subscription;
     private TextView firstname;
-    //private TextView lastname;
     private TextView email;
     private TextView street;
     private TextView postnr;
@@ -44,6 +43,7 @@ public class UserProfile extends AppCompatActivity {
 
     private String full_name;
 
+    //User object
     private User user;
 
     //Menu
@@ -54,8 +54,8 @@ public class UserProfile extends AppCompatActivity {
     private View itemLogout;
 
 
-    // Email for logget inn bruker (HARDKODET NÅ, MÅ KOMME FRA LOGG INN eller noe)
-    String email_usr = Login.getUser().getEmail();
+    // Email for logged-in user
+    String email_usr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +67,10 @@ public class UserProfile extends AppCompatActivity {
         // Database
         mDb = MyDatabase.getDatabase(getApplicationContext());
 
-        // Finner views
+        // Finding views
         username = findViewById(R.id.userprofile_username);
         subscription = findViewById(R.id.userprofile_sub);
         firstname = findViewById(R.id.userprofile_fname);
-        //lastname = findViewById(R.id.userprofile_sname);
         email = findViewById(R.id.userprofile_email);
         street = findViewById(R.id.userprofile_street);
         postnr = findViewById(R.id.userprofile_postnr);
@@ -90,12 +89,18 @@ public class UserProfile extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.naviView);
 
-        //SKAL BLI RØD
         itemLogout = findViewById(R.id.logout);
 
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        email_usr = Login.getUser().getEmail();
+
+        //Retrieving userdata from the database
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
@@ -103,17 +108,11 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        // Metode for å vise data om bruker
+        // Method to show userdata
         showListData();
     }
 
+    //Closing meny when going to another activity
     @Override
     protected void onPause() {
         super.onPause();
@@ -125,23 +124,20 @@ public class UserProfile extends AppCompatActivity {
         super.onResume();
     }
 
-    // Metode for å vise data om bruker
+    // Method to show userdata
     private void showListData(){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-
-                // Finner data om bruker
-                //user = mDb.getKnittersboxDao().loadUser(email_usr);
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         full_name = user.getFirstname() + " " + user.getLastname();
 
-                        // Setter data på riktig plass
+                        // Setting data on textviews
                         username.setText(user.getDisplayname());
-                        //Sjekker om bruker har lagt til navn (fullt navn, fornavn, etternavn)
+                        // Checking if user has saved data about name (full name, firstname, lastname)
                         if(full_name.equals(" ") || full_name.equals("null null")) {
                             firstname.setText(R.string.userprofile_noname);
                         } else if (user.getFirstname() == null || user.getFirstname().isEmpty()) {
@@ -150,27 +146,24 @@ public class UserProfile extends AppCompatActivity {
                         } else {
                             firstname.setText(full_name);
                         }
-                        //lastname.setText(user.getLastname());
                         email.setText(user.getEmail());
                         street.setText(user.getStreetname());
                         postnr.setText(user.getPostnr());
                         city.setText(user.getCity());
 
-                        // Vising av abonnementtype
+                        // Displaying subscription type
                         String sub_type = user.getSubscription_subscriptionID();
-                        // Hvis bruker ikke har lagt inn noe abonnement
+                        // If user has no subscription
                         if(sub_type == null) {
                             sub_type = "Ingen";
                         }
-                        // Hvis bruker har abonnement (NB: MÅ LEGGE INN FLERE)
+                        // If user has subscription
                         else if(sub_type.equals("1")) {
                             sub_type = "Fargeboksen";
                         }
                         else if(sub_type.equals("2")) {
                             sub_type = "Jordboksen";
                         }
-
-                        //NB: IF FOR RESTEN AV ABONNEMENTTYPENE!
                         subscription.setText(sub_type);
 
                     }
@@ -179,35 +172,23 @@ public class UserProfile extends AppCompatActivity {
         });
     }
 
-    // Metode for knapp til redigering av profil
+    // Method for user settings button
     public void userSettings(View view) {
 
-        // Kobling til redigere profil aktivitet
         Intent user_settings = new Intent(this, UserSettings.class);
 
-        // Starter aktivitet
         startActivity(user_settings);
         finish();
     }
 
-    // Metode for knapp til endring av passord
+    // Method for change password button
     public void changePassword(View view) {
 
-        // Kobling til endre passord aktivitet
         Intent change_pwd = new Intent(this, ChangePassword.class);
 
-        // Starter aktivitet
         startActivity(change_pwd);
-        //finish();
+        finish();
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent back_to_insp = new Intent(this, Inspiration.class);
-//        startActivity(back_to_insp);
-//        finish();
-//    }
 
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {

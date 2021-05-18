@@ -9,13 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
 import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
@@ -26,19 +19,19 @@ import application.bop3000.sharedpreference.SharedPreferenceConfig;
 
 public class UserSettings extends AppCompatActivity {
 
-    // Inputfelt
+    // Input fields
     EditText usrname;
     EditText fname;
     EditText sname;
     EditText email;
 
-    // Lagre knapp
+    // Save/update button
     Button update;
 
     // Database
     private MyDatabase mDb;
 
-    // Email for bruker (blir hentet i onStart)
+    // Email for logged-in user
     String email_usr = Login.getUser().getEmail();
 
     private SharedPreferenceConfig sharedPreferenceConfig;
@@ -48,14 +41,14 @@ public class UserSettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_settings);
 
-        // Finner views
+        // Finding views
         usrname = findViewById(R.id.usrname);
         fname = findViewById(R.id.fname);
         sname = findViewById(R.id.sname);
         email = findViewById(R.id.email);
         update = findViewById(R.id.btn_updatename);
 
-        //Kobler til database
+        // Database connection
         mDb = MyDatabase.getDatabase(getApplicationContext());
 
         sharedPreferenceConfig = new SharedPreferenceConfig(getApplicationContext());
@@ -66,17 +59,19 @@ public class UserSettings extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //Viser data i inputfeltene om det er lagt inn noe
+        // Method for showing data in the input fields
         showData();
 
     }
 
+    // Back button in the toolbar
     public void userprofileBack(View view) {
         Intent user_profile_back = new Intent(this, UserProfile.class);
         startActivity(user_profile_back);
         finish();
     }
 
+    // Android back button; to update the data in user profile activity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -85,16 +80,16 @@ public class UserSettings extends AppCompatActivity {
         finish();
     }
 
-    // Viser data i inputfeltene om det er lagt inn noe
+    // Displaying data in input fields
     private void showData(){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 
-                //Henter data om brukeren
+                // Retrieving user data
                 User user = mDb.getKnittersboxDao().loadUser(email_usr);
 
-                // Setter data på riktig plass
+                // Setting data in input fields
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -102,32 +97,31 @@ public class UserSettings extends AppCompatActivity {
                         fname.setText(user.getFirstname());
                         sname.setText(user.getLastname());
                         email.setText(user.getEmail());
-                        //password_old.setText(user.getPassword());
                     }
                 });
             }
         });
     }
 
-    //Knapp for å oppdatere info som er skrevet inn
+    // Update button to save/update user info
     public void updateUserinfo(View view){
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
 
-                // Henter info som er skrevet inn
+                // Getting data/text from inputs
                 String username = usrname.getText().toString();
                 String firstname = fname.getText().toString();
                 String lastname = sname.getText().toString();
                 String emailnew = email.getText().toString(); //NB: MÅ FIKSES
 
-                // Henter data om brukeren
-                User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
+                // Retrieving user
+                User user = Login.getUser(); //mDb.getKnittersboxDao().loadUser(email_usr);
 
-                // For oppdatering av ekstern database
+                // For external database update
                 String emailold = user.getEmail();
 
-                // Hvis ingenting er endret
+                // If nothing is changed
                 if(username.equals(user.getDisplayname()) && firstname.equals(user.getFirstname()) && lastname.equals(user.getLastname()) && emailnew.equals(user.getEmail())) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -135,7 +129,7 @@ public class UserSettings extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Ingen endringer gjort", Toast.LENGTH_LONG).show();
                         }
                     });
-                // Hvis endringer er gjort
+                // If changed has been done
                 }
                 else if(emailnew.isEmpty() || emailnew.equals(" ")) {
                     runOnUiThread(new Runnable() {
@@ -145,6 +139,7 @@ public class UserSettings extends AppCompatActivity {
                         }
                     });
                 }
+                // If user name exists in the database
                 else if(mDb.getKnittersboxDao().displayname(username) != null && !username.equals(user.getDisplayname())) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -153,6 +148,7 @@ public class UserSettings extends AppCompatActivity {
                         }
                     });
                 }
+                // If e-mail exists in the database
                 else if(mDb.getKnittersboxDao().userEmail(emailnew) != null && !emailnew.equals(user.getEmail())) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -163,27 +159,28 @@ public class UserSettings extends AppCompatActivity {
                 }
                 else {
 
-                    // Setter data om brukeren
+                    // Setting data in the database
                     user.setDisplayname(username);
                     user.setFirstname(firstname);
                     user.setLastname(lastname);
                     user.setEmail(emailnew); //NB: MÅ FIKSES
 
-
-                    // Oppdaterer lokal database
+                    // Updating local database
                     //mDb.getKnittersboxDao().updateName(user);
                     mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
 
+                    // Syncing with external database
                     DatabasePost.syncUserData(emailnew, user.getPassword(), UserSettings.this);
 
+                    // Message, updating sharedPreferences with new email
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
-                            //System.out.println("EMAIL ER DEN DER: " + user.getEmail());
-                            sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL",emailnew);
+                            sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL", emailnew);
                         }
                     });
+                    // Finishing activity and returning to the user profile
                     finish();
                     Intent intent_profile = new Intent(UserSettings.this, UserProfile.class);
                     startActivity(intent_profile);
