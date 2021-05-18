@@ -97,7 +97,6 @@ public class UserSettings extends AppCompatActivity {
                         fname.setText(user.getFirstname());
                         sname.setText(user.getLastname());
                         email.setText(user.getEmail());
-                        //password_old.setText(user.getPassword());
                     }
                 });
             }
@@ -117,7 +116,7 @@ public class UserSettings extends AppCompatActivity {
                 String emailnew = email.getText().toString(); //NB: MÅ FIKSES
 
                 // Retrieving user
-                User user = Login.getUser();//mDb.getKnittersboxDao().loadUser(email_usr);
+                User user = Login.getUser(); //mDb.getKnittersboxDao().loadUser(email_usr);
 
                 // For external database update
                 String emailold = user.getEmail();
@@ -166,7 +165,6 @@ public class UserSettings extends AppCompatActivity {
                     user.setLastname(lastname);
                     user.setEmail(emailnew); //NB: MÅ FIKSES
 
-
                     // Updating local database
                     //mDb.getKnittersboxDao().updateName(user);
                     mDb.getKnittersboxDao().updateUserInfo(username, firstname, lastname, emailnew, emailold);
@@ -179,7 +177,6 @@ public class UserSettings extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Profil oppdatert", Toast.LENGTH_LONG).show();
-                            //System.out.println("EMAIL ER DEN DER: " + user.getEmail());
                             sharedPreferenceConfig.setPreference(UserSettings.this,"PREFS_LOGIN_EMAIL", emailnew);
                         }
                     });

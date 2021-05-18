@@ -190,14 +190,6 @@ public class UserProfile extends AppCompatActivity {
         finish();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent back_to_insp = new Intent(this, Inspiration.class);
-//        startActivity(back_to_insp);
-//        finish();
-//    }
-
     //Menu
     private void selectDrawerItem(MenuItem menuItem) {
         Intent intent_home = new Intent(this, Inspiration.class);

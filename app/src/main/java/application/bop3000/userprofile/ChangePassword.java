@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,6 @@ import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.User;
-import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
 import application.bop3000.network.DatabasePost;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
@@ -60,30 +58,12 @@ public class ChangePassword extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        // Finner email som ble sent fra brukerprofil
-        //Intent change_pwd = getIntent();
-        //email_usr = change_pwd.getStringExtra("useremail");
-
-    }
-
     // Back button in the toolbar
     public void userprofileBack(View view) {
         Intent user_profile_back = new Intent(this, UserProfile.class);
         startActivity(user_profile_back);
         finish();
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent user_profile_back = new Intent(this, UserProfile.class);
-//        startActivity(user_profile_back);
-//        finish();
-//    }
 
     //Knapp for å oppdatere info som er skrevet inn
     public void updatePassword(View view){
@@ -96,9 +76,7 @@ public class ChangePassword extends AppCompatActivity {
                 String pass_new = password_new.getText().toString();
 
                 // Retrieving user
-                User user = mDb.getKnittersboxDao().loadUser(email_usr);
-
-                //User user = Login.getUser();
+                User user = mDb.getKnittersboxDao().loadUser(email_usr); //User user = Login.getUser();
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -120,7 +98,6 @@ public class ChangePassword extends AppCompatActivity {
                         else {
                             // Encrypting new password
                             String pass_new_encrypted = EncryptDecrypt.encrypt(pass_new).trim();
-                            //pass_new_encrypted = pass_new_encrypted.trim();
                             user.setPassword(pass_new_encrypted);
 
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -131,7 +108,6 @@ public class ChangePassword extends AppCompatActivity {
 
                                     // Syncing new data with external database
                                     DatabasePost.syncUserData(email_usr, pass_new_encrypted, ChangePassword.this);
-                                    //DatabasePost.syncUserData(user.getEmail(), pass_old, ChangePassword.this);
                                 }
                             });
 
