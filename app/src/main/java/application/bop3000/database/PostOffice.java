@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room DB for Zipcodes and Locations
 @Entity(tableName = "PostOffice")
 public class PostOffice implements Serializable {
     @ColumnInfo(name = "postnr")

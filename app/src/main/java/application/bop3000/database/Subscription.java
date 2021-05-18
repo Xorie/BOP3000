@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room DB table for subscription types
 @Entity(tableName = "Subscription")
 public class Subscription implements Serializable {
     @ColumnInfo(name = "subscriptionID")

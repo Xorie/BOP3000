@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room DB table for FAQ
 @Entity(tableName = "FAQ")
 public class FAQ implements Serializable {
     @ColumnInfo(name = "faqID")

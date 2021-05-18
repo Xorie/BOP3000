@@ -10,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.Serializable;
 
+//Room DB table for Image file location
 @Entity(tableName = "Image"
         //,foreignKeys = @ForeignKey(entity = Post.class,
           //      parentColumns = "postID",
