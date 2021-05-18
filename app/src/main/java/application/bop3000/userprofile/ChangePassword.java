@@ -71,13 +71,13 @@ public class ChangePassword extends AppCompatActivity {
         finish();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent user_profile_back = new Intent(this, UserProfile.class);
-//        startActivity(user_profile_back);
-//        finish();
-//    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent user_profile_back = new Intent(this, UserProfile.class);
+        startActivity(user_profile_back);
+        finish();
+    }
 
     //Knapp for å oppdatere info som er skrevet inn
     public void updatePassword(View view){

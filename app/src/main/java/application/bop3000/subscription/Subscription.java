@@ -59,13 +59,12 @@ public class Subscription extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.naviView);
 
-        //SKAL BLI RØD
         itemLogout = findViewById(R.id.logout);
 
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
 
-        //Setter default visningsfragment
+        //Setting the default displayed fragment
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.fragment_container, new SubscriptionFragment());
@@ -85,7 +84,6 @@ public class Subscription extends AppCompatActivity {
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
-        Intent intent_payment = new Intent(this, Payment_method.class);
         Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
@@ -104,9 +102,6 @@ public class Subscription extends AppCompatActivity {
 
             case R.id.faq:
                 startActivity(intent_faq);
-                break;
-            case R.id.payment:
-                startActivity(intent_payment);
                 break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);

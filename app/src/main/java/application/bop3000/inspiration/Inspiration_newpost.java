@@ -33,6 +33,7 @@ import application.bop3000.database.KnittersboxDao;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.database.Post;
 import application.bop3000.login.Login;
+import application.bop3000.userprofile.UserProfile;
 
 public class Inspiration_newpost extends AppCompatActivity implements View.OnClickListener {
     private static final int GALLERY_REQUEST = 100;
@@ -132,6 +133,12 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
     public void openCamera(View view) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA_REQUEST);
+    }
+
+    public void userprofileBack(View view) {
+        Intent user_profile_back = new Intent(this, Inspiration.class);
+        startActivity(user_profile_back);
+        finish();
     }
 
 

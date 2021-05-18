@@ -37,7 +37,6 @@ public class SubscriptionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_subscription, container, false);
         mDb = MyDatabase.getDatabase(getActivity().getApplicationContext());
         userSub = view.findViewById(R.id.userSub);
@@ -52,15 +51,15 @@ public class SubscriptionFragment extends Fragment {
             public void run() {
                 int userID = Login.getUser().getUserID();
 
-                // Henter informasjon på brukerID
+                //Getting information on user
                 User user = mDb.getKnittersboxDao().hentBrukerID(userID);
 
-                // Sjekker om man får nullverdi
+                //Checking for NULL values
                 if (user.getSubscription_subscriptionID() == null) {
                     subDesc = "Ingen";
                 } else {
                     String sub = user.getSubscription_subscriptionID();
-                    //Henter subscription desc fra ID
+                    //Displaying the description instead of subscription ID
                     int subscriptID = Integer.parseInt(sub);
                     application.bop3000.database.Subscription subscription = mDb.getKnittersboxDao().hentSubDesc(subscriptID);
                     subDesc = subscription.getDescription();
@@ -80,7 +79,7 @@ public class SubscriptionFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        //Fyller textview
+                        //Filling the textview
                         userSub.setText(subDesc);
                         userPost.setText(post);
                         userCity.setText(city);
@@ -89,14 +88,13 @@ public class SubscriptionFragment extends Fragment {
                 });
             }
         });
-
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated( savedInstanceState );
-
+        super.onActivityCreated(savedInstanceState);
+        //Changing the displayed fragment
         getView().findViewById(R.id.subscription_btn_change).setOnClickListener(v ->  {
             FragmentManager manager = getActivity().getSupportFragmentManager();
             SubscriptionChangeFragment fragmentChange = new SubscriptionChangeFragment();

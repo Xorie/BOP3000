@@ -36,6 +36,7 @@ import application.bop3000.database.PostOffice;
 import application.bop3000.database.Subscription;
 import application.bop3000.database.User;
 import application.bop3000.login.Login;
+import application.bop3000.network.Constants;
 import application.bop3000.network.DatabasePost;
 
 
@@ -57,10 +58,8 @@ public class SubscriptionChangeFragment extends Fragment {
     private ArrayAdapter adapter;
     private application.bop3000.database.Subscription subDesc;
     private User user;
-    //Endelig liste
     private ArrayList<String> subscriptionList;
     private ArrayList<String> postOfficeList;
-    //Liste som henter abonnement
     private List<Subscription> getSubList;
     private List<PostOffice> getPostList;
     private ImageButton backbutton;
@@ -68,7 +67,6 @@ public class SubscriptionChangeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_subscription_change, container, false);
 
         mDb = MyDatabase.getDatabase(getActivity().getApplicationContext());
@@ -82,15 +80,46 @@ public class SubscriptionChangeFragment extends Fragment {
         postOfficeList = new ArrayList<>();
         adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, subscriptionList);
 
+        //calling the method for setting info in spinner
         getSub();
 
+        //calling the external database method for setting info in spinner
+        //getSubExternal();
+
+        showUserData();
+        return view;
+    }
+
+    private void showUserData(){
+        //Puts existing address in the input field if there is any
+        AppExecutors.getInstance().diskIO().execute( new Runnable() {
+            @Override
+            public void run() {
+                String userMail = Login.getUser().getEmail();
+                //Getting info from user
+                User user = mDb.getKnittersboxDao().loadUser(userMail);
+
+                //Setting value
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        et_postnr.setText(user.getPostnr());
+                        et_city.setText(user.getCity());
+                        et_address.setText(user.getStreetname());
+                    }
+                });
+            }
+        });
+    }
+    private void getSubExternal() {
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String url = "http://192.168.1.29/BACH/spinner.php?";
+        String url = Constants.IP + "spinner.php?";
 
         StringRequest stringRequest = new StringRequest( Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        //Splitting the list retrived from the database and add to Array
                         String[] desc = response.split("¤" );
                         subscriptionList.addAll(Arrays.asList(desc));
 
@@ -104,33 +133,10 @@ public class SubscriptionChangeFragment extends Fragment {
         });
         //RequestQueue
         queue.add(stringRequest);
-
-        showUserData();
-        return view;
-    }
-
-    private void showUserData(){
-        AppExecutors.getInstance().diskIO().execute( new Runnable() {
-            @Override
-            public void run() {
-                String userMail = Login.getUser().getEmail();
-                //Henter data om brukeren
-                User user = mDb.getKnittersboxDao().loadUser(userMail);
-
-                // Setter data på riktig plass
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        et_postnr.setText(user.getPostnr());
-                        et_city.setText(user.getCity());
-                        et_address.setText(user.getStreetname());
-                    }
-                });
-            }
-        });
     }
 
     private void getSub() {
+        //Finds all the subscriptions available
         AppExecutors.getInstance().diskIO().execute( new Runnable() {
             @Override
             public void run() {
@@ -147,10 +153,10 @@ public class SubscriptionChangeFragment extends Fragment {
     }
 
     private void setSub() {
+        //Found subscriptions are set in adapter
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //Setter spinner adapter
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinner.setAdapter(adapter);
             }
@@ -158,14 +164,14 @@ public class SubscriptionChangeFragment extends Fragment {
     }
 
     private void getSubID() {
-        //Henter abonnementet som er vald og finner ID
+        //Retrieving the chosen subscription and finding it's ID
         subDesc = mDb.getKnittersboxDao().hentSubID(subscript);
         subID = subDesc.getSubscriptionID();
         str_subID = String.valueOf(subID);
     }
 
     private void getPostOffice() {
-        //Henter en liste med PostOffice
+        //Retrieves all the registered postOffices
         getPostList = mDb.getKnittersboxDao().hentPostOffice();
         size = getPostList.size();
         for (count = 0; count < size; count++) {
@@ -180,15 +186,16 @@ public class SubscriptionChangeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        //OnButtonClick saves the subscription and address
         getView().findViewById(R.id.btn_save).setOnClickListener(v ->  {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     int userID = Login.getUser().getUserID();
-                    //Finner brukeren som er pålogget
+                    //Finding the user in the database
                     user = mDb.getKnittersboxDao().hentBrukerID(userID);
 
-                    //inputdata
+                    //getting the value from input fields
                     city = et_city.getText().toString();
                     postnr = et_postnr.getText().toString();
                     address = et_address.getText().toString();
@@ -196,6 +203,7 @@ public class SubscriptionChangeFragment extends Fragment {
 
                     getSubID();
                     getPostOffice();
+                    //Checking if the PostOffice given already exist
                     if (postOfficeList.contains(postnr)) {
                         if(city.isEmpty() || postnr.isEmpty() || address.isEmpty()) {
                             getActivity().runOnUiThread( new Runnable() {
@@ -205,21 +213,22 @@ public class SubscriptionChangeFragment extends Fragment {
                                 }
                             });
                         } else {
-                            //Setter
+                            //Setting the values into user object
                             user.setCity(city);
                             user.setPostnr(postnr);
                             user.setStreetname(address);
                             user.setSubscription_subscriptionID(str_subID);
-                            //Oppdaterer bruker
+                            //Update user
                             mDb.getKnittersboxDao().updateUser(user);
 
+                            //Sync to external database
                             DatabasePost.syncUserData(user.getEmail(), user.getPassword(), getContext());
 
+                            //Changing displayed fragment
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     Toast.makeText(getActivity().getApplicationContext(), "Bruker er oppdatert", Toast.LENGTH_SHORT ).show();
-                                    //Sender tilbake til forrige fragment
                                     FragmentManager manager = getActivity().getSupportFragmentManager();
                                     SubscriptionFragment fragment = new SubscriptionFragment();
                                     manager.beginTransaction()

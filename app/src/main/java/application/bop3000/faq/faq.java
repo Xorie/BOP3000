@@ -12,6 +12,7 @@ import application.bop3000.database.FAQ;
 import application.bop3000.database.MyDatabase;
 import application.bop3000.inspiration.Inspiration;
 import application.bop3000.login.Login;
+import application.bop3000.network.Constants;
 import application.bop3000.payment_method.Payment_method;
 import application.bop3000.sharedpreference.SharedPreferenceConfig;
 import application.bop3000.subscription.Subscription;
@@ -77,10 +78,10 @@ public class faq extends AppCompatActivity {
         adapter = new MainAdapter(this, listGroup, listItem);
         expandableListView.setAdapter(adapter);
 
-        //Henter FAQ fra intern database
+        //Calling the internal FAQ method
         getFaq();
 
-        //Henter FAQ fra ekstern database
+        //Calling the external FAQ method
         //getFaqEksternt();
 
 
@@ -98,7 +99,7 @@ public class faq extends AppCompatActivity {
         navigationView = findViewById(R.id.naviView);
 
         //SKAL BLI RØD
-        itemLogout = findViewById(R.id.logout);
+        //itemLogout = findViewById(R.id.logout);
 
         setupDrawerContent(navigationView);
         View header = navigationView.getHeaderView(0);
@@ -116,9 +117,11 @@ public class faq extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+                //Getting the FAQ list from database
                 faqList = mDb.getKnittersboxDao().faqList();
                 size = faqList.size();
 
+                //Separating the question and answer
                 for (count = 0; count < size; count++) {
                     FAQ faq = faqList.get(count);
                     String faqSp = faq.getQuestion();
@@ -136,6 +139,7 @@ public class faq extends AppCompatActivity {
             public void run() {
                 increment = 0;
                 Log.d( "SIZE", String.valueOf( size ) );
+                //Binding the question and answer together
                 for (count = 0; count < size; count++) {
                     listItem.put(listGroup.get(increment), Collections.singletonList(itemSet.get(increment)));
                     ++increment;
@@ -147,12 +151,13 @@ public class faq extends AppCompatActivity {
 
     private void getFaqEksternt() {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.29/BACH/faq.php?";
+        String url = Constants.IP + "faq.php?";
 
         StringRequest stringRequest = new StringRequest( Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        //Splitting question and answer and putting them in different arrays
                         String[] kombo = response.split( "¤" );
                         String[] question = kombo[0].split( "#" );
                         String[] answer = kombo[1].split( "#" );
@@ -192,28 +197,21 @@ public class faq extends AppCompatActivity {
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
-        Intent intent_payment = new Intent(this, Payment_method.class);
         Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
             case R.id.home:
                 startActivity(intent_home);
                 break;
-
             case R.id.userprofile:
                 startActivity(intent_profile);
                 break;
-
             case R.id.subscription:
                 startActivity(intent_subscription);
                 break;
-
             case R.id.faq:
                 startActivity(intent_faq);
                 finish();
-                break;
-            case R.id.payment:
-                startActivity(intent_payment);
                 break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);

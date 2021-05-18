@@ -106,6 +106,7 @@ public class Inspiration extends AppCompatActivity {
         fab.setOnClickListener(view -> {
             Intent intent = new Intent(Inspiration.this, Inspiration_newpost.class);
             startActivity(intent);
+            finish();
         });
 
         //Henter brukernavn fra logg inn. INN I ONSTART ELS????
@@ -140,7 +141,6 @@ public class Inspiration extends AppCompatActivity {
         Intent intent_subscription = new Intent(this, Subscription.class);
         Intent intent_faq = new Intent(this, faq.class);
         Intent intent_profile = new Intent(this, UserProfile.class);
-        Intent intent_payment = new Intent(this, Payment_method.class);
         Intent intent_loggout = new Intent(this, Login.class);
 
         switch(menuItem.getItemId()) {
@@ -157,9 +157,6 @@ public class Inspiration extends AppCompatActivity {
                 break;
             case R.id.faq:
                 startActivity(intent_faq);
-                break;
-            case R.id.payment:
-                startActivity(intent_payment);
                 break;
             case R.id.logout:
                 sharedPreferenceConfig.login_status(false);

@@ -7,13 +7,19 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".inspiration.Inspiration_newpost">
+    <include
+        layout="@layout/usersettings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         android:fontFamily="@font/roboto_thin"
-        android:gravity="center_horizontal"
         android:text="@string/inspiration_newpost"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -32,13 +38,13 @@
             <View
                 android:id="@+id/divider5"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="21dp"
                 android:background="@drawable/white" />
 
             <ImageView
                 android:id="@+id/new_memory_selected_image"
                 android:layout_width="match_parent"
-                android:layout_height="159dp"
+                android:layout_height="200dp"
                 android:visibility="visible"
                 tools:srcCompat="@drawable/ic_baseline_image_24"
                 android:contentDescription="@string/app_name"/>
@@ -47,6 +53,8 @@
                 android:id="@+id/new_memory_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:ems="12"
                 android:hint="@string/inspiration_title"
                 android:textColor="@color/black"
@@ -58,11 +66,12 @@
                 android:id="@+id/new_memory_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:ems="12"
                 android:textColor="@color/black"
                 android:hint="@string/inspiration_saysomething"
                 android:textColorHint="@color/gray"
-
                 android:autofillHints="@string/inspiration_saysomething"
                 android:inputType="text" />
 
@@ -76,6 +85,8 @@
                 android:id="@+id/inspiration_checkBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:text="@string/inspiration_checkbox" />
 
             <View
@@ -84,31 +95,42 @@
                 android:layout_height="20dp"
                 android:background="@drawable/white" />
 
-            <Button
-                android:id="@+id/gallery"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/userprofile_button"
-                android:onClick="openGallery"
-                android:text="@string/inspiration_gallary"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal">
 
-            <View
-                android:id="@+id/divider4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="@drawable/white" />
+                <Button
+                    android:id="@+id/gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/userprofile_button"
+                    android:onClick="openGallery"
+                    android:text="@string/inspiration_gallary"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/userprofile_button"
+                    android:onClick="openCamera"
+                    android:text="@string/inspiration_takePic"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/camera"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/userprofile_button"
-                android:onClick="openCamera"
-                android:text="@string/inspiration_takePic"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+            </LinearLayout>
+
+
+
+
 
             <View
                 android:id="@+id/divider2"
@@ -117,32 +139,26 @@
                 android:background="@drawable/white"
                 />
 
-            <Button
-                android:id="@+id/inspiration_save"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/userprofile_button"
-                android:onClick="onClick"
-                android:text="@string/inspiration_save"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/inspiration_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/userprofile_button"
+                    android:onClick="onClick"
+                    android:text="@string/inspiration_save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
 
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:background="@drawable/white" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gray"
-                android:onClick="back"
-                android:text="@string/inspiration_back"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
 
