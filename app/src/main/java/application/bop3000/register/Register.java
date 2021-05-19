@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -117,6 +118,7 @@ public class Register extends AppCompatActivity {
                                                                 // End registration activity (for back-pressed)
                                                                 finish();
                                                             } catch (Exception e) {
+                                                                Looper.prepare();
                                                                 Toast.makeText(Register.this, "Feil ved kobling til server", Toast.LENGTH_SHORT).show();
                                                             }
 

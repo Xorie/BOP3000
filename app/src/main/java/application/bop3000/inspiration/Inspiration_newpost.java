@@ -45,7 +45,9 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
     Button btn_save;
     CheckBox inspiration_checkBox;
     Bitmap bitmap;
+    Bitmap image;
     private MyDatabase DB;
+    InputStream imageStream;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -84,26 +86,22 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
             final String post_text = textEdithText.getText().toString();
 
             //checks if the title fields is empty
-            if (title.isEmpty()) {
-                Toast.makeText(this, "Du må fylle inn titelfeltet!", Toast.LENGTH_LONG).show();
-            } else {
-                post.setUserID(String.valueOf(user));
-                post.setPost_tittle(title);
-                post.setPost_text(post_text);
-                post.setPost_imagepath(imagepath);
-                //checks if the checkbox is checked
-                //if checked the user is anonymous when the post is posted
-                if (inspiration_checkBox.isChecked()) {
-                    post.setPost_checkbox(1);
-                }
-                else {
-                    post.setPost_checkbox(0);
-                }
-                //saves the post in the room database
-                new Thread(() -> postDao.insertNewPost(post)).start();
-                Toast.makeText(getApplicationContext(), "Innlegget er lagret!", Toast.LENGTH_LONG).show();
-                finish();
+            post.setUserID(String.valueOf(user));
+            post.setPost_tittle(title);
+            post.setPost_text(post_text);
+            post.setPost_imagepath(imagepath);
+            //checks if the checkbox is checked
+            //if checked the user is anonymous when the post is posted
+            if (inspiration_checkBox.isChecked()) {
+                post.setPost_checkbox(1);
             }
+            else {
+                post.setPost_checkbox(0);
+            }
+            //saves the post in the room database
+            new Thread(() -> postDao.insertNewPost(post)).start();
+            Toast.makeText(getApplicationContext(), "Innlegget er lagret!", Toast.LENGTH_LONG).show();
+            finish();
         }catch(Exception e){
                 e.printStackTrace();
             }
@@ -172,7 +170,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
         //selected image from gallery
         if (requestCode == GALLERY_REQUEST && resultCode == RESULT_OK) {
             Uri selectedImage = data.getData();
-            InputStream imageStream;
+            //InputStream imageStream;
             try {
                 imageStream = getContentResolver().openInputStream(selectedImage);
                 selectedImageview.setImageBitmap(BitmapFactory.decodeStream(imageStream));
@@ -185,7 +183,7 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             try {
                 Bundle ex = data.getExtras();
-                Bitmap image = (Bitmap)ex.get("data");
+                image = (Bitmap)ex.get("data");
                 selectedImageview.setImageBitmap(image);
             } catch (Exception e) {
                 Toast.makeText(this, "Kunne ikke laste inne bildet", Toast.LENGTH_LONG).show();
@@ -196,7 +194,16 @@ public class Inspiration_newpost extends AppCompatActivity implements View.OnCli
     //calls on function to store image internally on the mobile and to the room database
     @Override
     public void onClick(View v) {
-        saveToInternalStorage(bitmap);
+        if (imageStream == null && image == null) {
+            Toast.makeText(this, "Velg/Ta et bilde", Toast.LENGTH_SHORT).show();
+        } else {
+            if(titleEdithText.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Mangler tittel", Toast.LENGTH_LONG).show();
+            }
+            else {
+                saveToInternalStorage(bitmap);
+            }
+        }
     }
 
     //back button to inspirasjonsside
