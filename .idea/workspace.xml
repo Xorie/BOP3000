@@ -21,14 +21,17 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-    </expand>
-    <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Mikkel" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-    </select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8700ae4c-f8c8-4d16-a0cb-e39cd52be21c" name="Default Changelist" comment="">
@@ -38,16 +41,39 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/inspiration/Inspiration_newpost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/KnittersboxDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/database/KnittersboxDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/faq/faq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabaseGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/application/bop3000/network/DatabaseGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/PayAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/Payment_method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/payment_method/newPayment_method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/subscription/Subscription_change.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/application/bop3000/userprofile/AppExecutors_OLD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/delete.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/gray.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_payment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/logo.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/logo2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/strikk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/userprofile_header_color.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/userprofile_round_layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/usersettings_button_old.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_payment_method.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_payment_method.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_subscription_change.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pay_recview.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\sdk\.android\.android\avd\Pixel_2_API_23.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\fredr\.android\avd\Pixel_3a_API_30_x86.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -92,6 +118,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@C:\sdk\.android\.android\avd\Pixel_2_API_23.avd" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-19T16:43:29.320541600Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -101,7 +128,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -392,11 +419,12 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="119" key="Downloadable.Font.Dialog.Size/0.0.1366.728@0.0.1366.728" timestamp="1616673778812" />
-    <state x="739" y="276" key="FileChooserDialogImpl" timestamp="1618872484983">
+    <state x="739" y="276" key="FileChooserDialogImpl" timestamp="1621506629608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="526" y="193" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615894429841" />
     <state x="739" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618872484983" />
+    <state x="739" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-535.2560.1440@0.0.1920.1040" timestamp="1621506629608" />
     <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1621442784506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -480,9 +508,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1613939231419" />
-    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620209935403">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1621508649589">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-3840.-535.2560.1440@0.0.1920.1040" timestamp="1621508649589" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1618352660772" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620209935403" />
     <state x="447" y="48" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1612966234914">
@@ -493,11 +522,12 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="258" width="585" height="592" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1617114406003" />
-    <state x="649" y="209" key="git4idea.branch.GitSmartOperationDialog" timestamp="1621333741435">
-      <screen x="0" y="0" width="1707" height="920" />
+    <state x="0" y="236" key="git4idea.branch.GitSmartOperationDialog" timestamp="1621508703475">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="649" y="209" key="git4idea.branch.GitSmartOperationDialog/0.0.1707.920@0.0.1707.920" timestamp="1621333741435" />
     <state x="730" y="236" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620067627532" />
+    <state x="0" y="236" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-3840.-535.2560.1440@0.0.1920.1040" timestamp="1621508703475" />
     <state x="730" y="238" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1620241623820" />
     <state x="779" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1617706477953" />
     <state x="547" y="173" key="refactoring.ChangeSignatureDialog" timestamp="1618874573122">

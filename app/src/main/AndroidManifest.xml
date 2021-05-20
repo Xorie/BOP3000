@@ -7,10 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
 
-    package="application.bop3000"
-    android:versionCode="1"
-    android:versionName="1.0">
-
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="30" />
@@ -21,6 +17,8 @@
 
     <!-- Cleartext HTTP traffic for external db -->
     <application
+        android:versionCode="1"
+        android:versionName="1.0"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -31,7 +29,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".subscription.Subscription"
             android:label="Subscription"/>
-        <activity android:name=".subscription.Subscription_change" />
         <activity android:name=".faq.faq"
             android:label="FAQ"/>
 
@@ -49,10 +46,6 @@
         <activity android:name=".userprofile.UserProfile"
             android:label="Brukerprofil"/>
         <activity android:name=".register.Register"/>
-        android:theme="@style/Theme.BOP3000">
-        <activity android:name=".payment_method.newPayment_method" />
-        <activity android:name=".payment_method.Payment_method"
-            android:label="Betalingsmetode"/>
         <activity android:name=".inspiration.Inspiration_newpost" />
         <activity
             android:name=".inspiration.Inspiration"

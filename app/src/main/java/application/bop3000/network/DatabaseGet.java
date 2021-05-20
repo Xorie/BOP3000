@@ -89,11 +89,11 @@ public class DatabaseGet {
         String url = Constants.IP + "getUser.php?";
         url += "email=" + email + "&PW=" + password;
 
-        Log.d("EEE", password);
+        //Log.d("EEE", password);
 
-        Log.d("EEE", EncryptDecrypt.encrypt(password).trim());
+        //Log.d("EEE", EncryptDecrypt.encrypt(password).trim());
 
-        Log.d("EEE", url);
+        //Log.d("EEE", url);
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

@@ -133,7 +133,7 @@ public class faq extends AppCompatActivity {
     private void showFaq() {
         runOnUiThread( () -> {
             increment = 0;
-            Log.d( "SIZE", String.valueOf( size ) );
+            //Log.d( "SIZE", String.valueOf( size ) );
             //Binding the question and answer together
             for (count = 0; count < size; count++) {
                 listItem.put(listGroup.get(increment), Collections.singletonList(itemSet.get(increment)));
@@ -157,8 +157,8 @@ public class faq extends AppCompatActivity {
                     listGroup.addAll(Arrays.asList(question));
                     itemSet.addAll(Arrays.asList(answer));
 
-                    Log.d( "TUSS", String.valueOf( listGroup ) );
-                    Log.d( "TATT", String.valueOf( itemSet ) );
+                    //Log.d( "TUSS", String.valueOf( listGroup ) );
+                    //Log.d( "TATT", String.valueOf( itemSet ) );
 
                     runOnUiThread( () -> {
                         increment = 0;
