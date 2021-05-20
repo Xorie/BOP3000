@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import appexecutors.AppExecutors;
 import application.bop3000.R;
 import application.bop3000.database.MyDatabase;
@@ -113,7 +116,7 @@ public class UserSettings extends AppCompatActivity {
                 String username = usrname.getText().toString();
                 String firstname = fname.getText().toString();
                 String lastname = sname.getText().toString();
-                String emailnew = email.getText().toString(); //NB: MÅ FIKSES
+                String emailnew = email.getText().toString();
 
                 // Retrieving user
                 User user = Login.getUser(); //mDb.getKnittersboxDao().loadUser(email_usr);
@@ -157,6 +160,15 @@ public class UserSettings extends AppCompatActivity {
                         }
                     });
                 }
+                // If e-mail is valid
+                else if (!isValidEmail(emailnew)) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Ugyldig e-post", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
                 else {
 
                     // Setting data in the database
@@ -187,6 +199,17 @@ public class UserSettings extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean isValidEmail(String email) {
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+
+        return matcher.matches();
     }
 
 }
